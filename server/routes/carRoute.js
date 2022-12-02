@@ -2,9 +2,10 @@
 
 const express = require('express');
 const router = express.Router();
+const carController = require('../controllers/carController');
 
-router.get('/', (req, res) => {
-    res.send('This is car route!')
-  })
+router
+  .route("/")
+  .get(carController.get_all_car);
 
   module.exports = router;
