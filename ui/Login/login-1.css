@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@100;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+* {
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+}
+
+body {
+   margin: 0;
+}
+
+.logo{
+   margin-left: 20px;
+   width: 10rem;
+   padding: 20px;
+}
+
+.header{
+   display: flex;
+   flex-direction: row;
+   height: 10%;
+   background-color: #8EE4AF;
+   justify-content: space-between;
+   align-items: center;
+   position: sticky; top: 0;
+   z-index: 1;
+   font-weight: 600;
+}
+
+#nav-menu{
+   height: 100%;
+   width: 50%;
+   padding: 10px;
+   display: flex;
+   flex-direction: row;
+   list-style: none;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+.nav-link{
+   color: black;
+   text-decoration: none;
+   font-size: 20px;
+}
+
+.main{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+}
+
+.container{
+   margin-top: 100px;
+   max-width: 430px;
+   width: 100%;
+   background-color: white;
+   border-radius: 10px;
+   box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+   
+}
+
+.form-login{
+   padding: 30px;
+}
+
+.form-login .title{
+   position: relative;
+   font-size: 30px;
+   font-weight: 700;
+}
+
+.form-login .title::before{
+   content: '';
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   height: 3px;
+   width: 30px;
+   border-radius: 25px;
+}
+
+.input-field{
+   position: relative;
+   height: 50px;
+   width: 100%;
+   margin-top: 30px;
+}
+
+.input-field input{
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   padding: 0 35px;
+   border: none;
+   font-size: 16px;
+   outline: none;
+   border-bottom: 2px solid #ccc;
+   border-top: 2px solid transparent;
+}
+
+.input-field input:is(:focus, :valid){
+   border-bottom-color:#05386B;
+}
+
+.input-field i{
+   position:absolute;
+   top: 50%;
+   left: 0;
+   transform: translateY(-50%);
+   color: #999;
+   font-size: 23px ;
+}
+
+.input-field i.icon{
+   left: 0;
+}
+
+.form-login .forgot-password{
+   display: flex;
+   flex-direction: row-reverse;
+   margin-top: 10px;
+   padding: 5px;
+}
+
+.form-login a{
+   color: #4070f4;
+   text-decoration: none;
+}
+
+.form-login a:hover{
+   text-decoration: underline;
+}
+
+.form-login .button{
+   margin-top: 35px;
+}
+
+.form-login .button input{
+   border: none;
+   font-size: 17px;
+   font-weight: 500;
+   color: #ccc;
+   background-color: #05386B;
+   letter-spacing: 1px;
+   border-radius: 6px;
+   cursor: pointer;
+   transition: all 0.5s ease;
+}
+
+.button input:hover{
+   background-color: #4070f4;
+}
+
+.form-login .signup{
+   margin-top:30px;
+   text-align: center;
+}
