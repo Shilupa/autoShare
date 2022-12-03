@@ -2,9 +2,12 @@
 
 const express = require('express');
 const router = express.Router();
+const userController = require('../controllers/userController');
 
-router.get('/', (req, res) => {
-    res.send('This is user route!')
-  })
+router
+.get('/', userController.get_all_users
+
+
+);
 
   module.exports = router;

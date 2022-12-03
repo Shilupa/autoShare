@@ -2,10 +2,16 @@
 const pool = require("../database/db");
 const promisePool = pool.promise();
 
-const getAllCars = async () => {
+
+const getHomeCars = async () => {
   try {
-    // TODO: do the LEFT (or INNER) JOIN to get owner's name as ownername (from wop_user table).
-    const [rows] = await promisePool.query("SELECT * FROM user");
+    const queries = "SELECT c.brand, c.model, r.rating, c.seater, c.fuel_type, c.transmission, c.rent_price, p.name "+
+                      "FROM car c "+
+                      "Inner join booking b on b.car_reg_no=c.reg_no "+
+                      "Inner join review r on b.id = r.booking_id "+
+                      "Inner join person p on p.id = c.person_id;"
+    // we need car brand, car name , rating, seater, fuel, transmission rent price and post name
+    const [rows] = await promisePool.query(queries);
     return rows;
   } catch (e) {
     console.error("error", e.message);
@@ -13,5 +19,7 @@ const getAllCars = async () => {
 };
 
 module.exports = {
-  getAllCars,
+  getHomeCars,
 };
+
+

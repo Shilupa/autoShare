@@ -1,11 +1,13 @@
 'use strict';
 const carModel = require('../models/carModel');
 
-const get_all_car = async (req, res) => {
-    const cars = await carModel.getAllCars();
+const get_home_cars = async (req, res) => {
+    const cars = await carModel.getHomeCars();
     res.json(cars);
   };
 
+
+
   module.exports = {
-    get_all_car,
+    get_home_cars,
   };

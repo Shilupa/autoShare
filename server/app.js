@@ -4,14 +4,17 @@ const express = require('express')
 const app = express()
 const port = 3000
 const cors = require("cors");
-const carRouter = require("./routes/carRoute");
-const authRouter = require("./routes/authRoute");
-const userRouter = require("./routes/userRoute");
+
 
 app.use(cors());
 
+const carRouter = require("./routes/carRoute");
 app.use("/car", carRouter);
+
+const authRouter = require("./routes/authRoute");
 app.use("/auth", authRouter);
+
+const userRouter = require("./routes/userRoute");
 app.use("/user", userRouter);
 
 app.listen(port, () => {
