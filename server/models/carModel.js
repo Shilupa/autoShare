@@ -18,8 +18,21 @@ const getHomeCars = async () => {
   }
 };
 
+const getCarById = async (carId, res) => {
+  try {
+    
+    const [rows] = await promisePool.query("SELECT id, name, email FROM person WHERE id = ?", [carId]);
+    return rows[0];
+  } catch (e) {
+    console.error("error", e.message);
+    res.status(500).send(e.message);
+  }
+};
+
 module.exports = {
   getHomeCars,
+  getCarById,
+
 };
 
 

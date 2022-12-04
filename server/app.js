@@ -4,9 +4,12 @@ const express = require('express')
 const app = express()
 const port = 3000
 const cors = require("cors");
-
+const formData = require("express-form-data");
 
 app.use(cors());
+app.use(express.json()); // for parsing application json
+app.use(express.urlencoded({extended : true}));
+app.use(formData.parse())
 
 const carRouter = require("./routes/carRoute");
 app.use("/car", carRouter);
