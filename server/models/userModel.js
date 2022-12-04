@@ -34,14 +34,14 @@ const addUser = async (userObject, res) => {
       userObject.name,
       userObject.email,
       userObject.password,
-      userObject.address,
-      userObject.number,
+      userObject.street_address,
+      userObject.phone_,
       userObject.city,
-      userObject.postalCode,
+      userObject.postal_code,
       userObject.license,
-      "male",
+      "gender",
       userObject.dob,
-      "1",
+      userObject.role_,
     ];
    
     const [result] = await promisePool.query(sql, values);

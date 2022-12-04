@@ -10,10 +10,10 @@ router.post(
   body("name").isLength({ min: 3 }).trim().escape(),
   body("email").isEmail().normalizeEmail(),
   body("dob").isDate(),
-  body("number").notEmpty(),
-  body("address").notEmpty(),
+  body("phone_").notEmpty(),
+  body("street_address").notEmpty(),
   body("city").notEmpty(),
-  body("postalCode").notEmpty(),
+  body("postal_code").notEmpty(),
   body("license").notEmpty(),
   body("password").isLength({ min: 8 }).trim(),
   userController.add_user
