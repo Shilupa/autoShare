@@ -2,10 +2,9 @@
 const pool = require("../database/db");
 const promisePool = pool.promise();
 
-
 const getAllUsers = async () => {
   try {
-    const queries = "SELECT * from person"
+    const queries = "SELECT * from person";
     const [rows] = await promisePool.query(queries);
     return rows;
   } catch (e) {
@@ -15,7 +14,10 @@ const getAllUsers = async () => {
 
 const getUserById = async (userId, res) => {
   try {
-    const [rows] = await promisePool.query("SELECT id, name, email FROM person WHERE id = ?", [userId]);
+    const [rows] = await promisePool.query(
+      "SELECT id, name, email FROM person WHERE id = ?",
+      [userId]
+    );
     return rows[0];
   } catch (e) {
     console.error("error", e.message);
@@ -24,9 +26,24 @@ const getUserById = async (userId, res) => {
 };
 
 const addUser = async (userObject, res) => {
+  console.log("userModel", userObject);
   try {
-    const sql = "INSERT INTO person VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    const values = [userObject.name, userObject.email,userObject.password, userObject.street_address, userObject.phone_, userObject.city, userObject.postal_code, userObject.license, userObject.gender, userObject.dob, userObject.role_];
+    const sql =
+      "INSERT INTO person (name, email, password, street_address, phone_, city, postal_code,license, gender, dob, role_) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    const values = [
+      userObject.name,
+      userObject.email,
+      userObject.password,
+      userObject.address,
+      userObject.number,
+      userObject.city,
+      userObject.postalCode,
+      userObject.license,
+      "male",
+      userObject.dob,
+      "1",
+    ];
+   
     const [result] = await promisePool.query(sql, values);
     return result.insertId;
   } catch (e) {
@@ -35,9 +52,11 @@ const addUser = async (userObject, res) => {
   }
 };
 
-const deleteUserById = async ( userId, res ) => {
+const deleteUserById = async (userId, res) => {
   try {
-    const [rows] = await promisePool.query("DELETE FROM person WHERE id = ?", [userId]);
+    const [rows] = await promisePool.query("DELETE FROM person WHERE id = ?", [
+      userId,
+    ]);
     return rows;
   } catch (e) {
     console.error("error", e.message);
@@ -47,8 +66,22 @@ const deleteUserById = async ( userId, res ) => {
 
 const modifyUserById = async (userObject, res) => {
   try {
-    const sql = "Update person set name=?, email=?, password=?, street_address=?, phone_=?, city=?, postal_code=?, license=?, gender=?, dob=?, role_=? where id=?" ;
-    const values = [userObject.name, userObject.email,userObject.password, userObject.street_address, userObject.phone_, userObject.city, userObject.postal_code, userObject.license, userObject.gender, userObject.dob, userObject.role_, userObject.id];
+    const sql =
+      "Update person set name=?, email=?, password=?, street_address=?, phone_=?, city=?, postal_code=?, license=?, gender=?, dob=?, role_=? where id=?";
+    const values = [
+      userObject.name,
+      userObject.email,
+      userObject.password,
+      userObject.street_address,
+      userObject.phone_,
+      userObject.city,
+      userObject.postal_code,
+      userObject.license,
+      userObject.gender,
+      userObject.dob,
+      userObject.role_,
+      userObject.id,
+    ];
     const [result] = await promisePool.query(sql, values);
     return result;
   } catch (e) {
@@ -57,15 +90,10 @@ const modifyUserById = async (userObject, res) => {
   }
 };
 
-
-
 module.exports = {
   getAllUsers,
   getUserById,
   addUser,
   deleteUserById,
-  modifyUserById
-
+  modifyUserById,
 };
-
-
