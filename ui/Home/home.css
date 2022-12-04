@@ -19,7 +19,7 @@ body {
    flex-direction: row;
    height: 10%;
    background-color: #8EE4AF;
-   justify-content: space-between;
+   justify-content: space-around;
    align-items: center;
    position: sticky; top: 0;
    z-index: 1;
@@ -33,7 +33,7 @@ body {
    display: flex;
    flex-direction: row;
    list-style: none;
-   justify-content: space-evenly;
+   justify-content: space-between;
    align-items: center;
 }
 
