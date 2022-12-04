@@ -133,13 +133,13 @@ form button{
  .car-list{
    margin-top: 30px;
    margin-bottom: 30px;
-   width: 80%;
+   width: 90%;
    height: fit-content;
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
+   flex-wrap: wrap;
    background-color: #EBECF0;
-   justify-content: center;
-   align-items: center;
+   justify-content: flex-start;
    border-radius: 6px;
    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
 
@@ -149,31 +149,37 @@ form button{
    position: relative;
    margin-top: 30px;
    margin-bottom: 30px;
-   width: 95%;
-   height: 300px;
+   margin-left: 70px;
+   width: 20%;
+   height: fit-content;
    display: flex;
-   flex-direction: row;
+   flex-direction: column;
+   justify-content: center;
    align-items: center;
-   justify-content: space-around;
    background-color: whitesmoke;
    border-radius: 6px;
    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
  }
 
+ .car-list-item img{
+   width: 200px;
+   height: 200px;
+   border-radius: 6px;
+ }
+
  .details{
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
    width: 300px;
-   height: 300px;
-   align-items: flex-start;
-   justify-content: space-around;
+   height: fit;
+   align-items: center;
+   justify-content:flex-start;
  }
 
  .details ul{
    list-style: none;
    word-spacing: 10px;
-   font-size: 15px;
-   font-weight: 400;
+   text-decoration: none;
  }
 
 
@@ -183,16 +189,17 @@ form button{
 
  .price-and-rent{
    display: flex;
-   flex-direction: column;
-   width: 300px;
-   height: 300px;
+   flex-direction: row;
+   margin-bottom: 10px;
+   margin-top: 10px;
+   width:200px;
    align-items: center;
    justify-content: space-around;
  }
 
  .price{
    border: none;
-   width: 200px;
+   width: 100pxpx;
    height: 50px;
    font-size: 17px;
    font-weight: 500;
@@ -205,9 +212,9 @@ form button{
    transition: all 0.5s ease;
  }
 
- .rent-btn input{
+ .rent-btn {
    border: none;
-   width: 200px;
+   width: 50px;
    height: 50px;
    font-size: 17px;
    font-weight: 500;
@@ -217,11 +224,10 @@ form button{
    border-radius: 6px;
    cursor: pointer;
    transition: all 0.5s ease;
+   text-align: center;
+   padding: 10px;
 }
 
 .rent-btn input:hover{
    background-color: #4070f4;
 }
- 
-
-
