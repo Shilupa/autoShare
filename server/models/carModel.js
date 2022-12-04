@@ -18,9 +18,15 @@ const getHomeCars = async () => {
   }
 };
 
-const getCarById = async (carId, res) => {
+const getCarByRegNum = async (carRegNum, res) => {
   try {
-    
+    const sql = "select * from car c "+
+                "inner join person p on c.person_id=p.id "+
+                "inner join booking b on b.car_reg_no = c.reg_no "+
+                "inner join picture pic on pic.car_reg_no = c.reg_no";
+
+    const values = [userObject.name, userObject.email,userObject.password, userObject.street_address, userObject.phone_, userObject.city, userObject.postal_code, userObject.license, userObject.gender, userObject.dob, userObject.role_];
+
     const [rows] = await promisePool.query("SELECT id, name, email FROM person WHERE id = ?", [carId]);
     return rows[0];
   } catch (e) {
@@ -31,7 +37,7 @@ const getCarById = async (carId, res) => {
 
 module.exports = {
   getHomeCars,
-  getCarById,
+  getCarByRegNum,
 
 };
 
