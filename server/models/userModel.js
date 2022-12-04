@@ -39,11 +39,11 @@ const addUser = async (userObject, res) => {
       userObject.city,
       userObject.postal_code,
       userObject.license,
-      "gender",
+      userObject.gender,
       userObject.dob,
       userObject.role_,
     ];
-   
+
     const [result] = await promisePool.query(sql, values);
     return result.insertId;
   } catch (e) {

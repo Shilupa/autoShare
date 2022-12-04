@@ -9,6 +9,7 @@ router.post(
   "/register",
   body("name").isLength({ min: 3 }).trim().escape(),
   body("email").isEmail().normalizeEmail(),
+  body("gender").notEmpty(),
   body("dob").isDate(),
   body("phone_").notEmpty(),
   body("street_address").notEmpty(),
