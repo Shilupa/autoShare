@@ -1,65 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>AutoShare</title>
-   <link rel="stylesheet" href="login-1.css">
-   <script src="https://kit.fontawesome.com/e1ac683977.js" crossorigin="anonymous"></script>
-</head>
-<body>
-   <div class="header">
-      <a href="/ui/Home/home.html"><img src="/autoshare-logo/png/logo-no-background-cropped.png" alt="company logo" class="logo"></a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoShare</title>
+    <link rel="stylesheet" href="login-1.css" />
+    <script
+      src="https://kit.fontawesome.com/e1ac683977.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="header">
+      <a href="/ui/Home/home.html"
+        ><img
+          src="/autoshare-logo/png/logo-no-background-cropped.png"
+          alt="company logo"
+          class="logo"
+      /></a>
 
       <div id="nav-menu">
-           <li class="nav-item">
-              <a href="/ui/About/about.html" class="nav-link">About Us</a>
-           </li>
-           <li class="nav-item">
-            <a href="/ui/Login/login-1.html" class="nav-link">Log In</a>
-         </li>
+        <li class="nav-item">
+          <a href="/ui/About/about.html" class="nav-link">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a href="/ui/Login/login-1.html" class="nav-link">Log In</a>
+        </li>
       </div>
-  </div>
+    </div>
 
-
-  <div class="main">
-   <div class="container">
-      <div class="forms">
-         <div class="form-login">
+    <div class="main">
+      <div class="container">
+        <div class="forms">
+          <div class="form-login">
             <span class="title">Login</span>
-   
-            <form action="#">
-               <div class="input-field">
-                  <input type="text" placeholder="Enter your e-mail" required>
-                  <i class="fa-solid fa-envelope icon"></i>
-               </div>
-               <div class="input-field">
-                  <input type="text" placeholder="Enter your password" required>
-                  <i class="fa-solid fa-lock icon"></i>
-               </div>
-               
-               <div class="forgot-password">
-                  <a href="#" class="text">Forgot password?</a>
-               </div>
-   
-               <div class="input-field button">
-                  <a href="/ui/userProfile/userProfile.html"><input type="button" value="Login"></a>
-               </div>
+
+            <form action="#" id="login-form">
+              <div class="input-field">
+                <input
+                  type="text"
+                  name="e-mail"
+                  placeholder="Enter your e-mail"
+                  required
+                />
+                <i class="fa-solid fa-envelope icon"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  type="text"
+                  name="password"
+                  placeholder="Enter your password"
+                  required
+                />
+                <i class="fa-solid fa-lock icon"></i>
+              </div>
+
+              <div class="forgot-password">
+                <a href="#" class="text">Forgot password?</a>
+              </div>
+
+              <div class="input-field button">
+                <a href="/ui/userProfile/userProfile.html">
+                  <!-- <input type="submit" value="Login"/> -->
+                  <input type="submit"/>
+               </a>
+              </div>
             </form>
-   
+
             <div class="signup">
-               <span class="text">Not registered yet?
-                  <a href="/ui/Register/register-1.html" class="text signup-text">Signup now</a>
-               </span>
-   
+              <span class="text"
+                >Not registered yet?
+                <a href="/ui/Register/register-1.html" class="text signup-text"
+                  >Signup now</a
+                >
+              </span>
             </div>
-   
-         </div>
-   </div>
-   
-   </div>
-</div>
-</body>
-</body>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="login.js"></script>
+    <script src="../serialize.js"></script>
+  </body>
 </html>

@@ -5,7 +5,10 @@ const router = express.Router();
 const carController = require('../controllers/carController');
 
 router
-  .route("/")
-  .get(carController.get_all_car);
+  .get('/',carController.get_home_cars
+  
+  
+  
+  );
 
   module.exports = router;
