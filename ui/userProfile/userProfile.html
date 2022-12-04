@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +9,10 @@
    <link rel="stylesheet" href="userProfile.css">
    <script src="https://kit.fontawesome.com/e1ac683977.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
    <div class="header">
-
       <a href="/ui/Home/home.html"><img src="/autoshare-logo/png/logo-no-background-cropped.png" alt="company logo" class="logo"></a>
-
       <div id="nav-menu">
            <li class="nav-item">
               <a href="/ui/About/about.html" class="nav-link">About Us</a>
@@ -21,143 +21,80 @@
             <a href="/ui/Login/login-1.html" class="nav-link">Hi User!</a>
          </li>
       </div>
+   </div>
+
+  <div class="user-bar">
+   <a href="/ui/userProfile/userCar.html"><h3 class="user-bar-item">My car(s)</h3></a>
+   <a href="/ui/userProfile/userProfile.html"><h3 class="user-bar-item">My profile</h3></a>
+   <a href="/ui/Home/home.html"><h3 class="user-bar-item"><i class="fa-solid fa-right-from-bracket"></i> Log out</h3></a>
   </div>
 
 
   <div class="main">
-   <div class="left-box">
-      <div class="user-info">
-         <div class="forms">
-            <div class="form-login">
-               <span class="title">User Info</span>
-               <form action="#">
-                     <div class="input-field">
-                        <input type="text" placeholder="Enter your name" required>
-                        <i class="fa-solid fa-user"></i>
-                     </div>
-                     <div class="input-field">
-                        <input type="text" placeholder="Enter your social security number" required>
-                        <i class="fa-solid fa-id-badge"></i>
-                     </div>
-                     <div class="input-field">
-                        <input type="text" placeholder="Enter your e-mail" required>
-                        <i class="fa-solid fa-envelope icon"></i>
-                     </div>
-                     <div class="input-field">
-                        <input type="date" placeholder="Date of birth" required>
-                        <i class="fa-solid fa-calendar"></i>
-                     </div>
-                     <div class="input-field">
-                        <input type="text" placeholder="Enter your phone number" required>
-                        <i class="fa-solid fa-phone"></i>
-                     </div>
-                     <div class="input-field">
-                        <input type="text" placeholder="Enter your street address" required>
-                        <i class="fa-solid fa-location-pin"></i>
-                     </div>
-                     <div class="input-field">
-                        <input type="text" placeholder="Enter your city" required>
-                        <i class="fa-solid fa-city"></i>
-                     </div>
-                     <div class="input-field">
-                        <input type="text" placeholder="Enter your postal code" required>
-                        <i class="fa-solid fa-signs-post"></i>
-                     </div>
-                     <div class="input-field">
-                        <input type="text" placeholder="Enter your driver's license number" required>
-                        <i class="fa-solid fa-id-card"></i>
-                     </div>
-                     <div class="input-field">
-                        <input type="text" placeholder="Enter your password" required>
-                        <i class="fa-solid fa-lock icon"></i>
-                     </div>
-                     <div class="input-field">
-                        <input type="text" placeholder="Confirm your password" required>
-                        <i class="fa-solid fa-lock icon"></i>
-                     </div>
-
-                     <div class="choose-file">
-                        <input type="file" id="actual-btn" hidden/>
-                        <!-- our custom upload button -->
-                        <label for="actual-btn">Upload profile picture</label>
-                        <!-- name of file chosen -->
-                        <span id="file-chosen">No file chosen</span>
-                     </div>
-      
-                  <div class="input-field button">
-                     <input type="button" value="Update">
+   <div class="user-info">
+      <div class="forms">
+         <div class="form-user">
+            <div class="form-header"><span class="title">User Info</span>
+               <div class="display-pic">
+                  <input type="file" id="actual-btn"hidden/>
+                  <!-- custom upload button -->
+                  <label for="actual-btn">U</label>
+                  <!-- name of file chosen -->
+               </div>
+            </div>
+            <form action="#">
+                  <div class="input-field">
+                     <input type="text" placeholder="Enter your name" required>
+                     <i class="fa-solid fa-user"></i>
                   </div>
-               </form>
-            </div>
-            </div>
-      </div>
-   </div>
-
-   <div class="right-box">
-      <div class="car-info">
-         <div class="forms">
-            <div class="form-login">
-               <span class="title">Add a Car</span>
-                  <form action="#">
-                     <div class="input-field">
-                        <input type="text" placeholder="Enter car registration number" required>
-                        <i class="fa-solid fa-car"></i>
-                     </div>
-                     <div class="input-field">
-                        <input type="text" placeholder="Brand" required>
-                        <i class="fa-solid fa-car"></i>
-                     </div>
-                     <div class="input-field">
-                        <input type="text" placeholder="Model" required>
-                        <i class="fa-solid fa-car"></i>
-                     </div>
-                     <div class="input-field">
-                        <input type="text" placeholder="Color" required>
-                        <i class="fa-solid fa-palette"></i>
-                     </div>
-                     <div class="input-field">
-                        <input type="number" min ="1990" max="2022" step="1" placeholder="1990">
-                        <i class="fa-solid fa-calendar"></i>
-                     </div>
-                     <div class="input-field">
-                        <input type="text" placeholder="Fuel type" required>
-                        <i class="fa-solid fa-gas-pump"></i>
-                     </div>
-                     <div class="input-field">
-                        <input type="text" placeholder="Gearbox" required>
-                        <i class="fa-solid fa-gears"></i>
-                     </div>
-                     <div class="input-field">
-                        <input type="number" min="1" max="10" step="1" placeholder="number of people" required>
-                        <i class="fa-solid fa-users"></i>
-                     </div>
-                     <div class="input-field">
-                        <input type="text" placeholder="rent per hour" required>
-                        <i class="fa-solid fa-coins"></i>
-                     </div>
-
-                     <div class="choose-file">
-                        <input type="file" id="actual-btn" hidden/>
-                        <!-- our custom upload button -->
-                        <label for="actual-btn">Upload car pictures</label>
-                        <!-- name of file chosen -->
-                        <span id="file-chosen">No file chosen</span>
-                     </div>
-      
-                  <div class="input-field button">
-                     <input type="button" value="Save">
+                  <div class="input-field">
+                     <input type="text" placeholder="Enter your social security number" required>
+                     <i class="fa-solid fa-id-badge"></i>
                   </div>
-               </form>
-            </div>
+                  <div class="input-field">
+                     <input type="text" placeholder="Enter your e-mail" required>
+                     <i class="fa-solid fa-envelope icon"></i>
+                  </div>
+                  <div class="input-field">
+                     <input type="date" value="2018/01/01">
+                     <i class="fa-solid fa-cake-candles"></i>
+                  </div>
+                  <div class="input-field">
+                     <input type="text" placeholder="Enter your phone number" required>
+                     <i class="fa-solid fa-phone"></i>
+                  </div>
+                  <div class="input-field">
+                     <input type="text" placeholder="Enter your street address" required>
+                     <i class="fa-solid fa-location-pin"></i>
+                  </div>
+                  <div class="input-field">
+                     <input type="text" placeholder="Enter your city" required>
+                     <i class="fa-solid fa-city"></i>
+                  </div>
+                  <div class="input-field">
+                     <input type="text" placeholder="Enter your postal code" required>
+                     <i class="fa-solid fa-signs-post"></i>
+                  </div>
+                  <div class="input-field">
+                     <input type="text" placeholder="Enter your driver's license number" required>
+                     <i class="fa-solid fa-id-card"></i>
+                  </div>
+                  <div class="input-field">
+                     <input type="text" placeholder="Enter your password" required>
+                     <i class="fa-solid fa-lock icon"></i>
+                  </div>
+                  <div class="input-field">
+                     <input type="text" placeholder="Confirm your password" required>
+                     <i class="fa-solid fa-lock icon"></i>
+                  </div>
+               <div class="input-field button">
+                  <input type="button" value="Update">
+               </div>
+            </form>
          </div>
-      </div>
-
-      <div class="add-another-car">
-         <h3><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add another car</h3>
-      </div>
+         </div>
    </div>
-   
-</div>
+  </div>
 </body>
 </body>
 </html>

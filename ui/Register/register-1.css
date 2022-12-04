@@ -49,6 +49,29 @@ body {
    justify-content: center;
 }
 
+.form-header{
+   display: flex;
+   justify-content: space-between;
+}
+
+.display-pic {
+   border-radius: 50%;
+   background-color: #cccccc;
+   width: 2.5em;
+   height: 2.5em;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 48px;
+   color: #ffffff;
+   box-shadow: 0px 0px 6px rgba(20, 20, 20, 0.6);
+  
+ }
+
+ label:hover{
+   cursor: pointer;
+}
+
 .container{
    margin-top: 100px;
    margin-bottom: 50px;
