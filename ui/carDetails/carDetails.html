@@ -23,7 +23,7 @@
   </div>
 
   <div class="main">
-   <div class="car-details">
+   <div class="card">
       <div class="images">
          <i class="fa-solid fa-circle-left"></i>
          <img src="/images/photo-1525609004556-c46c7d6cf023.jfif" alt="" class="car-img">
@@ -32,9 +32,53 @@
 
       <div class="car-info">
          <div class="items">
-            <span id="fuel"><i class="fa-solid fa-gas-pump"></i>&nbspPetrol</span>
-            <span id="gearbox"><i class="fa-solid fa-gears"></i>&nbspAutomatic</span>
+            <h2 style="align-self: center;">Toyota Yaris</h2>
+            <div class="overall-ratings" style="align-self: center;">
+               <span class="fa fa-star checked"></span>
+               <span class="fa fa-star checked"></span>
+               <span class="fa fa-star checked"></span>
+               <span class="fa fa-star"></span>
+               <span class="fa fa-star"></span>
+            </div>
+            <span id="fuel"><i class="fa-solid fa-gas-pump"></i>&nbsp;&nbsp;Petrol</span>
+            <span id="gearbox"><i class="fa-solid fa-gears"></i>&nbsp;&nbsp;Automatic transmission</span>
+            <span id="year"><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;1994</span>
+            <span id="number-of-people"><i class="fa-solid fa-users"></i>&nbsp;&nbsp;5</span>
+            <span id="number-of-people"><i class="fa-solid fa-sack-dollar"></i>&nbsp;&nbsp;25€/hr</span>            
          </div>
+      </div>
+
+      <div class="booking">
+         <div class="booking-details">
+            <div class="booking-details-rows">
+               Booking starts 
+               <input type="date" name="start-date" id="date-picker">
+               <input type="time" class="time-picker"/>
+            </div>
+            <div class="booking-details-rows">
+               Booking ends
+               <input type="date" name="start-date" id="date-picker">
+               <input type="time" class="time-picker"/>
+            </div>
+            <div class="booking-details-rows">
+               <input type="text" placeholder="intended distance of travel (in km)" id="distance">
+            </div>
+
+         </div>
+
+         <div class="send-request">
+            <button class="request-btn" type="button">Send Request</button>
+         </div>
+      </div>
+
+   </div>
+
+   <div class="right-box">
+      <div class="card">
+         <div id="map"></div>
+      </div>
+      <div class="card">
+         <div class="reviews"></div>
       </div>
    </div>
   </div>
