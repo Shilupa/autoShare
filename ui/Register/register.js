@@ -2,6 +2,8 @@
 const url = "http://localhost:3000";
 
 const registerForm = document.getElementById("register-form");
+const errorMessage = document.getElementById("error-message");
+
 registerForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const data = serializeJson(registerForm);
@@ -9,6 +11,12 @@ registerForm.addEventListener("submit", async (event) => {
     if (value === "") {
       delete data[prop];
     }
+  }
+
+  // Give error message confirm password does not match password
+  if (data.password !== data.confirmPassword) {
+    alert("Password did not match!");
+    return;
   }
   const fetchOptions = {
     method: "POST",
@@ -19,15 +27,7 @@ registerForm.addEventListener("submit", async (event) => {
   };
   const response = await fetch(url + "/auth/register", fetchOptions);
   const json = await response.json();
-  console.log("registerFrom", json);
+  alert(json.message);
+  //TODO: navigation to login page.
+  location.href = "../login/login-1.html";
 });
-
-const register = async () => {
-  try {
-    const response = await fetch(url + "/car");
-    const cars = await response.json();
-    console.log(cars);
-  } catch (e) {
-    console.log(e.message);
-  }
-};

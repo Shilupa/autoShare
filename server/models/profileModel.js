@@ -2,20 +2,10 @@
 const pool = require("../database/db");
 const promisePool = pool.promise();
 
-const getAllUsers = async () => {
-  try {
-    const queries = "SELECT * from person";
-    const [rows] = await promisePool.query(queries);
-    return rows;
-  } catch (e) {
-    console.error("error", e.message);
-  }
-};
-
-const getUserById = async (userId, res) => {
+const getProfileByUserId = async (userId, res) => {
   try {
     const [rows] = await promisePool.query(
-      "SELECT id, name, email FROM person WHERE id = ?",
+      "SELECT file FROM profile WHERE person_id = ?",
       [userId]
     );
     return rows[0];
@@ -25,11 +15,10 @@ const getUserById = async (userId, res) => {
   }
 };
 
-const addUser = async (userObject, res) => {
-  console.log("userModel", userObject);
+const addProfileByUserId = async (profileObject, res) => {
+  console.log("profileModel", profileObject);
   try {
-    const sql =
-      "INSERT INTO person (name, email, password, street_address, phone_, city, postal_code,license, gender, dob, role_) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    const sql = "INSERT INTO profile (file, person_id) VALUES (?, ?)";
     const values = [
       userObject.name,
       userObject.email,
@@ -89,24 +78,7 @@ const modifyUserById = async (userObject, res) => {
     res.status(500).send(e.message);
   }
 };
-const getUserLogin = async (email) => {
-  try {
-    const [rows] = await promisePool.execute(
-      "SELECT * FROM person WHERE email = ?",
-      email
-    );
-    return rows;
-  } catch (e) {
-    console.error("error", e.message);
-    res.status(500).send(e.message);
-  }
-};
 
 module.exports = {
-  getAllUsers,
-  getUserById,
-  addUser,
-  deleteUserById,
-  modifyUserById,
-  getUserLogin,
+  getProfileByUserId,
 };

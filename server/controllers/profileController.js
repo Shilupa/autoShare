@@ -1,23 +1,17 @@
 "use strict";
-const userModel = require("../models/userModel");
+const profileModel = require("../models/profileModel");
 const { validationResult } = require("express-validator");
-const bcrypt = require("bcryptjs");
 
-const get_all_users = async (req, response) => {
-  const users = await userModel.getAllUsers();
-  response.json(users);
-};
-
-const get_user = async (req, res) => {
-  const user = await userModel.getUserById(req.params.userId, res);
-  if (user) {
-    res.json(user);
+const get_profile_by_person_id = async (req, res) => {
+  const profile = await profileModel.getProfileByUserId(req.params.userId, res);
+  if (profile) {
+    res.json(profile);
   } else {
     res.sendStatus(404);
   }
 };
 
-const add_user = async (req, res) => {
+const add_profile_by_person_id = async (req, res) => {
   console.log("creating a new user: ", req.body);
   const newUser = req.body;
   if (!newUser.role_) {
@@ -27,9 +21,6 @@ const add_user = async (req, res) => {
   console.log("error: ", errors);
 
   if (errors.isEmpty()) {
-    const salt = await bcrypt.genSalt();
-    const passwordHash = await bcrypt.hash(newUser.password, salt);
-    newUser.password = passwordHash;
     const result = await userModel.addUser(newUser, res);
     res.status(201).json({ message: "user created", newUserId: result });
   } else {
@@ -67,9 +58,6 @@ const modify_user = async (req, res) => {
 };
 
 module.exports = {
-  get_all_users,
-  get_user,
-  add_user,
-  modify_user,
-  delete_user,
+  get_profile_by_person_id,
+  add_profile_by_person_id,
 };
