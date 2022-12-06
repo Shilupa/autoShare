@@ -10,6 +10,7 @@ const carRouter = require("./routes/carRoute");
 const authRouter = require("./routes/authRoute");
 const userRouter = require("./routes/userRoute");
 const bookingRouter = require("./routes/bookingRoute");
+const profileRouter = require("./routes/profileRoute");
 
 app.use(cors());
 app.use(express.json()); // for parsing application json
@@ -20,6 +21,7 @@ app.use("/car", carRouter);
 app.use("/auth", authRouter);
 app.use("/user", userRouter);
 app.use("/booking", bookingRouter);
+app.use("/profile", profileRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
