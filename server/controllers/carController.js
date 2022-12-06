@@ -16,7 +16,6 @@ const add_car = async (req, res) => {
   console.log("creating a new car: ", req.body);
   const newCar = req.body;
   const errors = validationResult(req);
-  console.log("error: ", errors);
 
   if (errors.isEmpty()) {
     const result = await carModel.addCar(newCar, res);

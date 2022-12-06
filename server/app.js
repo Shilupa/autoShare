@@ -18,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/auth", authRouter);
 app.use("/user", userRouter);
+//app.use("/car", carRouter);
 app.use("/car", passport.authenticate("jwt", { session: false }), carRouter);
 
 app.listen(port, () => {
