@@ -89,12 +89,11 @@ const modifyUserById = async (userObject, res) => {
     res.status(500).send(e.message);
   }
 };
-const getUserLogin = async (user) => {
+const getUserLogin = async (email) => {
   try {
-    console.log("getUserLogin()", user);
     const [rows] = await promisePool.execute(
       "SELECT * FROM person WHERE email = ?",
-      user
+      email
     );
     return rows;
   } catch (e) {

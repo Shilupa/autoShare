@@ -2,8 +2,7 @@
 const url = "http://localhost:3000";
 
 const loginForm = document.getElementById("login-form");
-console.log(loginForm);
-loginForm.addEventListener("submit", (event) => {
+loginForm.addEventListener("submit", async(event) => {
   event.preventDefault();
   const data = serializeJson(loginForm);
   for (const [prop, value] of Object.entries(data)) {
@@ -12,5 +11,23 @@ loginForm.addEventListener("submit", (event) => {
     }
   }
 
-  console.log(data);
+  const fetchOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  };
+  const response = await fetch(url + '/auth/login', fetchOptions);
+  const json = await response.json();
+  console.log('login response', json);
+  if (!json.user) {
+    alert(json.message);
+  } else {
+    // save token
+    sessionStorage.setItem('token', json.token);
+    sessionStorage.setItem('user', JSON.stringify(json.user));
+    //TODO: navigating to home page
+    //location.href = 'front.html';
+  }
 });

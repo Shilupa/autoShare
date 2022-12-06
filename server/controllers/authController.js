@@ -8,7 +8,6 @@ require("dotenv").config();
 
 const login = (req, res) => {
   // TODO: add passport authenticate
-  console.log(req.body);
   passport.authenticate("local", { session: false }, (err, user, info) => {
     console.log("login", user, info);
     if (err || !user) {
