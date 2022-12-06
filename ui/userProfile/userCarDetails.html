@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>AutoShare</title>
+   <link rel="stylesheet" href="userCarDetails.css">
+   <script src="https://kit.fontawesome.com/e1ac683977.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+   <div class="header">
+      <a href="/ui/Home/home.html"><img src="/autoshare-logo/png/logo-no-background-cropped.png" alt="company logo" class="logo"></a>
+      <div id="nav-menu">
+           <li class="nav-item">
+              <a href="/ui/About/about.html" class="nav-link">About Us</a>
+           </li>
+           <li class="nav-item">
+            <a href="/ui/Login/login-1.html" class="nav-link">Hi User!</a>
+         </li>
+      </div>
+   </div>
+
+  <div class="user-bar">
+   <a href="/ui/userProfile/userCar.html"><h3 class="user-bar-item">My car(s)</h3></a>
+   <a href="/ui/userProfile/userProfile.html"><h3 class="user-bar-item">My profile</h3></a>
+   <a href="/ui/bookings/myBookings.html"><h3 class="user-bar-item">My bookings</h3></a>
+   <a href="/ui/Home/home.html"><h3 class="user-bar-item"><i class="fa-solid fa-right-from-bracket"></i> Log out</h3></a>
+  </div>
+
+  <div class="main">
+   <div class="user-info">
+      <div class="forms">
+         <div class="form-user">
+            <div class="form-header">
+               <span class="title">Car Info</span>
+               <form action="" method="" enctype="multipart/form-data" id="example"></form>
+               <div class="multiple-uploader" id="multiple-uploader">
+                  <div class="mup-msg">
+                     <span class="mup-main-msg">click to upload images.</span>
+                     <span class="mup-msg" id="max-upload-number">Upload up to 10 images</span>
+                     <span class="mup-msg">Only images are allowed for upload</span>
+                  </div>
+               </div>
+
+            </div>
+            
+            <form action="#">
+               <div class="input-field">
+                  <input type="text" placeholder="Enter car registration number" required>
+                  <i class="fa-solid fa-car"></i>
+               </div>
+               <div class="input-field">
+                  <input type="text" placeholder="Brand" required>
+                  <i class="fa-solid fa-car"></i>
+               </div>
+               <div class="input-field">
+                  <input type="text" placeholder="Model" required>
+                  <i class="fa-solid fa-car"></i>
+               </div>
+               <div class="input-field">
+                  <input type="text" placeholder="Color" required>
+                  <i class="fa-solid fa-palette"></i>
+               </div>
+               <div class="input-field">
+                  <input type="number" min ="1990" max="2022" step="1" placeholder="1990">
+                  <i class="fa-solid fa-calendar"></i>
+               </div>
+               <div class="input-field">
+                  <input type="text" placeholder="Fuel type" required>
+                  <i class="fa-solid fa-gas-pump"></i>
+               </div>
+               <div class="input-field">
+                  <input type="text" placeholder="Gearbox" required>
+                  <i class="fa-solid fa-gears"></i>
+               </div>
+               <div class="input-field">
+                  <input type="number" min="1" max="10" step="1" placeholder="number of people" required>
+                  <i class="fa-solid fa-users"></i>
+               </div>
+               <div class="input-field">
+                  <input type="text" placeholder="rent per hour" required>
+                  <i class="fa-solid fa-coins"></i>
+               </div>
+
+               <div class="input-field button">
+                  <input type="button" value="Save">
+               </div>
+            </form>
+         </div>
+         </div>
+   </div>
+  </div>
+</body>
+</html>

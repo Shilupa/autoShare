@@ -26,71 +26,39 @@
   <div class="user-bar">
    <a href="/ui/userProfile/userCar.html"><h3 class="user-bar-item">My car(s)</h3></a>
    <a href="/ui/userProfile/userProfile.html"><h3 class="user-bar-item">My profile</h3></a>
+   <a href="/ui/bookings/myBookings.html"><h3 class="user-bar-item">My bookings</h3></a>
    <a href="/ui/Home/home.html"><h3 class="user-bar-item"><i class="fa-solid fa-right-from-bracket"></i> Log out</h3></a>
   </div>
 
   <div class="main">
-   <div class="user-info">
-      <div class="forms">
-         <div class="form-user">
-            <div class="form-header">
-               <span class="title">Car Info</span>
-               <form action="" method="" enctype="multipart/form-data" id="example"></form>
-               <div class="multiple-uploader" id="multiple-uploader">
-                  <div class="mup-msg">
-                     <span class="mup-main-msg">click to upload images.</span>
-                     <span class="mup-msg" id="max-upload-number">Upload up to 10 images</span>
-                     <span class="mup-msg">Only images are allowed for upload</span>
-                  </div>
-               </div>
+   <div class="car-list">
 
-            </div>
-            
-            <form action="#">
-               <div class="input-field">
-                  <input type="text" placeholder="Enter car registration number" required>
-                  <i class="fa-solid fa-car"></i>
-               </div>
-               <div class="input-field">
-                  <input type="text" placeholder="Brand" required>
-                  <i class="fa-solid fa-car"></i>
-               </div>
-               <div class="input-field">
-                  <input type="text" placeholder="Model" required>
-                  <i class="fa-solid fa-car"></i>
-               </div>
-               <div class="input-field">
-                  <input type="text" placeholder="Color" required>
-                  <i class="fa-solid fa-palette"></i>
-               </div>
-               <div class="input-field">
-                  <input type="number" min ="1990" max="2022" step="1" placeholder="1990">
-                  <i class="fa-solid fa-calendar"></i>
-               </div>
-               <div class="input-field">
-                  <input type="text" placeholder="Fuel type" required>
-                  <i class="fa-solid fa-gas-pump"></i>
-               </div>
-               <div class="input-field">
-                  <input type="text" placeholder="Gearbox" required>
-                  <i class="fa-solid fa-gears"></i>
-               </div>
-               <div class="input-field">
-                  <input type="number" min="1" max="10" step="1" placeholder="number of people" required>
-                  <i class="fa-solid fa-users"></i>
-               </div>
-               <div class="input-field">
-                  <input type="text" placeholder="rent per hour" required>
-                  <i class="fa-solid fa-coins"></i>
-               </div>
+      <!-- create list here -->
 
-               <div class="input-field button">
-                  <input type="button" value="Save">
-               </div>
-            </form>
+      <div class="car-list-item">
+         <h4>Toyota <form action=""></form></h4>
+         <div class="car-image"><img src="/images/photo-1525609004556-c46c7d6cf023.jfif" alt="car" ></div>
+         <div class="overall-ratings">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
          </div>
+         <div class="details">
+            <ul>
+               <li class="seats"><i class="fa-solid fa-users"></i>&nbsp;5</li>
+               <li class="fuel"><i class="fa-solid fa-gas-pump">&nbsp;Petrol</i></li>
+               <li class="gearbox"><i class="fa-solid fa-gears">&nbsp;Automatic</i></li>
+            </ul>
          </div>
+
+      </div>
+
+      <div class="add-car-btn">
+         <div class="message"><i class="fa-solid fa-plus"></i></div>
+      </div>
    </div>
-  </div>
+</div>
 </body>
 </html>
