@@ -22,7 +22,8 @@ body {
    background-color: #8EE4AF;
    justify-content: space-around;
    align-items: center;
-   position: sticky; top: 0;
+   position: sticky;
+   top: 0;
    z-index: 1;
    font-weight: 600;
 }
@@ -97,7 +98,6 @@ a{
    font-size: 48px;
    color: #ffffff;
    box-shadow: 0px 0px 6px rgba(20, 20, 20, 0.6);
-  
  }
 
  label:hover{
@@ -201,3 +201,36 @@ a{
    text-align: center;
 }
 
+
+@media screen and (max-width:600px) {
+   .user-bar-item{
+      font-size: 0.8rem;
+   }
+   .logo{
+      width: 10rem;
+    }
+    .nav-link {
+      font-size: 1rem;
+    }
+    .user-info{
+      max-width: 95%;
+ }
+}
+
+@media screen and (max-width:350px) {
+   .logo{
+      width: 7rem;
+    }
+   .nav-link {
+      font-size: 0.7rem;
+    }
+    .user-bar-item{
+      font-size: 0.6rem;
+   }
+   .input-field input{
+      font-size: 0.6rem;
+   }
+   .form-header .title{
+      font-size: 1.5rem;
+   }
+}
