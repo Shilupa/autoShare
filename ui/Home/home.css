@@ -1,233 +1,259 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@100;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@100;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 * {
-   box-sizing: border-box;
-   font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-   margin: 0;
+  margin: 0;
 }
 
-.logo{
-   margin-left: 20px;
-   width: 10rem;
-   padding: 20px;
+.logo {
+  margin-left: 20px;
+  width: 10rem;
+  padding: 20px;
 }
 
-.header{
-   display: flex;
-   flex-direction: row;
-   height: 10%;
-   background-color: #8EE4AF;
-   justify-content: space-around;
-   align-items: center;
-   position: sticky; top: 0;
-   z-index: 1;
-   font-weight: 600;
+.header {
+  display: flex;
+  flex-direction: row;
+  height: 10%;
+  background-color: #8ee4af;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-weight: 600;
 }
 
-#nav-menu{
-   height: 100%;
-   width: 40%;
-   padding: 10px;
-   display: flex;
-   flex-direction: row;
-   list-style: none;
-   justify-content: space-between;
-   align-items: center;
+#nav-menu {
+  height: 100%;
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.nav-link{
-   color: black;
-   text-decoration: none;
-   font-size: 20px;
+.nav-link {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
 }
 
-.search-bar{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   margin-top: 40px;
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
 }
 
-form{
-   background: white;
-   width: 600px;
-   height: 55px;
-   display: flex;
-   justify-content: center;
-
+form {
+  background: white;
+  width: 80%;
+  height: 55px;
+  display: flex;
+  justify-content: center;
 }
 
-form input{
-   flex: 1;
-   border: none;
-   outline: none;
-   padding: 10px;
-   background: #D0D0D0;
+form input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px;
+  background: #d0d0d0;
 }
 
-form button{
-   background: #05386B;
-   padding: 10px 50px;
-   border: none;
-   outline: none;
-   color: #EDF5E1;
-   letter-spacing: 1px;
-   cursor: pointer;
+form button {
+  background: #05386b;
+  padding: 10px 50px;
+  border: none;
+  outline: none;
+  color: #edf5e1;
+  letter-spacing: 1px;
+  cursor: pointer;
 }
 
-.sort-bar{
-   margin-top: 30px;
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   justify-content: space-evenly;
-   
+.sort-bar {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }
-
 
 .dropbtn {
-   background-color: #04AA6D;
-   color: white;
-   padding: 16px;
-   font-size: 16px;
-   border: none;
- }
- 
- /* The container <div> - needed to position the dropdown content */
- .dropdown {
-   position: relative;
-   display: inline-block;
- }
- /* Dropdown Content (Hidden by Default) */
- .dropdown-content {
-   display: none;
-   position: absolute;
-   background-color: #f1f1f1;
-   min-width: 160px;
-   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-   z-index: 1;
- }
- /* Links inside the dropdown */
- .dropdown-content a {
-   color: black;
-   padding: 12px 16px;
-   text-decoration: none;
-   display: block;
- }
- /* Change color of dropdown links on hover */
- .dropdown-content a:hover {background-color: #ddd;}
- /* Show the dropdown menu on hover */
- .dropdown:hover .dropdown-content {display: block;}
- /* Change the background color of the dropdown button when the dropdown content is shown */
- .dropdown:hover .dropbtn {background-color: #3e8e41;}
-
-
- .main{
-   display: flex;
-   align-items: center;
-   justify-content: center;
- }
-
- .car-list{
-   margin-top: 30px;
-   margin-bottom: 30px;
-   width: 90%;
-   height: fit-content;
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   background-color: #EBECF0;
-   justify-content: flex-start;
-   border-radius: 6px;
-   box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-
- }
-
- .car-list-item{
-   position: relative;
-   margin-top: 30px;
-   margin-bottom: 30px;
-   margin-left: 70px;
-   width: 20%;
-   height: fit-content;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   background-color: whitesmoke;
-   border-radius: 6px;
-   box-shadow: 0 5px 10px rgba(0,0,0,0.5);
- }
-
- .car-list-item img{
-   width: 200px;
-   height: 200px;
-   border-radius: 6px;
- }
-
- .details{
-   display: flex;
-   flex-direction: row;
-   width: 300px;
-   height: fit;
-   align-items: center;
-   justify-content:flex-start;
- }
-
- .details ul{
-   list-style: none;
-   word-spacing: 10px;
-   text-decoration: none;
- }
-
-
- .checked {
-   color: orange;
- }
-
- .price-and-rent{
-   display: flex;
-   flex-direction: row;
-   margin-bottom: 10px;
-   margin-top: 10px;
-   width:200px;
-   align-items: center;
-   justify-content: space-around;
- }
-
- .price{
-   border: none;
-   width: 100pxpx;
-   height: 50px;
-   font-size: 17px;
-   font-weight: 500;
-   color: white;
-   text-align: center;
-   padding: 10px;
-   background-color: #04AA6D;
-   letter-spacing: 1px;
-   border-radius: 6px;
-   transition: all 0.5s ease;
- }
-
- .rent-btn {
-   border: none;
-   width: 50px;
-   height: 50px;
-   font-size: 17px;
-   font-weight: 500;
-   color: #ccc;
-   background-color: #05386B;
-   letter-spacing: 1px;
-   border-radius: 6px;
-   cursor: pointer;
-   transition: all 0.5s ease;
-   text-align: center;
-   padding: 10px;
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
 }
 
-.rent-btn input:hover{
-   background-color: #4070f4;
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.car-list {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 95%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
+  background-color: #ebecf0;
+  justify-content: center;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.car-list-item {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 240px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.car-list-item img {
+  width: 200px;
+  height: 200px;
+  border-radius: 6px;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  height: fit;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.details ul {
+  list-style: none;
+  word-spacing: 10px;
+  text-decoration: none;
+}
+
+.checked {
+  color: orange;
+}
+
+.price-and-rent {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 200px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.price {
+  border: none;
+  width: 100pxpx;
+  height: 50px;
+  font-size: 17px;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  background-color: #04aa6d;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  transition: all 0.5s ease;
+}
+
+.rent-btn {
+  border: none;
+  width: 50px;
+  height: 50px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #ccc;
+  background-color: #05386b;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  text-align: center;
+  padding: 10px;
+}
+
+.rent-btn input:hover {
+  background-color: #4070f4;
+}
+
+@media screen and (max-width: 1200px) {
+  .car-list-item {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .nav-link {
+    color: black;
+    text-decoration: none;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .logo{
+    width: 7rem;
+  }
+  .nav-link {
+    color: black;
+    text-decoration: none;
+    font-size: 0.6rem;
+  }
 }

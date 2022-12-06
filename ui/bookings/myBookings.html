@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>AutoShare</title>
+   <link rel="stylesheet" href="myBookings.css">
+   <script src="https://kit.fontawesome.com/e1ac683977.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+   <div class="header">
+      <a href="/ui/Home/home.html"><img src="/autoshare-logo/png/logo-no-background-cropped.png" alt="company logo" class="logo"></a>
+      <div id="nav-menu">
+           <li class="nav-item">
+              <a href="/ui/About/about.html" class="nav-link">About Us</a>
+           </li>
+           <li class="nav-item">
+            <a href="/ui/Login/login-1.html" class="nav-link">Hi User!</a>
+         </li>
+      </div>
+   </div>
+
+  <div class="user-bar">
+   <a href="/ui/userProfile/userCar.html"><h3 class="user-bar-item">My car(s)</h3></a>
+   <a href="/ui/userProfile/userProfile.html"><h3 class="user-bar-item">My profile</h3></a>
+   <a href="/ui/bookings/myBookings.html"><h3 class="user-bar-item">My bookings</h3></a>
+   <a href="/ui/Home/home.html"><h3 class="user-bar-item"><i class="fa-solid fa-right-from-bracket"></i> Log out</h3></a>
+  </div>
+
+  <div class="main">
+   <div class="booking-list">
+
+      <!--js creates booking list here-->
+
+      <div class="booking-list-item">
+         <h4>As owner</h4> <!--should be owner or renter-->
+         <div class="car-image"><img src="/images/photo-1525609004556-c46c7d6cf023.jfif" alt="car" ></div>
+
+         <div class="booking-details">
+            <span id="booking-date"> Booking date : 12/12/2022</span>
+            <span id="booked-hrs">Booked for : 2 hours</span>
+            <span id="total-cost">Total estimated cost : 50€</span>
+         </div>
+
+      </div>
+
+   </div>
+</div>
+</body>
+</html>
