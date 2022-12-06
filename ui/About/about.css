@@ -6,6 +6,7 @@
 
 body {
    margin: 0;
+   width:max-content;
 }
 
 .logo{
@@ -15,12 +16,13 @@ body {
 }
 
 .header{
+   min-width: 650px;
+   height: 10%;
    display: flex;
    flex-direction: row;
-   height: 10%;
    background-color: #8EE4AF;
-   justify-content: space-between;
    align-items: center;
+   justify-content: space-between;
    position: sticky; top: 0;
    z-index: 1;
    font-weight: 600;
@@ -44,6 +46,7 @@ body {
 }
 
 .main{
+   width: 100%;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -52,7 +55,6 @@ body {
 .box-1{
    width: 100%;
    height: 800px;
- 
    background-color: white;
    display: flex;
    flex-direction: column;
@@ -68,8 +70,8 @@ body {
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   font: 700;
-   font-size: 30px;
+   font:700;
+   font-size: 1.5rem;
 }
 
 .info img{
@@ -80,8 +82,58 @@ body {
    width: 100%;
 }
 
-.how-it-works img {
-   width: 100%;
-   z-index: -1;
+.how-it-works {
+   background-image: url('/images/Speedy-car-at-night-980x651.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 800px;
+   color:whitesmoke;
+   display: flex;
+   align-items: center;
 }
 
+.how-it-works ol{
+   font-size: 20px;
+}
+
+.text-container {
+   width: 80%;
+   display: flex;
+   flex-direction: column;
+   align-items:flex-start;
+   margin-left: 30px;
+}
+
+.contact-box{
+   width: 100%;
+   height: fit-content;
+   padding: 30px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   background-color: #EBECF0;
+}
+
+.contact-developers{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: 20px;
+   justify-content: space-evenly;
+}
+
+.contact-developers li{
+   list-style: none;
+   letter-spacing: 2px;
+   text-transform:lowercase;
+}
+
+footer{
+   height: 70px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: black;
+   color: #ccc;
+   font-size: 1.5rem;
+}

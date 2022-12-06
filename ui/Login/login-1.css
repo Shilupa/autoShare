@@ -21,7 +21,8 @@ body {
    background-color: #8EE4AF;
    justify-content: space-between;
    align-items: center;
-   position: sticky; top: 0;
+   position: sticky;
+   top: 0;
    z-index: 1;
    font-weight: 600;
 }
@@ -44,19 +45,22 @@ body {
 }
 
 .main{
+   min-height:80vh;
    display: flex;
-   flex-direction: row;
+   flex-direction: column;
+   align-items: center;
    justify-content: center;
 }
 
 .container{
-   margin-top: 100px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
    max-width: 430px;
    width: 100%;
    background-color: white;
    border-radius: 10px;
    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-   
 }
 
 .form-login{
@@ -154,4 +158,32 @@ body {
 .form-login .signup{
    margin-top:30px;
    text-align: center;
+}
+
+@media screen and (max-width: 550px) {
+   .nav-link{
+      font-size: 1rem;
+   }
+
+   .container{
+      max-width: 300px;
+   }
+}
+
+
+@media screen and (max-width: 350px) {
+   .logo{
+      width: 7rem;
+   }
+   .nav-link{
+      font-size: 0.7em;
+   }
+
+   .container{
+      max-width: 250px;
+   }
+
+   .forms input{
+      font-size: 0.7rem;
+   }
 }
