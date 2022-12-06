@@ -44,6 +44,7 @@ body {
 }
 
 .main{
+   min-height:80vh;
    display: flex;
    flex-direction: row;
    justify-content: center;
@@ -154,14 +155,16 @@ body {
    text-decoration: underline;
 }
 
-.form-login .button{
-   margin-top: 35px;
-}
-
-.form-login .button input{
+.form-login #btn {
    border: none;
+   width: 80%;
+   height: 40px;
+   align-content: center;
+   align-self: center;
+   text-align: center;
    font-size: 17px;
    font-weight: 500;
+   margin: 30px;
    color: #ccc;
    background-color: #05386B;
    letter-spacing: 1px;
@@ -170,11 +173,46 @@ body {
    transition: all 0.5s ease;
 }
 
-.button input:hover{
+#btn:hover{
    background-color: #4070f4;
 }
-
+/* 
 .form-login .signup{
    margin-top:30px;
    text-align: center;
+} */
+
+@media screen and (max-width: 550px) {
+   .nav-link{
+      font-size: 1rem;
+   }
+
+   .container{
+      max-width: 300px;
+   }
+   .forms input{
+      font-size: 0.7rem;
+   }
+}
+
+
+@media screen and (max-width: 350px) {
+   .logo{
+      width: 7rem;
+   }
+
+   #nav-menu{
+      justify-content: space-between;
+   }
+   .nav-link{
+      font-size: 0.7em;
+   }
+
+   .container{
+      max-width: 250px;
+   }
+
+   .forms input{
+      font-size: 0.6rem;
+   }
 }

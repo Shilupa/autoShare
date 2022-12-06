@@ -1,6 +1,7 @@
 "use strict";
 const userModel = require("../models/userModel");
 const { validationResult } = require("express-validator");
+const bcrypt = require("bcryptjs");
 
 const get_all_users = async (req, response) => {
   const users = await userModel.getAllUsers();
@@ -26,6 +27,9 @@ const add_user = async (req, res) => {
   console.log("error: ", errors);
 
   if (errors.isEmpty()) {
+    const salt = await bcrypt.genSalt();
+    const passwordHash = await bcrypt.hash(newUser.password, salt);
+    newUser.password = passwordHash;
     const result = await userModel.addUser(newUser, res);
     res.status(201).json({ message: "user created", newUserId: result });
   } else {

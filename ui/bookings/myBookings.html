@@ -6,7 +6,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>AutoShare</title>
-   <link rel="stylesheet" href="userCar.css">
+   <link rel="stylesheet" href="myBookings.css">
    <script src="https://kit.fontawesome.com/e1ac683977.js" crossorigin="anonymous"></script>
 </head>
 
@@ -31,33 +31,22 @@
   </div>
 
   <div class="main">
-   <div class="car-list">
+   <div class="booking-list">
 
-      <!-- create list here -->
+      <!--js creates booking list here-->
 
-      <div class="car-list-item">
-         <h4>Toyota <form action=""></form></h4>
+      <div class="booking-list-item">
+         <h4>As owner</h4> <!--should be owner or renter-->
          <div class="car-image"><img src="/images/photo-1525609004556-c46c7d6cf023.jfif" alt="car" ></div>
-         <div class="overall-ratings">
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-         </div>
-         <div class="details">
-            <ul>
-               <li class="seats"><i class="fa-solid fa-users"></i>&nbsp;5</li>
-               <li class="fuel"><i class="fa-solid fa-gas-pump">&nbsp;Petrol</i></li>
-               <li class="gearbox"><i class="fa-solid fa-gears">&nbsp;Automatic</i></li>
-            </ul>
+
+         <div class="booking-details">
+            <span id="booking-date"> Booking date : 12/12/2022</span>
+            <span id="booked-hrs">Booked for : 2 hours</span>
+            <span id="total-cost">Total estimated cost : 50€</span>
          </div>
 
       </div>
 
-      <div class="add-car-btn">
-         <div class="message"><i class="fa-solid fa-plus"></i></div>
-      </div>
    </div>
 </div>
 </body>

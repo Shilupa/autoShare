@@ -89,6 +89,18 @@ const modifyUserById = async (userObject, res) => {
     res.status(500).send(e.message);
   }
 };
+const getUserLogin = async (email) => {
+  try {
+    const [rows] = await promisePool.execute(
+      "SELECT * FROM person WHERE email = ?",
+      email
+    );
+    return rows;
+  } catch (e) {
+    console.error("error", e.message);
+    res.status(500).send(e.message);
+  }
+};
 
 module.exports = {
   getAllUsers,
@@ -96,4 +108,5 @@ module.exports = {
   addUser,
   deleteUserById,
   modifyUserById,
+  getUserLogin,
 };

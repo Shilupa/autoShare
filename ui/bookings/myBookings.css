@@ -17,12 +17,12 @@ body {
 .header{
    display: flex;
    flex-direction: row;
+   width: 100%;
    height: 10%;
    background-color: #8EE4AF;
-   justify-content: space-between;
+   justify-content: space-around;
    align-items: center;
-   position: sticky;
-   top: 0;
+   position: sticky; top: 0;
    z-index: 1;
    font-weight: 600;
 }
@@ -51,7 +51,7 @@ body {
    width: 100%;
    height:100px;
    align-items: center;
-   justify-content: space-evenly;
+   justify-content: space-around;
    cursor: pointer;
 }
 
@@ -71,7 +71,7 @@ a{
    justify-content: space-evenly;
 }
 
-.car-list{
+.booking-list{
    margin-top: 30px;
    margin-bottom: 30px;
    width: 90%;
@@ -79,18 +79,19 @@ a{
    display: flex;
    flex-direction: row;
    flex-wrap: wrap;
-   gap: 40px;
    background-color: #EBECF0;
-   justify-content: center;
+   justify-content: flex-start;
    border-radius: 6px;
    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
 
  }
 
- .car-list-item{
+ .booking-list-item{
+   position: relative;
    margin-top: 30px;
-   width: 30%;
-   width: 240px;
+   margin-bottom: 30px;
+   margin-left: 70px;
+   width: 20%;
    height: fit-content;
    display: flex;
    flex-direction: column;
@@ -102,74 +103,14 @@ a{
    cursor: pointer;
  }
 
- .car-list-item img{
-   width: 10rem;
-   height: 10rem;
+ .booking-list-item img{
+   width: 200px;
+   height: 200px;
    border-radius: 6px;
  }
 
- .details{
-   display: flex;
-   flex-direction: row;
-   width: 300px;
-   height: fit;
-   align-items: center;
-   justify-content:flex-start;
- }
-
- .details ul li{
-   list-style: none;
-   letter-spacing: 2px;
-   font-size: 0.8rem;
-   text-decoration: none;
- }
-
-
- .checked {
-   color: orange;
- }
-
- .add-car-btn{
-   position: relative;
-   margin-top: 30px;
-   margin-bottom: 30px;
-   width: 230px;
-   height: 345px;
+ .booking-details{
    display: flex;
    flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   background-color: #C0C0C0;
-   border-radius: 6px;
-   box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-   cursor: pointer;
- }
-
- @media screen and (max-width:550px) {
-   .user-bar-item{
-      font-size: 0.8rem;
-   }
-   .logo{
-      width: 10rem;
-    }
-    .nav-link {
-      color: black;
-      text-decoration: none;
-      font-size: 1rem;
-    }
- }
-
- @media screen and (max-width: 350px) {
-   .logo{
-     width: 7rem;
-   }
-   .nav-link {
-     color: black;
-     text-decoration: none;
-     font-size: 0.6rem;
-   }
-
-   .user-bar-item{
-      font-size: 0.65rem;
-   }
+   margin-bottom: 10px;
  }

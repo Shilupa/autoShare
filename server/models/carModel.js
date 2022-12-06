@@ -31,8 +31,15 @@ const getCarByRegNum = async (carRegNum, res) => {
   }
 };
 
-const addCar = async (carObject, res) => {
+const addCar = async (carObject, res, user_id) => {
   console.log("Adding car", carObject);
+
+  // Hard coded values to be changed later
+  const car_address = "Espoo ";
+  const pickup_date = "2022-11-10";
+  const pickup_time = "10:30:00";
+  const dropoff_date = "2022-11-12";
+  const dropoff_time = "10:30:00";
   try {
     const sql =
       "INSERT INTO car (reg_no, brand, model, year_, transmission, fuel_type, seater, color, rent_price, car_address, pickup_date, pickup_time, dropoff_date, dropoff_time, person_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -46,12 +53,17 @@ const addCar = async (carObject, res) => {
       carObject.seater,
       carObject.color,
       carObject.rent_price,
-      carObject.car_address,
+      car_address,
+      pickup_date,
+      pickup_time,
+      dropoff_date,
+      dropoff_time,
+      /*       carObject.car_address,
       carObject.pickup_date,
       carObject.pickup_time,
       carObject.dropoff_date,
-      carObject.dropoff_time,
-      carObject.person_id,
+      carObject.dropoff_time, */
+      user_id,
     ];
 
     const [result] = await promisePool.query(sql, values);
