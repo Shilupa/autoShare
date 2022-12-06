@@ -31,7 +31,7 @@ const getCarByRegNum = async (carRegNum, res) => {
   }
 };
 
-const addCar = async (carObject, res) => {
+const addCar = async (carObject, res, user_id) => {
   console.log("Adding car", carObject);
   try {
     const sql =
@@ -51,7 +51,7 @@ const addCar = async (carObject, res) => {
       carObject.pickup_time,
       carObject.dropoff_date,
       carObject.dropoff_time,
-      carObject.person_id,
+      user_id,
     ];
 
     const [result] = await promisePool.query(sql, values);

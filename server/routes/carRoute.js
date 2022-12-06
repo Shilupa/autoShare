@@ -23,7 +23,6 @@ router
     body("pickup_time").notEmpty(),
     body("dropoff_date").isDate(),
     body("dropoff_time").notEmpty(),
-    body("person_id").notEmpty(),
     carController.add_car
   )
   .get("/:carReg", carController.get_car_by_reg)

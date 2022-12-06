@@ -27,6 +27,6 @@ loginForm.addEventListener("submit", async (event) => {
     // save token
     sessionStorage.setItem("token", json.token);
     sessionStorage.setItem("user", JSON.stringify(json.user));
-    location.href = "../home/home.html";
+    location.href = "../userProfile/userProfile.html";
   }
 });
