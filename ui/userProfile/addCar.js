@@ -2,7 +2,7 @@
 const url = "http://localhost:3000";
 console.log(sessionStorage.getItem("token"));
 
-const carForm = document.getElementById("for-test");
+const carForm = document.getElementById("add-car");
 
 carForm.addEventListener("submit", async (evt) => {
   evt.preventDefault();
