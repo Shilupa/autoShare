@@ -11,25 +11,28 @@ const get_profile_by_person_id = async (req, res) => {
   }
 };
 
-const add_profile_by_person_id = async (req, res) => {
-  console.log("creating a new user: ", req.body);
-  const newUser = req.body;
-  if (!newUser.role_) {
-    newUser.role_ = "User";
-  }
+const modify_profile_by_person_id = async (req, res) => {
   const errors = validationResult(req);
-  console.log("error: ", errors);
-
   if (errors.isEmpty()) {
-    const result = await userModel.addUser(newUser, res);
-    res.status(201).json({ message: "user created", newUserId: result });
+    console.log("adding a profile: ", req.body);
+    const profile = req.body;
+    console.log("hahaha", req.file);
+    if (req.file) {
+      profile.file = req.file.filename;
+    } else {
+      profile.file = null;
+    }
+    profile.person_id = req.params.userId;
+    const result = await profileModel.addProfileByUserId(profile, res);
+    res.status(201).json({ message: "profile added", newUserId: result });
   } else {
     res
       .status(400)
-      .json({ message: "user creation failed", errors: errors.array() });
+      .json({ message: "add profile failed", errors: errors.array() });
   }
 };
 
+/*
 const delete_user = async (req, res) => {
   const result = await userModel.deleteUserById(req.params.userId, res);
   console.log("user deleted", result);
@@ -56,8 +59,8 @@ const modify_user = async (req, res) => {
       .json({ message: "There doesnot exist any user with this ID" });
   }
 };
-
+*/
 module.exports = {
   get_profile_by_person_id,
-  add_profile_by_person_id,
+  modify_profile_by_person_id,
 };

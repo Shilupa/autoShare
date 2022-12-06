@@ -17,10 +17,12 @@ const file_filter = (req, file, cb) => {
 
 const upload = multer({ dest: "uploads/", fileFilter: file_filter });
 
-router.get("/:userId", profileController.get_profile_by_person_id);
-/*
-  .get("/:userId", userController.get_user)
-  .put("/:userId", userController.modify_user)
-  .delete("/:userId", userController.delete_user);
-*/
+router
+  .get("/:userId", profileController.get_profile_by_person_id)
+  .put(
+    "/:userId",
+    upload.single("file"),
+    profileController.modify_profile_by_person_id
+  );
+
 module.exports = router;

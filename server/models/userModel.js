@@ -45,6 +45,13 @@ const addUser = async (userObject, res) => {
     ];
 
     const [result] = await promisePool.query(sql, values);
+
+    // filling profile database file with null
+    await promisePool.query(
+      "insert into profile (person_id, file) values(?, ?)",
+      [result.insertId, null]
+    );
+
     return result.insertId;
   } catch (e) {
     console.error("error", e.message);

@@ -18,20 +18,8 @@ const getProfileByUserId = async (userId, res) => {
 const addProfileByUserId = async (profileObject, res) => {
   console.log("profileModel", profileObject);
   try {
-    const sql = "INSERT INTO profile (file, person_id) VALUES (?, ?)";
-    const values = [
-      userObject.name,
-      userObject.email,
-      userObject.password,
-      userObject.street_address,
-      userObject.phone_,
-      userObject.city,
-      userObject.postal_code,
-      userObject.license,
-      userObject.gender,
-      userObject.dob,
-      userObject.role_,
-    ];
+    const sql = "Update profile set file=? where person_id=?";
+    const values = [profileObject.file, profileObject.person_id];
 
     const [result] = await promisePool.query(sql, values);
     return result.insertId;
@@ -40,7 +28,7 @@ const addProfileByUserId = async (profileObject, res) => {
     res.status(500).send(e.message);
   }
 };
-
+/*
 const deleteUserById = async (userId, res) => {
   try {
     const [rows] = await promisePool.query("DELETE FROM person WHERE id = ?", [
@@ -78,7 +66,8 @@ const modifyUserById = async (userObject, res) => {
     res.status(500).send(e.message);
   }
 };
-
+*/
 module.exports = {
   getProfileByUserId,
+  addProfileByUserId,
 };
