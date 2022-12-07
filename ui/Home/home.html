@@ -25,15 +25,17 @@
           <a href="/ui/About/about.html" class="nav-link">About Us</a>
         </li>
         <li class="nav-item">
-          <a href="/ui/Login/login-1.html" class="nav-link" id="btn-login">Log In</a>
+          <a href="/ui/Login/login-1.html" class="nav-link" id="btn-login"
+            >Log In</a
+          >
         </li>
       </div>
     </div>
 
     <div class="search-bar">
       <form>
-        <input type="text" placeholder="search cars by name" />
-        <button type="submit">Search</button>
+        <input type="text" placeholder="search cars by name" id="search" />
+        <button id="btn-search">Search</button>
       </form>
     </div>
 
@@ -53,6 +55,9 @@
       <ul id="list">
         <!-- js creates list here -->
       </ul>
+      <p id="not-found">
+        <!-- Will be displayed if no cars found during search: TODO -->
+      </p>
       <div class="car-list">
         <div class="car-list-item">
           <h4>Toyota Yaris</h4>

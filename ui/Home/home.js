@@ -3,11 +3,18 @@
 const url = "http://localhost:3000";
 
 const ul = document.querySelector("#list");
+const searchedList = document.querySelector("#searched-list");
 const btnLogin = document.querySelector("#btn-login");
+const search = document.querySelector("#search");
+const notFound = document.querySelector("#not-found");
+
 const token = sessionStorage.getItem("token");
 const user = sessionStorage.getItem("user");
 console.log(user, token);
 
+ul.innerHTML = "";
+console.log("hello", search.value);
+//checking token if it exists
 if (token != null) {
   btnLogin.innerHTML = "Logout";
   btnLogin.addEventListener("click", () => {
@@ -18,15 +25,13 @@ if (token != null) {
 // Fetching car data from server
 (async () => {
   const response = await fetch(url + "/car");
-  const json = await response.json();
-  createCarCards(json);
+  const cars = await response.json();
+  createCarCards(cars);
 })();
 
-ul.innerHTML = "";
-
+//inserting element to the list in html page
 const createCarCards = (cars) => {
-  console.log(cars);
-
+  console.log("car", cars);
   cars.forEach((car) => {
     const img = document.createElement("img");
 
@@ -42,6 +47,8 @@ const createCarCards = (cars) => {
     });
 
     const h4 = document.createElement("h4");
+    // Setting attribute for brand to use for filtering
+    h4.setAttribute("className", "brand");
     h4.innerHTML = car.brand;
 
     const figure = document.createElement("figure").appendChild(img);
@@ -59,6 +66,8 @@ const createCarCards = (cars) => {
     p4.innerHTML = `${car.rent_price}/hour`;
 
     const li = document.createElement("li");
+    // Setting attribute for li to use for filtering
+    li.setAttribute("class", "car-list");
     li.classList.add("light-border");
 
     li.appendChild(h4);
@@ -70,3 +79,17 @@ const createCarCards = (cars) => {
     ul.appendChild(li);
   });
 };
+
+// Filtering car list on user input
+search.addEventListener("keyup", () => {
+  let inputValue = search.value.toLowerCase();
+  const carList = document.querySelectorAll("li.car-list");
+  carList.forEach((car) => {
+    let brand = car.getElementsByTagName("h4")[0];
+    if (!brand.innerHTML.toLocaleLowerCase().indexOf(inputValue)) {
+      car.style.display = "";
+    } else {
+      car.style.display = "none";
+    }
+  });
+});
