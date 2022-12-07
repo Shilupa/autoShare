@@ -2,7 +2,7 @@
 
 const url = "http://localhost:3000";
 
-const ul = document.querySelector("#list");
+const ul = document.querySelector(".car-list-item");
 const searchedList = document.querySelector("#searched-list");
 const btnLogin = document.querySelector("#btn-login");
 const search = document.querySelector("#search");
@@ -25,12 +25,13 @@ if (token != null) {
 (async () => {
   const response = await fetch(url + "/car");
   const cars = await response.json();
-  createCarCards(cars);
+  // createCarCards(cars);
+  sortCars(cars);
 })();
 
 let test = document.querySelector(".sort");
 
-//inserting element to the list in html page
+/* //inserting element to the list in html page
 const createCarCards = (cars) => {
   sortCar.forEach((sort) => {
     sort.addEventListener("click", (event) => {
@@ -53,7 +54,7 @@ const createCarCards = (cars) => {
   });
 
   console.log(cars);
-};
+}; */
 
 // Filtering car list on user input
 search.addEventListener("keyup", () => {
