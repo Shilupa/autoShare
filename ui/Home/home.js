@@ -3,7 +3,18 @@
 const url = "http://localhost:3000";
 
 const ul = document.querySelector("#list");
+const btnLogin = document.querySelector("#btn-login");
+const token = sessionStorage.getItem("token");
+const user = sessionStorage.getItem("user");
+console.log(user, token);
 
+if (token != null) {
+  btnLogin.innerHTML = "Logout";
+  btnLogin.addEventListener("click", () => {
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("user");
+  });
+}
 // Fetching car data from server
 (async () => {
   const response = await fetch(url + "/car");
