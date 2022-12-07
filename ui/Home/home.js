@@ -7,13 +7,12 @@ const searchedList = document.querySelector("#searched-list");
 const btnLogin = document.querySelector("#btn-login");
 const search = document.querySelector("#search");
 const notFound = document.querySelector("#not-found");
+const sortCar = document.querySelectorAll(".sort");
 
 const token = sessionStorage.getItem("token");
 const user = sessionStorage.getItem("user");
 console.log(user, token);
 
-ul.innerHTML = "";
-console.log("hello", search.value);
 //checking token if it exists
 if (token != null) {
   btnLogin.innerHTML = "Logout";
@@ -29,9 +28,49 @@ if (token != null) {
   createCarCards(cars);
 })();
 
+let test = document.querySelector(".sort");
+
 //inserting element to the list in html page
 const createCarCards = (cars) => {
-  console.log("car", cars);
+  sortCar.forEach((sort) => {
+    sort.addEventListener("click", (event) => {
+      event.preventDefault();
+      ul.innerHTML = "";
+      if (sort.innerHTML == "The Cheapest") {
+        cars.sort((a, b) => a.rent_price - b.rent_price);
+        sortCars(cars);
+        console.log("Cheap", cars);
+      } else if (sort.innerHTML == "Most Expensive") {
+        cars.sort((a, b) => b.rent_price - a.rent_price);
+        console.log("Expensive", cars);
+        sortCars(cars);
+      } else if (sort.innerHTML == "Popularity") {
+        // TODO: Sorting car by popularity
+        console.log("Popular");
+        sortCars(cars);
+      }
+    });
+  });
+
+  console.log(cars);
+};
+
+// Filtering car list on user input
+search.addEventListener("keyup", () => {
+  let inputValue = search.value.toLowerCase();
+  const carList = document.querySelectorAll("li.car-list");
+  carList.forEach((car) => {
+    let brand = car.getElementsByTagName("h4")[0];
+    if (!brand.innerHTML.toLocaleLowerCase().indexOf(inputValue)) {
+      car.style.display = "";
+    } else {
+      car.style.display = "none";
+    }
+  });
+});
+
+const sortCars = (cars) => {
+  console.log("Car");
   cars.forEach((car) => {
     const img = document.createElement("img");
 
@@ -79,17 +118,3 @@ const createCarCards = (cars) => {
     ul.appendChild(li);
   });
 };
-
-// Filtering car list on user input
-search.addEventListener("keyup", () => {
-  let inputValue = search.value.toLowerCase();
-  const carList = document.querySelectorAll("li.car-list");
-  carList.forEach((car) => {
-    let brand = car.getElementsByTagName("h4")[0];
-    if (!brand.innerHTML.toLocaleLowerCase().indexOf(inputValue)) {
-      car.style.display = "";
-    } else {
-      car.style.display = "none";
-    }
-  });
-});
