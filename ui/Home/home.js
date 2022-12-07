@@ -1,36 +1,61 @@
-'use strict'
-const url = 'http://localhost:3000';
+"use strict";
 
-const addForm = document.querySelector('#addCatForm');
+const url = "http://localhost:3000";
 
-// submit add car form
-addForm.addEventListener('submit', async (evt) => {
-    evt.preventDefault();
-    const fd = new FormData(addForm);
-    const fetchOptions = {
-      method: 'POST',
-      headers: {
-        Authorization: 'Bearer ' + sessionStorage.getItem('token'),
-      },
-      body: fd,
-    };
-    const response = await fetch(url + '/car', fetchOptions);
-    const json = await response.json();
-    alert(json.message);
-  });
+const ul = document.querySelector("#list");
+
+// Fetching car data from server
+(async () => {
+  const response = await fetch(url + "/car");
+  const json = await response.json();
+  createCarCards(json);
+})();
+
+ul.innerHTML = "";
 
 const createCarCards = (cars) => {
-    // clear ul
-    ul.innerHTML = '';
-    cars.forEach((car) => {
-      // create li with DOM methods
-      const img = document.createElement('img');
-      img.src = url + '/thumbnails/' + car.filename;
-      img.alt = car.name;
-      img.classList.add('resp');
-  
-      // open image in single.html
-      img.addEventListener('click', () => {
-        location.href = 'single.html?id=' + car.car_id;
-      });
-    })}
+  console.log(cars);
+
+  cars.forEach((car) => {
+    const img = document.createElement("img");
+
+    //img.src = url + car.filename;
+    img.src = "../../autoshare-logo/png/logo-white.png";
+    img.alt = car.brand;
+    img.height = 200;
+    img.width = 200;
+    img.classList.add("resp");
+
+    img.addEventListener("click", () => {
+      location.href = "single.html?id=" + car.car_id;
+    });
+
+    const h4 = document.createElement("h4");
+    h4.innerHTML = car.brand;
+
+    const figure = document.createElement("figure").appendChild(img);
+
+    const p1 = document.createElement("p");
+    p1.innerHTML = `${car.seater}`;
+
+    const p2 = document.createElement("p");
+    p2.innerHTML = `${car.fuel_type}`;
+
+    const p3 = document.createElement("p");
+    p3.innerHTML = `${car.transmission}`;
+
+    const p4 = document.createElement("p");
+    p4.innerHTML = `${car.rent_price}/hour`;
+
+    const li = document.createElement("li");
+    li.classList.add("light-border");
+
+    li.appendChild(h4);
+    li.appendChild(figure);
+    li.appendChild(p1);
+    li.appendChild(p2);
+    li.appendChild(p3);
+    li.appendChild(p4);
+    ul.appendChild(li);
+  });
+};
