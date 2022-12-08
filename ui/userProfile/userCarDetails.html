@@ -27,26 +27,46 @@
         <li class="nav-item">
           <a href="/ui/Login/login-1.html" class="nav-link">Hi User!</a>
         </li>
+
+        <!-- hamburger is hidden by default and becomes active when the screen size is small -->
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+
+          <div class="dropdown-content">
+            <a href="/ui/About/about.html" class="nav-link">About Us</a>
+            <a href="/ui/Login/login-1.html" class="nav-link">Log In</a>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="user-bar">
-      <a href="/ui/userProfile/userCar.html"
-        ><h3 class="user-bar-item">My car(s)</h3></a
+      <div
+        class="user-bar-item"
+        style="border-bottom: 3px solid #04aa6d; color: #04aa6d"
       >
-      <a href="/ui/userProfile/userProfile.html"
-        ><h3 class="user-bar-item">My profile</h3></a
-      >
-      <a href="/ui/bookings/myBookings.html"
-        ><h3 class="user-bar-item">My bookings</h3></a
-      >
-      <a href="/ui/Home/home.html"
-        ><h3 class="user-bar-item">
-          <i class="fa-solid fa-right-from-bracket"></i> Log out
-        </h3></a
-      >
+        <i class="fa-solid fa-car fa-lg"></i>&nbsp;&nbsp;
+        <h3 class="user-bar-text">My car(s)</h3>
+      </div>
+
+      <div class="user-bar-item">
+        <i class="fa-solid fa-user fa-lg"></i>&nbsp;&nbsp;
+        <h3 class="user-bar-text">My profile</h3>
+      </div>
+
+      <div class="user-bar-item">
+        <i class="fa-solid fa-list-ol fa-lg"></i>&nbsp;&nbsp;
+        <h3 class="user-bar-text">My bookings</h3>
+      </div>
+
+      <div class="user-bar-item">
+        <i class="fa-solid fa-right-from-bracket fa-lg"></i>&nbsp;&nbsp;
+        <h3 class="user-bar-text">Log Out</h3>
+      </div>
     </div>
-    
+
     <div class="main">
       <div class="car-info">
         <div class="forms">
