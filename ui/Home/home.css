@@ -35,7 +35,7 @@ body {
   display: flex;
   flex-direction: row;
   list-style: none;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -269,7 +269,7 @@ form button {
   }
 } */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 850px) {
   .nav-link {
     display: none;
   }
@@ -285,6 +285,7 @@ form button {
   #nav-menu {
     justify-content: end;
   }
+
 }
 
 @media screen and (max-width: 350px) {

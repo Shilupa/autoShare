@@ -34,7 +34,7 @@ body {
   display: flex;
   flex-direction: row;
   list-style: none;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -307,10 +307,8 @@ body {
   }
 }
 
-@media screen and (max-width: 600px) {
-  .logo {
-    width: 10rem;
-  }
+@media screen and (max-width: 850px) {
+
   .nav-link {
     display: none;
   }

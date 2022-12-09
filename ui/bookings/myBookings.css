@@ -100,7 +100,7 @@ body {
   cursor: pointer;
 }
 
-.user-bar-item {
+.user-bar-item a {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -111,7 +111,7 @@ a {
   color: black;
 }
 
-.user-bar-item:hover {
+.user-bar-item a:hover {
   color: #04aa6d;
 }
 
@@ -163,20 +163,7 @@ a {
   margin-bottom: 10px;
 }
 
-footer {
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-  color: #ccc;
-  font-size: 1.5em;
-}
-
-@media screen and (max-width: 600px) {
-  .logo {
-    width: 10rem;
-  }
+@media screen and (max-width: 850px) {
   .nav-link {
     display: none;
   }

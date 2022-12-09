@@ -100,19 +100,18 @@ body {
   cursor: pointer;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
-
-.user-bar-item {
+.user-bar-item a {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.user-bar-item:hover {
-  border-bottom: 3px solid #04aa6d;
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.user-bar-item a:hover {
   color: #04aa6d;
 }
 
@@ -255,12 +254,7 @@ label:hover {
   .car-info {
     max-width: 95%;
   }
-}
 
-@media screen and (max-width: 650px) {
-  .logo {
-    width: 9rem;
-  }
   .nav-link {
     display: none;
   }
@@ -282,5 +276,19 @@ label:hover {
 
   .user-bar-item h3 {
     display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .logo {
+    width: 9rem;
+  }
+
+  .form-user .title {
+    font-size: 20px;
+  }
+
+  .form-user input {
+    font-size: 0.7rem;
   }
 }

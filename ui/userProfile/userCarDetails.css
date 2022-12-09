@@ -35,7 +35,7 @@ body {
   display: flex;
   flex-direction: row;
   list-style: none;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -100,20 +100,18 @@ body {
   cursor: pointer;
 }
 
-.user-bar-item {
+.user-bar-item a {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-
 
 a {
   text-decoration: none;
   color: black;
 }
 
-.user-bar-item:hover {
-  border-bottom: 3px solid #04aa6d;
+.user-bar-item a:hover {
   color: #04aa6d;
 }
 
@@ -191,6 +189,12 @@ a {
 
 .input-field i.icon {
   left: 0;
+}
+
+.availibility {
+  margin-top: 20px;
+  border-style: hidden;
+  padding: 0px;
 }
 
 .button {
@@ -328,19 +332,15 @@ a {
   pointer-events: unset;
 }
 
-@media screen and (max-width:850px) {
+@media screen and (max-width: 850px) {
   .car-info {
     max-width: 95%;
   }
-}
 
-@media screen and (max-width: 650px) {
   .user-bar-item {
     font-size: 0.8rem;
   }
-  .logo {
-    width: 9rem;
-  }
+
   .nav-link {
     display: none;
   }
@@ -356,22 +356,13 @@ a {
   #nav-menu {
     justify-content: end;
   }
-  
+
   .user-bar-item h3 {
     display: none;
   }
 }
 
 @media screen and (max-width: 400px) {
- 
-  .nav-link {
-    font-size: 0.7rem;
-  }
-
-  .user-bar-item .icon{
-    font-size: 1rem;
-  }
-
   .form-car .title {
     font-size: 20px;
   }
@@ -380,5 +371,9 @@ a {
   }
   .mup-msg {
     font-size: 0.7rem;
+  }
+
+  .logo {
+    width: 9rem;
   }
 }

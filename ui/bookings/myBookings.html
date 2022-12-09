@@ -27,6 +27,12 @@
         <li class="nav-item">
           <a href="/ui/Login/login-1.html" class="nav-link">Hi User!</a>
         </li>
+        <li class="nav-item">
+          <a href="/ui/Home/home.html" class="nav-link">
+            <i class="fa-solid fa-right-from-bracket fa-lg"></i>&nbsp;&nbsp; Log
+            Out
+          </a>
+        </li>
 
         <!-- hamburger is hidden by default and becomes active when the screen size is small -->
         <div class="hamburger">
@@ -35,8 +41,9 @@
           <span class="bar"></span>
 
           <div class="dropdown-content">
-             <a href="/ui/About/about.html" class="nav-link">About Us</a>
-             <a href="/ui/Login/login-1.html" class="nav-link">Log In</a>
+            <a href="/ui/Login/login-1.html" class="nav-link">Hi User!</a>
+            <a href="/ui/About/about.html" class="nav-link">About Us</a>
+            <a href="/ui/Home/home.html" class="nav-link">Log Out</a>
           </div>
         </div>
       </div>
@@ -48,26 +55,27 @@
    <a href="/ui/bookings/myBookings.html"><h3 class="user-bar-item">My bookings</h3></a>
    <a href="/ui/Home/home.html"><h3 class="user-bar-item"><i class="fa-solid fa-right-from-bracket"></i> Log out</h3></a> -->
       <div class="user-bar-item">
-        <i class="fa-solid fa-car icon"></i>&nbsp;&nbsp;
-        <h3 class="user-bar-text">My car(s)</h3>
+        <a href="/ui/userProfile/userCar.html">
+          <i class="fa-solid fa-car fa-lg"></i>&nbsp;&nbsp;
+          <h3 class="user-bar-text">My car(s)</h3>
+        </a>
       </div>
 
       <div class="user-bar-item">
-        <i class="fa-solid fa-user icon"></i>&nbsp;&nbsp;
-        <h3 class="user-bar-text">My profile</h3>
+        <a
+          href="/ui/userProfile/userProfile.html">
+          <i class="fa-solid fa-user fa-lg"></i>&nbsp;&nbsp;
+          <h3 class="user-bar-text">My profile</h3>
+        </a>
       </div>
 
-      <div
-        class="user-bar-item"
+      <div class="user-bar-item">
+        <a href="/ui/bookings/myBookings.html"
         style="border-bottom: 3px solid #04aa6d; color: #04aa6d"
-      >
-        <i class="fa-solid fa-list-ol icon"></i>&nbsp;&nbsp;
-        <h3 class="user-bar-text">My bookings</h3>
-      </div>
-
-      <div class="user-bar-item">
-        <i class="fa-solid fa-right-from-bracket icon"></i>&nbsp;&nbsp;
-        <h3 class="user-bar-text">Log Out</h3>
+        >
+          <i class="fa-solid fa-list-ol fa-lg"></i>&nbsp;&nbsp;
+          <h3 class="user-bar-text">My bookings</h3>
+        </a>
       </div>
     </div>
 

@@ -1,227 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>AutoShare</title>
-      <link rel="stylesheet" href="home.css">
-      <script src="https://kit.fontawesome.com/e1ac683977.js" crossorigin="anonymous"></script>
-   </head>
-   <body>
-      <div class="header">
-         <a href="/ui/Home/home.html"><img src="/autoshare-logo/png/logo-no-background-cropped.png" alt="company logo" class="logo"></a>
-         
-         <div id="nav-menu">
-            <li class="nav-item">
-              <a href="/ui/About/about.html" class="nav-link">About Us</a>
-            </li>
-            <li class="nav-item">
-               <a href="/ui/Login/login-1.html" class="nav-link">Log In</a>
-            </li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoShare</title>
+    <link rel="stylesheet" href="home.css" />
+    <script
+      src="https://kit.fontawesome.com/e1ac683977.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="header">
+      <a href="/ui/Home/home.html"
+        ><img
+          src="/autoshare-logo/png/logo-no-background-cropped.png"
+          alt="company logo"
+          class="logo"
+      /></a>
 
-            <!-- hamburger is hidden by default and becomes active when the screen size is small -->
-            <div class="hamburger">
-               <span class="bar"></span>
-               <span class="bar"></span>
-               <span class="bar"></span>
+      <div id="nav-menu">
+        <li class="nav-item">
+          <a href="/ui/About/about.html" class="nav-link">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a href="/ui/Login/login-1.html" class="nav-link">Log In</a>
+        </li>
 
-               <div class="dropdown-content">
-                  <a href="/ui/About/about.html" class="nav-link">About Us</a>
-                  <a href="/ui/Login/login-1.html" class="nav-link">Log In</a>
-               </div>
+        <!-- should be hidden unless user has logged in -->
+        <li class="nav-item" style="display: none;">
+          <a href="/ui/Home/home.html" class="nav-link">
+            <i class="fa-solid fa-right-from-bracket fa-lg"></i>&nbsp;&nbsp; Log
+            Out
+          </a>
+        </li>
 
-            </div>
-         </div>
+        <!-- hamburger is hidden by default and becomes active when the screen size is small -->
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+
+          <div class="dropdown-content">
+            <a href="/ui/Login/login-1.html" class="nav-link">Log In</a>
+            <a href="/ui/About/about.html" class="nav-link">About Us</a>
+            <!-- should be hidden unless user has logged in -->
+            <a href="/ui/Home/home.html" class="nav-link" style="display: none;">Log Out</a>
+          </div>
+        </div>
       </div>
-      
-      <div class="search-bar">
-         <form>
-            <input type="text" placeholder="search cars by name">
-            <button type="submit">Search</button>
-         </form>
+    </div>
+
+    <div class="search-bar">
+      <form>
+        <input type="text" placeholder="search cars by name" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="sort-bar">
+      <h3><span id="number-of-cars">1</span>&nbsp;cars(s) found</h3>
+      <div class="dropdown">
+        <button class="dropbtn">Sort By</button>
+        <div class="dropdown-content">
+          <a href="#">Popularity</a>
+          <a href="#">Most Expensive</a>
+          <a href="#">The Cheapest</a>
+        </div>
       </div>
-  
-      <div class="sort-bar">
-         <h3><span id="number-of-cars">1</span>&nbsp;cars(s) found</h3>
-         <div class="dropdown">
-            <button class="dropbtn">Sort By</button>
-            <div class="dropdown-content">
-               <a href="#">Popularity</a>
-               <a href="#">Most Expensive</a>
-               <a href="#">The Cheapest</a>
+    </div>
+
+    <div class="main">
+      <div class="car-list">
+        <!-- car list is populated here -->
+
+        <!-- car list is populated here -->
+        <div class="car-list-item">
+          <h4>Toyota Yaris</h4>
+          <div class="car-image">
+            <img
+              src="/images/photo-1525609004556-c46c7d6cf023.jfif"
+              alt="car"
+            />
+          </div>
+          <div class="overall-ratings">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+
+          <div class="details">
+            <ul>
+              <li class="seats"><i class="fa-solid fa-users"></i>&nbsp;5</li>
+              <li class="fuel">
+                <i class="fa-solid fa-gas-pump">&nbsp;Petrol</i>
+              </li>
+              <li class="gearbox">
+                <i class="fa-solid fa-gears">&nbsp;Automatic</i>
+              </li>
+            </ul>
+          </div>
+
+          <div class="price-and-rent">
+            <div class="price">
+              25 <i class="fa-solid fa-euro-sign"></i> /hour
             </div>
-         </div>
+          </div>
+        </div>
       </div>
-      
-      <div class="main">
-         <div class="car-list">
-            <!-- car list is populated here -->
-            <div class="car-list-item">
-               <h4>Toyota Yaris</h4>
-               <div class="car-image"><img src="/images/photo-1525609004556-c46c7d6cf023.jfif" alt="car" ></div>
-               <div class="overall-ratings">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-               </div>
-
-               <div class="details">
-                  <ul>
-                     <li class="seats"><i class="fa-solid fa-users"></i>&nbsp;5</li>
-                     <li class="fuel"><i class="fa-solid fa-gas-pump">&nbsp;Petrol</i></li><li class="gearbox"><i class="fa-solid fa-gears">&nbsp;Automatic</i></li>
-                  </ul>
-               </div>
-
-               <div class="price-and-rent">
-                  <div class="price">25 <i class="fa-solid fa-euro-sign"></i> /hour</div>
-               </div>
-
-            </div>
-
-            <div class="car-list-item">
-               <h4>Toyota Yaris</h4>
-               <div class="car-image"><img src="/images/photo-1525609004556-c46c7d6cf023.jfif" alt="car" ></div>
-               <div class="overall-ratings">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-               </div>
-
-               <div class="details">
-                  <ul>
-                     <li class="seats"><i class="fa-solid fa-users"></i>&nbsp;5</li>
-                     <li class="fuel"><i class="fa-solid fa-gas-pump">&nbsp;Petrol</i></li><li class="gearbox"><i class="fa-solid fa-gears">&nbsp;Automatic</i></li>
-                  </ul>
-               </div>
-
-               <div class="price-and-rent">
-                  <div class="price">25 <i class="fa-solid fa-euro-sign"></i> /hour</div>
-               </div>
-
-            </div>
-            <div class="car-list-item">
-               <h4>Toyota Yaris</h4>
-               <div class="car-image"><img src="/images/photo-1525609004556-c46c7d6cf023.jfif" alt="car" ></div>
-               <div class="overall-ratings">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-               </div>
-
-               <div class="details">
-                  <ul>
-                     <li class="seats"><i class="fa-solid fa-users"></i>&nbsp;5</li>
-                     <li class="fuel"><i class="fa-solid fa-gas-pump">&nbsp;Petrol</i></li><li class="gearbox"><i class="fa-solid fa-gears">&nbsp;Automatic</i></li>
-                  </ul>
-               </div>
-
-               <div class="price-and-rent">
-                  <div class="price">25 <i class="fa-solid fa-euro-sign"></i> /hour</div>
-               </div>
-
-            </div>
-            <div class="car-list-item">
-               <h4>Toyota Yaris</h4>
-               <div class="car-image"><img src="/images/photo-1525609004556-c46c7d6cf023.jfif" alt="car" ></div>
-               <div class="overall-ratings">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-               </div>
-
-               <div class="details">
-                  <ul>
-                     <li class="seats"><i class="fa-solid fa-users"></i>&nbsp;5</li>
-                     <li class="fuel"><i class="fa-solid fa-gas-pump">&nbsp;Petrol</i></li><li class="gearbox"><i class="fa-solid fa-gears">&nbsp;Automatic</i></li>
-                  </ul>
-               </div>
-
-               <div class="price-and-rent">
-                  <div class="price">25 <i class="fa-solid fa-euro-sign"></i> /hour</div>
-               </div>
-
-            </div>
-            <div class="car-list-item">
-               <h4>Toyota Yaris</h4>
-               <div class="car-image"><img src="/images/photo-1525609004556-c46c7d6cf023.jfif" alt="car" ></div>
-               <div class="overall-ratings">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-               </div>
-
-               <div class="details">
-                  <ul>
-                     <li class="seats"><i class="fa-solid fa-users"></i>&nbsp;5</li>
-                     <li class="fuel"><i class="fa-solid fa-gas-pump">&nbsp;Petrol</i></li><li class="gearbox"><i class="fa-solid fa-gears">&nbsp;Automatic</i></li>
-                  </ul>
-               </div>
-
-               <div class="price-and-rent">
-                  <div class="price">25 <i class="fa-solid fa-euro-sign"></i> /hour</div>
-               </div>
-
-            </div>
-            <div class="car-list-item">
-               <h4>Toyota Yaris</h4>
-               <div class="car-image"><img src="/images/photo-1525609004556-c46c7d6cf023.jfif" alt="car" ></div>
-               <div class="overall-ratings">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-               </div>
-
-               <div class="details">
-                  <ul>
-                     <li class="seats"><i class="fa-solid fa-users"></i>&nbsp;5</li>
-                     <li class="fuel"><i class="fa-solid fa-gas-pump">&nbsp;Petrol</i></li><li class="gearbox"><i class="fa-solid fa-gears">&nbsp;Automatic</i></li>
-                  </ul>
-               </div>
-
-               <div class="price-and-rent">
-                  <div class="price">25 <i class="fa-solid fa-euro-sign"></i> /hour</div>
-               </div>
-
-            </div>
-            <!-- car list is populated here -->
-            <div class="car-list-item">
-               <h4>Toyota Yaris</h4>
-               <div class="car-image"><img src="/images/photo-1525609004556-c46c7d6cf023.jfif" alt="car" ></div>
-               <div class="overall-ratings">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-               </div>
-
-               <div class="details">
-                  <ul>
-                     <li class="seats"><i class="fa-solid fa-users"></i>&nbsp;5</li>
-                     <li class="fuel"><i class="fa-solid fa-gas-pump">&nbsp;Petrol</i></li><li class="gearbox"><i class="fa-solid fa-gears">&nbsp;Automatic</i></li>
-                  </ul>
-               </div>
-
-               <div class="price-and-rent">
-                  <div class="price">25 <i class="fa-solid fa-euro-sign"></i> /hour</div>
-               </div>
-
-            </div>
-         </div>
-      </div>
-      <script src="home.js"></script>
-   </body>
+    </div>
+    <script src="home.js"></script>
+  </body>
 </html>
