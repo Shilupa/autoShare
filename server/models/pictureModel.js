@@ -3,36 +3,42 @@ const pool = require("../database/db");
 const promisePool = pool.promise();
 const fs = require("fs");
 
-const getProfileByUserId = async (userId, res) => {
+const getPictureByRegNo = async (carRegNo, res) => {
   try {
     const [rows] = await promisePool.query(
-      "SELECT file FROM profile WHERE person_id = ?",
-      [userId]
+      "SELECT file_name FROM pictures WHERE car_reg_no = ?",
+      [carRegNo]
     );
-    return rows[0];
+    return rows;
   } catch (e) {
     console.error("error", e.message);
     res.status(500).send(e.message);
   }
 };
 
-const addProfileByUserId = async (profileObject, res) => {
-  console.log("profileModel", profileObject);
+const addPictureByRegNo = async (pictureObject, res) => {
   try {
     const deleteFile = await promisePool.query(
-      "select file from profile where person_id=?",
-      profileObject.person_id
+      "select file_name from pictures where car_reg_no=?",
+      pictureObject.reg_no
     );
-    if (deleteFile[0][0].file) {
-      fs.unlinkSync("uploads/" + deleteFile[0][0].file);
-      fs.unlinkSync("thumbnails/" + deleteFile[0][0].file);
-    }
 
-    const sql = "Update profile set file=? where person_id=?";
-    const values = [profileObject.file, profileObject.person_id];
+    try {
+      deleteFile[0].forEach((file) => {
+        fs.unlinkSync("./uploads/" + file.file_name);
+      });
+    } catch (e) {}
 
-    const [result] = await promisePool.query(sql, values);
-    return result.insertId;
+    await promisePool.query("Delete from pictures where car_reg_no=?", [
+      pictureObject.reg_no,
+    ]);
+
+    await pictureObject.files.forEach((file) => {
+      promisePool.query(
+        "Insert into pictures (file_name, car_reg_no) values (?, ?)",
+        [file, pictureObject.reg_no]
+      );
+    });
   } catch (e) {
     console.error("error", e.message);
     res.status(500).send(e.message);
@@ -78,6 +84,6 @@ const modifyUserById = async (userObject, res) => {
 };
 */
 module.exports = {
-  getProfileByUserId,
-  addProfileByUserId,
+  getPictureByRegNo,
+  addPictureByRegNo,
 };
