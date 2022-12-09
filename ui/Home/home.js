@@ -25,53 +25,41 @@ if (token != null) {
 (async () => {
   const response = await fetch(url + "/car");
   const cars = await response.json();
-  // createCarCards(cars);
-  sortCars(cars);
+  // Filter cars by category
+  createCarCards(cars);
+  //sortCars(cars);
 })();
 
-let test = document.querySelector(".sort");
-
-/* //inserting element to the list in html page
+//inserting element to the list in html page
 const createCarCards = (cars) => {
+  // Copying array of cars to sort later
+  let carToSort = [...cars];
+  sortedCars(cars);
+
   sortCar.forEach((sort) => {
     sort.addEventListener("click", (event) => {
       event.preventDefault();
       ul.innerHTML = "";
-      if (sort.innerHTML == "The Cheapest") {
-        cars.sort((a, b) => a.rent_price - b.rent_price);
-        sortCars(cars);
-        console.log("Cheap", cars);
+
+      if (sort.innerHTML == "Show All") {
+        sortedCars(cars);
+      } else if (sort.innerHTML == "The Cheapest") {
+        carToSort.sort((a, b) => a.rent_price - b.rent_price);
+        sortedCars(carToSort);
+        console.log("Cheap", carToSort);
       } else if (sort.innerHTML == "Most Expensive") {
-        cars.sort((a, b) => b.rent_price - a.rent_price);
+        carToSort.sort((a, b) => b.rent_price - a.rent_price);
         console.log("Expensive", cars);
-        sortCars(cars);
+        sortedCars(carToSort);
       } else if (sort.innerHTML == "Popularity") {
         // TODO: Sorting car by popularity
-        console.log("Popular");
-        sortCars(cars);
+        sortedCars(carToSort);
       }
     });
   });
+};
 
-  console.log(cars);
-}; */
-
-// Filtering car list on user input
-search.addEventListener("keyup", () => {
-  let inputValue = search.value.toLowerCase();
-  const carList = document.querySelectorAll("li.car-list");
-  carList.forEach((car) => {
-    let brand = car.getElementsByTagName("h4")[0];
-    if (!brand.innerHTML.toLocaleLowerCase().indexOf(inputValue)) {
-      car.style.display = "";
-    } else {
-      car.style.display = "none";
-    }
-  });
-});
-
-const sortCars = (cars) => {
-  console.log("Car");
+const sortedCars = (cars) => {
   cars.forEach((car) => {
     const img = document.createElement("img");
 
@@ -119,3 +107,45 @@ const sortCars = (cars) => {
     ul.appendChild(li);
   });
 };
+
+// Filtering car list on user input
+search.addEventListener("keyup", () => {
+  let searchedCarList = [];
+  let inputValue = search.value.toLowerCase();
+  const carList = document.querySelectorAll("li.car-list");
+  carList.forEach((car) => {
+    let brand = car.getElementsByTagName("h4")[0];
+    // Searching if brand includes user input value
+    if (brand.innerHTML.toLocaleLowerCase().includes(inputValue)) {
+      // Storing  boolean values (True) to array if searched car found
+      searchedCarList.push(
+        brand.innerHTML.toLocaleLowerCase().includes(inputValue)
+      );
+      car.style.display = "";
+    } else if (!brand.innerHTML.toLocaleLowerCase().includes(inputValue)) {
+      // Storing  boolean values (False) to array if searched car not found
+      searchedCarList.push(
+        brand.innerHTML.toLocaleLowerCase().includes(inputValue)
+      );
+      car.style.display = "none";
+    }
+
+    /**
+     * If searchedCarList have all values false and is equal to lenght of original car list
+     * car not found is displayed to user
+     */
+    if (
+      !searchedCarList.includes(true) &&
+      searchedCarList.length === carList.length
+    ) {
+      notFound.innerHTML = "Sorry Car Not Found!!";
+    } else if (inputValue === "") {
+      // if no input value restoring notFound value to it's default value
+      notFound.innerHTML = "";
+    } else {
+      notFound.innerHTML = "";
+    }
+
+    console.log(searchedCarList.includes(true));
+  });
+});
