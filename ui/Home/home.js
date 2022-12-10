@@ -62,17 +62,13 @@ const createCarCards = (cars) => {
 const sortedCars = (cars) => {
   cars.forEach((car) => {
     const img = document.createElement("img");
-
+    //console.log(car);
     //img.src = url + car.filename;
     img.src = "../../autoshare-logo/png/logo-white.png";
     img.alt = car.brand;
     img.height = 200;
     img.width = 200;
     img.classList.add("resp");
-
-    img.addEventListener("click", () => {
-      location.href = "single.html?id=" + car.car_id;
-    });
 
     const h4 = document.createElement("h4");
     // Setting attribute for brand to use for filtering
@@ -105,6 +101,11 @@ const sortedCars = (cars) => {
     li.appendChild(p3);
     li.appendChild(p4);
     ul.appendChild(li);
+
+    li.addEventListener("click", () => {
+      //location.href = "../carDetails/carDetails.html" + car.reg_no;
+      location.href = `../carDetails/carDetails.html?id=${car.reg_no}`;
+    });
   });
 };
 
