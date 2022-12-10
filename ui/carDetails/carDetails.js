@@ -60,6 +60,12 @@ const createCarCard = async (car) => {
   h3.setAttribute("className", "brand");
   h3.innerHTML = car.brand;
 
+  const img = document.createElement('img');
+    img.src = url + '/thumbnails/' + car.filename;
+    img.alt = car.brand;
+    img.classList.add('resp');
+
+
   //const figure = document.createElement("figure").appendChild(img);
   carName.innerHTML = car.brand;
   fuel.innerHTML = car.fuel_type;
