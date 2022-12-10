@@ -2,10 +2,15 @@
 const url = "http://localhost:3000";
 
 const carCard = document.querySelector(".card");
+const carName = document.querySelector(".car-name");
 const fuel = document.querySelector(".fuel-value");
 const gearbox = document.querySelector(".gearbox-value");
 const year = document.querySelector(".year-value");
-const numberOfPeople =  document.querySelector(".number-of-people-value");
+const startDate = document.querySelector(".start-value");
+const startTime = document.querySelector(".start-time-value");
+const endDate = document.querySelector(".end-value");
+const endTime = document.querySelector(".end-time-value");
+const numberOfPeople = document.querySelector(".number-of-people-value");
 const rentPrice = document.querySelector(".rent-price-value");
 
 // get query parameter
@@ -16,8 +21,6 @@ const getQParam = (param) => {
 };
 
 const reg_no = getQParam("id");
-
-console.log(reg_no);
 //const img = document.querySelector('#image img') */
 
 // add existing car data to form
@@ -35,6 +38,7 @@ const getCar = async (reg_no) => {
 
   createCarCard(car);
 };
+
 const createCarCard = (car) => {
   const h3 = document.createElement("h3");
   // Setting attribute for brand to use for filtering
@@ -42,12 +46,20 @@ const createCarCard = (car) => {
   h3.innerHTML = car.brand;
 
   //const figure = document.createElement("figure").appendChild(img);
-
+  carName.innerHTML = car.brand;
   fuel.innerHTML = car.fuel_type;
   gearbox.innerHTML = car.transmission;
   year.innerHTML = car.year_;
   numberOfPeople.innerHTML = car.seater;
   rentPrice.innerHTML = car.rent_price;
+  // Splitting date string to remove unnecessary string
+  const splittedStartDate = car.pickup_date.split("T");
+  const splittedEndDate = car.dropoff_date.split("T");
 
+  startDate.innerHTML = splittedStartDate[0];
+  startTime.innerHTML = car.pickup_time;
+  endDate.innerHTML = splittedEndDate[0];
+  endTime.innerHTML = car.dropoff_time;
 };
+
 getCar(reg_no);

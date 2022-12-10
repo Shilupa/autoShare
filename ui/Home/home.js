@@ -104,7 +104,11 @@ const sortedCars = (cars) => {
 
     li.addEventListener("click", () => {
       //location.href = "../carDetails/carDetails.html" + car.reg_no;
-      location.href = `../carDetails/carDetails.html?id=${car.reg_no}`;
+      if (token) {
+        location.href = `../carDetails/carDetails.html?id=${car.reg_no}`;
+      } else {
+        location.href = "../login/login-1.html";
+      }
     });
   });
 };

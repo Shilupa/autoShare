@@ -5,12 +5,14 @@ const promisePool = pool.promise();
 const getHomeCars = async () => {
   try {
     const queries =
+      "Select * from car inner join person on person.person_id = car.person_id inner join pictures on pictures.car_reg_no = car.reg_no";
+/*     const queries =
       "SELECT c.reg_no, c.brand, c.model, r.rating, r.comment, c.seater, c.fuel_type, c.transmission, c.rent_price, p.name as carOwner, bp.name as bookingPerson " +
       "FROM car c " +
       "left outer join person p on c.person_id=p.id " +
       "left outer join booking b on b.car_reg_no=c.reg_no " +
       "left outer join person bp on b.person_id = bp.id " +
-      "left outer join review r on b.id = r.booking_id;";
+      "left outer join review r on b.id = r.booking_id;"; */
     // we need car brand, car name , rating, seater, fuel, transmission rent price and post name
     const [rows] = await promisePool.query(queries);
     return rows;

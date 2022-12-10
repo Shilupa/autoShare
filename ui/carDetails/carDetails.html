@@ -1,84 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>AutoShare</title>
-   <link rel="stylesheet" href="carDetails.css">
-   <script src="https://kit.fontawesome.com/e1ac683977.js" crossorigin="anonymous"></script>
-</head>
-<body>
-   <div class="header">
-      <a href="/ui/Home/home.html"><img src="/autoshare-logo/png/logo-no-background-cropped.png" alt="company logo" class="logo"></a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoShare</title>
+    <link rel="stylesheet" href="carDetails.css" />
+    <script
+      src="https://kit.fontawesome.com/e1ac683977.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="header">
+      <a href="/ui/Home/home.html"
+        ><img
+          src="/autoshare-logo/png/logo-no-background-cropped.png"
+          alt="company logo"
+          class="logo"
+      /></a>
 
       <div id="nav-menu">
-           <li class="nav-item">
-              <a href="/ui/About/about.html" class="nav-link">About Us</a>
-           </li>
-           <li class="nav-item">
-            <a href="/ui/Login/login-1.html" class="nav-link">Log In</a>
-         </li>
+        <li class="nav-item">
+          <a href="/ui/About/about.html" class="nav-link">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a href="/ui/Login/login-1.html" class="nav-link">Log In</a>
+        </li>
       </div>
-  </div>
+    </div>
 
-  <div class="main">
-   <div class="card">
-      <div class="images">
-         <i class="fa-solid fa-circle-left"></i>
-         <img src="/images/photo-1525609004556-c46c7d6cf023.jfif" alt="" class="car-img">
-         <i class="fa-solid fa-circle-right"></i>
-      </div>
+    <div class="main">
+      <div class="card">
+        <div class="images">
+          <i class="fa-solid fa-circle-left"></i>
+          <img
+            src="/images/photo-1525609004556-c46c7d6cf023.jfif"
+            alt=""
+            class="car-img"
+          />
+          <i class="fa-solid fa-circle-right"></i>
+        </div>
 
-      <div class="car-header">
-         <h2>Toyota Yaris</h2>
-            <div class="overall-ratings">
-               <span class="fa fa-star checked"></span>
-               <span class="fa fa-star checked"></span>
-               <span class="fa fa-star checked"></span>
-               <span class="fa fa-star"></span>
-               <span class="fa fa-star"></span>
-            </div>
-      </div>
+        <div class="car-header">
+          <h2 class="car-name"></h2>
+          <div class="overall-ratings">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </div>
 
-      <div class="car-and-owner">
-         <div class="more-info">
+        <div class="car-and-owner">
+          <div class="more-info">
             <div class="items">
-               <h3>Car details</h3>
-               <span id="fuel"><i class="fa-solid fa-gas-pump"></i>&nbsp;&nbsp;<span class="fuel-value"></span></span>
-               <span id="gearbox"><i class="fa-solid fa-gears"></i>&nbsp;&nbsp;<span class="gearbox-value"></span></span>
-               <span id="year"><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;<span class="year-value"></span></span>
-               <span id="number-of-people"><i class="fa-solid fa-users"></i>&nbsp;&nbsp;<span class="number-of-people-value"></span></span>
-               <span id="rent-price"><i class="fa-solid fa-sack-dollar"></i>&nbsp;&nbsp;<span class="rent-price-value"></span></span>
+              <h3>Car details</h3>
+              <span id="fuel"
+                ><i class="fa-solid fa-gas-pump"></i>&nbsp;&nbsp;<span
+                  class="fuel-value"
+                ></span
+              ></span>
+              <span id="gearbox"
+                ><i class="fa-solid fa-gears"></i>&nbsp;&nbsp;<span
+                  class="gearbox-value"
+                ></span
+              ></span>
+              <span id="year"
+                ><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;<span
+                  class="year-value"
+                ></span
+              ></span>
+              <span id="number-of-people"
+                ><i class="fa-solid fa-users"></i>&nbsp;&nbsp;<span
+                  class="number-of-people-value"
+                ></span
+              ></span>
+              <span id="rent-price"
+                ><i class="fa-solid fa-sack-dollar"></i>&nbsp;&nbsp;<span
+                  class="rent-price-value"
+                ></span
+              ></span>
             </div>
-         </div>
+          </div>
 
-         <div class="more-info">
+          <div class="more-info">
             <div class="items">
-               <h3>Owner info</h3>
-               <span id="name"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;User</span>
-               <span id="phone"><i class="fa-solid fa-phone"></i>&nbsp;&nbsp;+358442410989</span>
-               <span id="email"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;haha@haha.com</span>
-               <span id="address"><i class="fa-solid fa-location-pin"></i>&nbsp;&nbsp;karaportti 2</span>
+              <h3>Owner info</h3>
+              <span id="name"
+                ><i class="fa-solid fa-user"></i>&nbsp;&nbsp;User</span
+              >
+              <span id="phone"
+                ><i class="fa-solid fa-phone"></i
+                >&nbsp;&nbsp;+358442410989</span
+              >
+              <span id="email"
+                ><i class="fa-solid fa-envelope"></i
+                >&nbsp;&nbsp;haha@haha.com</span
+              >
+              <span id="address"
+                ><i class="fa-solid fa-location-pin"></i>&nbsp;&nbsp;karaportti
+                2</span
+              >
             </div>
-         </div>
-      </div>
+          </div>
+        </div>
 
-      <div class="availibility">
-         <h4>Available from</h4>
-         <div class="availibility-row">
-            <span id="start-date"><i class="fa-solid fa-calendar-days"></i>&nbsp;&nbsp;dd/mm/yyyy</span>
-            <span id="start-time"><i class="fa-solid fa-clock"></i>&nbsp;&nbsp;hh:mm</span>
-         </div>
-         <h4>to</h4>
-         <div class="availibility-row">
-            <span id="end-date"><i class="fa-solid fa-calendar-days"></i>&nbsp;&nbsp;dd/mm/yyyy</span>
-            <span id="end-time"><i class="fa-solid fa-clock"></i>&nbsp;&nbsp;hh:mm</span>
-         </div>
-      </div>
+        <div class="availibility">
+          <h4>Available from</h4>
+          <div class="availibility-row">
+            <span id="start-date"
+              ><i class="fa-solid fa-calendar-days"></i>&nbsp;&nbsp;<span
+                class="start-value"
+              ></span
+            ></span>
+            <span id="start-time"
+              ><i class="fa-solid fa-clock"></i>&nbsp;&nbsp;<span
+                class="start-time-value"
+              ></span
+            ></span>
+          </div>
+          <h4>to</h4>
+          <div class="availibility-row">
+            <span id="end-date"
+              ><i class="fa-solid fa-calendar-days"></i>&nbsp;&nbsp;<span
+                class="end-value"
+              ></span
+            ></span>
+            <span id="end-time"
+              ><i class="fa-solid fa-clock"></i>&nbsp;&nbsp;<span
+                class="end-time-value"
+              ></span
+            ></span>
+          </div>
+        </div>
 
-      <div class="booking">
-         <div class="booking-details">
+        <div class="booking">
+          <div class="booking-details">
             <!-- <div class="booking-details-rows">
                Booking starts
                <input type="date" name="start-date" id="date-picker">
@@ -92,30 +151,40 @@
                <input type="text" placeholder="drop-off location" id="distance">
             </div> -->
             <div class="booking-details-rows">
-               <input type="number" placeholder="intended hours of booking" step="0.1"  min="0.5" id="distance">
+              <input
+                type="number"
+                placeholder="intended hours of booking"
+                step="0.1"
+                min="0.5"
+                id="distance"
+              />
             </div>
             <div class="booking-details-rows">
-               <input type="number" placeholder="intended distance of travel (in km)"  step="0.1"  min="0.5" id="distance">
+              <input
+                type="number"
+                placeholder="intended distance of travel (in km)"
+                step="0.1"
+                min="0.5"
+                id="distance"
+              />
             </div>
+          </div>
 
-         </div>
-
-         <div class="send-request">
+          <div class="send-request">
             <button class="request-btn" type="button">Reserve Now</button>
-         </div>
+          </div>
+        </div>
       </div>
 
-   </div>
-
-   <div class="right-box">
-      <div class="card">
-         <div id="map"> Map placeholder</div>
+      <div class="right-box">
+        <div class="card">
+          <div id="map">Map placeholder</div>
+        </div>
+        <div class="card">
+          <div class="reviews">Reviews Placeholder</div>
+        </div>
       </div>
-      <div class="card">
-         <div class="reviews"> Reviews Placeholder</div>
-      </div>
-   </div>
-  </div>
-  <script src="carDetails.js"></script>
-</body>
+    </div>
+    <script src="carDetails.js"></script>
+  </body>
 </html>
