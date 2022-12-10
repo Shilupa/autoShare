@@ -27,30 +27,56 @@
         <li class="nav-item">
           <a href="/ui/Login/login-1.html" class="nav-link">Hi User!</a>
         </li>
+
+        <li class="nav-item">
+          <a href="/ui/Home/home.html" class="nav-link">
+            <i class="fa-solid fa-right-from-bracket fa-lg"></i>&nbsp;&nbsp; Log
+            Out
+          </a>
+        </li>
+
+        <!-- hamburger is hidden by default and becomes active when the screen size is small -->
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+
+          <div class="dropdown-content">
+            <a href="/ui/Login/login-1.html" class="nav-link">Hi User!</a>
+            <a href="/ui/About/about.html" class="nav-link">About Us</a>
+            <a href="/ui/Home/home.html" class="nav-link">Log Out</a>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="user-bar">
-      <a href="/ui/userProfile/userCar.html"
-        ><h3 class="user-bar-item">My car(s)</h3></a
-      >
-      <a href="/ui/userProfile/userProfile.html"
-        ><h3 class="user-bar-item">My profile</h3></a
-      >
-      <a href="/ui/bookings/myBookings.html"
-        ><h3 class="user-bar-item">My bookings</h3></a
-      >
-      <a href="/ui/Home/home.html"
-        ><h3 class="user-bar-item">
-          <i class="fa-solid fa-right-from-bracket"></i> Log out
-        </h3></a
-      >
+      <div class="user-bar-item">
+        <a href="/ui/userProfile/userCar.html">
+          <i class="fa-solid fa-car fa-lg"></i>&nbsp;&nbsp;
+          <h3 class="user-bar-text">My car(s)</h3>
+        </a>
+      </div>
+
+      <div class="user-bar-item">
+        <a href="/ui/userProfile/userProfile.html">
+          <i class="fa-solid fa-user fa-lg"></i>&nbsp;&nbsp;
+          <h3 class="user-bar-text">My profile</h3>
+        </a>
+      </div>
+
+      <div class="user-bar-item">
+        <a href="/ui/bookings/myBookings.html">
+          <i class="fa-solid fa-list-ol fa-lg"></i>&nbsp;&nbsp;
+          <h3 class="user-bar-text">My bookings</h3>
+        </a>
+      </div>
     </div>
-    
+
     <div class="main">
-      <div class="user-info">
+      <div class="car-info">
         <div class="forms">
-          <div class="form-user">
+          <div class="form-car">
             <div class="form-header">
               <span class="title">Car Info</span>
               <form
@@ -145,9 +171,44 @@
                 <i class="fa-solid fa-coins"></i>
               </div>
 
+              <fieldset class="availibility">
+                <legend class="title">Car's Availibility</legend>
+                <div class="input-field">
+                  <input
+                    placeholder="starting date and time"
+                    type="text"
+                    onfocus="(this.type='datetime-local')"
+                    id="start-date"
+                  />
+                  <!-- <input
+                    type="datetime-local"
+                    placeholder="rent per hour"
+                    name="rent_price"
+                    required
+                  /> -->
+                  <i class="fa-solid fa-hourglass-start"></i>
+                </div>
+
+                <div class="input-field">
+                  <input
+                    placeholder="ending date and time"
+                    type="text"
+                    onfocus="(this.type='datetime-local')"
+                    id="start-date"
+                  />
+                  <!-- <input
+                    type="datetime-local"
+                    placeholder="rent per hour"
+                    name="rent_price"
+                    required
+                  /> -->
+                  <i class="fa-solid fa-hourglass-end"></i>
+                </div>
+              </fieldset>
+
               <div class="input-field button">
                 <!-- <input type="button" /> -->
-                <button type="submit">Upload</button>
+                <button type="submit" class="upload-btn">Upload</button>
               </div>
             </form>
           </div>

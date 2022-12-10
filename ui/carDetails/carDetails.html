@@ -5,7 +5,9 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>AutoShare</title>
+   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
    <link rel="stylesheet" href="carDetails.css">
+   <script type="module" src="./map.js"></script>
    <script src="https://kit.fontawesome.com/e1ac683977.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -13,12 +15,32 @@
       <a href="/ui/Home/home.html"><img src="/autoshare-logo/png/logo-no-background-cropped.png" alt="company logo" class="logo"></a>
 
       <div id="nav-menu">
-           <li class="nav-item">
-              <a href="/ui/About/about.html" class="nav-link">About Us</a>
-           </li>
-           <li class="nav-item">
+         <li class="nav-item">
+            <a href="/ui/About/about.html" class="nav-link">About Us</a>
+         </li>
+         <li class="nav-item">
             <a href="/ui/Login/login-1.html" class="nav-link">Log In</a>
          </li>
+         <li class="nav-item">
+            <a href="/ui/Home/home.html" class="nav-link">
+               <i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp; Log
+              Out
+            </a>
+         </li>
+
+         <!-- hamburger is hidden by default and becomes active when the screen size is small -->
+        <div class="hamburger">
+         <span class="bar"></span>
+         <span class="bar"></span>
+         <span class="bar"></span>
+
+         <div class="dropdown-content">
+            <a href="/ui/Login/login-1.html" class="nav-link">Hi User!</a>
+            <a href="/ui/About/about.html" class="nav-link">About Us</a>
+            <a href="/ui/Home/home.html" class="nav-link">Log Out</a>
+         </div>
+       </div>
+
       </div>
   </div>
 
@@ -48,7 +70,7 @@
                <span id="fuel"><i class="fa-solid fa-gas-pump"></i>&nbsp;&nbsp;Petrol</span>
                <span id="gearbox"><i class="fa-solid fa-gears"></i>&nbsp;&nbsp;Automatic</span>
                <span id="year"><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;1994</span>
-               <span id="number-of-people"><i class="fa-solid fa-users"></i>&nbsp;&nbsp;5</span>
+               <!-- <span id="number-of-people"><i class="fa-solid fa-users"></i>&nbsp;&nbsp;5</span> -->
                <span id="rent-price"><i class="fa-solid fa-sack-dollar"></i>&nbsp;&nbsp;25€/hr</span>
             </div>
          </div>
@@ -58,7 +80,7 @@
                <h3>Owner info</h3>
                <span id="name"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;User</span>
                <span id="phone"><i class="fa-solid fa-phone"></i>&nbsp;&nbsp;+358442410989</span>
-               <span id="email"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;haha@haha.com</span>
+               <span id="email"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;workbibekshrestha@haha.com</span>
                <span id="address"><i class="fa-solid fa-location-pin"></i>&nbsp;&nbsp;karaportti 2</span>
             </div>
          </div>
@@ -108,15 +130,30 @@
    </div>
 
    <div class="right-box">
-      <div class="card">
-         <div id="map"> Map placeholder</div>
+      <div class="map-card">
+         <div id="map">
+         </div>
       </div>
-      <div class="card">
-         <div class="reviews"> Reviews Placeholder</div>
+      <div class="reviews-card">
+         <h1>Reviews</h1>
+         <div class="reviews"> 
+            <div class="booking-ratings">
+               <span class="fa fa-star checked"></span>
+               <span class="fa fa-star checked"></span>
+               <span class="fa fa-star checked"></span>
+               <span class="fa fa-star"></span>
+               <span class="fa fa-star"></span>
+            </div>
+            <div class="comments">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta beatae natus vel, molestiae modi praesentium iste voluptate sequi odio, sit quo necessitatibus excepturi numquam, esse sunt. Totam, necessitatibus officiis. Quod?</div>
+         </div>
+
       </div>
    </div>
   </div>
-
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script>
 </body>
 </body>
 </html>
