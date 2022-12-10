@@ -21,7 +21,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/auth", authRouter);
 app.use("/user", userRouter);
-//app.use("/car", carRouter);
+
+// Car route for non authentication
+app.use("/car", carRouter);
+// Car route for authentication
 app.use("/car", passport.authenticate("jwt", { session: false }), carRouter);
 app.use("/booking", bookingRouter);
 app.use("/profile", profileRouter);
