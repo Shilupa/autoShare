@@ -29,6 +29,28 @@
             >Log In</a
           >
         </li>
+
+        <!-- should be hidden unless user has logged in -->
+        <li class="nav-item" style="display: none;">
+          <a href="/ui/Home/home.html" class="nav-link">
+            <i class="fa-solid fa-right-from-bracket fa-lg"></i>&nbsp;&nbsp; Log
+            Out
+          </a>
+        </li>
+
+        <!-- hamburger is hidden by default and becomes active when the screen size is small -->
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+
+          <div class="dropdown-content">
+            <a href="/ui/Login/login-1.html" class="nav-link">Log In</a>
+            <a href="/ui/About/about.html" class="nav-link">About Us</a>
+            <!-- should be hidden unless user has logged in -->
+            <a href="/ui/Home/home.html" class="nav-link" style="display: none;">Log Out</a>
+          </div>
+        </div>
       </div>
     </div>
 
