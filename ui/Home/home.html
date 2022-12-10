@@ -80,7 +80,7 @@
       <div class="car-list">
         <p id="not-found"></p>
         <div class="car-list-item">
-          <h4>Toyota Yaris</h4>
+          <h4 class="brand"></h4>
           <div class="car-image">
             <img
               src="/images/photo-1525609004556-c46c7d6cf023.jfif"
@@ -97,19 +97,28 @@
 
           <div class="details">
             <ul>
-              <li class="seats"><i class="fa-solid fa-users"></i>&nbsp;5</li>
+              <li class="seats">
+                <i class="fa-solid fa-users"></i>&nbsp;<span
+                  class="seat-value"
+                ></span>
+              </li>
               <li class="fuel">
-                <i class="fa-solid fa-gas-pump">&nbsp;Petrol</i>
+                <i class="fa-solid fa-gas-pump"
+                  >&nbsp;<span class="fuel-value"></span
+                ></i>
               </li>
               <li class="gearbox">
-                <i class="fa-solid fa-gears">&nbsp;Automatic</i>
+                <i class="fa-solid fa-gears"
+                  >&nbsp;<span class="gear-value"></span
+                ></i>
               </li>
             </ul>
           </div>
 
           <div class="price-and-rent">
             <div class="price">
-              25 <i class="fa-solid fa-euro-sign"></i> /hour
+              <span class="price-value"></span>
+              <i class="fa-solid fa-euro-sign"></i> /hour
             </div>
           </div>
         </div>

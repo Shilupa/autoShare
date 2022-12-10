@@ -1,6 +1,17 @@
 "use strict";
 const url = "http://localhost:3000"; // change url when uploading to server
 
+const btnLogin = document.querySelector("#btn-login");
+
+const token = sessionStorage.getItem("token");
+//checking token if it exists
+if (token != null) {
+  btnLogin.innerHTML = "Logout";
+  btnLogin.addEventListener("click", () => {
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("user");
+  });
+}
 // Self invoking fuction which gets list of cars from database
 (async () => {
   try {
