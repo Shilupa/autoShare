@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
     <div class="header">
       <a href="/ui/Home/home.html"
@@ -19,7 +20,6 @@
           alt="company logo"
           class="logo"
       /></a>
-
       <div id="nav-menu">
         <li class="nav-item">
           <a href="/ui/About/about.html" class="nav-link">About Us</a>
@@ -29,56 +29,73 @@
             >Log In</a
           >
         </li>
+
+        <!-- hamburger is hidden by default and becomes active when the screen size is small -->
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+
+          <div class="dropdown-content">
+             <a href="/ui/About/about.html" class="nav-link">About Us</a>
+             <a href="/ui/Login/login-1.html" class="nav-link">Log In</a>
+          </div>
+        </div>
+
       </div>
     </div>
 
     <div class="main">
-      <div class="box-1">
-        <div class="info">
-          <img src="/autoshare-logo/png/logo-color.png" alt="main logo" />
-          <span id="text" style="text-align: center"
-            >Find the nearest car, book it with the web app and enjoy your
-            ride!<br
-          /></span>
-          <i class="fa-solid fa-circle-down"></i>
-        </div>
+
+      <div class="landing">
+        <img src="/autoshare-logo/png/logo-color.png" alt="main logo" />
+        <span id="text" style="text-align: center"
+          >Find the nearest car, book it with the web app and enjoy your
+          ride!<br
+        /></span>
+        <i class="fa-solid fa-circle-down icon"></i>
       </div>
 
       <div class="how-it-works">
-        <div class="text-container">
-          <h1>How it works?</h1>
-          <ol>
-            <li><h2>Find</h2></li>
-            Find and locate the car you want to ride.
-            <li><h2>Contact the owner</h2></li>
-            Get the owner's contact information.
-            <li><h2>Ride</h2></li>
-            Enjoy your ride!
-            <li><h2>Return the car</h2></li>
-            Return the car to the owner as agreed.
-          </ol>
-        </div>
+        <h1>How it works?</h1>
+        <ol>
+          <li><h2>Find</h2></li>
+          Find and locate the car you want to ride.
+          <li><h2>Contact the owner</h2></li>
+          Get the owner's contact information.
+          <li><h2>Ride</h2></li>
+          Enjoy your ride!
+          <li><h2>Return the car</h2></li>
+          Return the car to the owner as agreed.
+        </ol>
       </div>
 
       <div class="contact-box">
         <h1 style="align-self: center">Contact us</h1>
         <div class="contact-developers">
           <li>
-            <i class="fa-solid fa-envelope"
-              >&nbsp;suraj.ranabhat@metropolia.fi</i
+
+            <a href="mailto:suraj.ranabhat@metropolia.fi" target="_blank"
+              ><i class="fa-solid fa-envelope"></i
+              >&nbsp;suraj.ranabhat@metropolia.fi</a
             >
           </li>
           <li>
-            <i class="fa-solid fa-envelope">&nbsp;shilpa.yadav@metropolia.fi</i>
+            <a href="mailto:shilpa.yadav@metropolia.fi" target="_blank"
+              ><i class="fa-solid fa-envelope"></i
+              >&nbsp;shilpa.yadav@metropolia.fi</a
+            >
           </li>
           <li>
-            <i class="fa-solid fa-envelope"
-              >&nbsp;bibek.shrestha@metropolia.fi</i
+            <a href="mailto:bibek.shrestha@metropolia.fi" target="_blank"
+              ><i class="fa-solid fa-envelope"></i
+              >&nbsp;bibek.shrestha@metropolia.fi</a
             >
           </li>
         </div>
       </div>
     </div>
+
     <script src="about.js"></script>
   </body>
 

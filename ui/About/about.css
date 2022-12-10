@@ -1,142 +1,260 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@100;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@100;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 * {
-   box-sizing: border-box;
-   font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-   margin: 0;
-   width:max-content;
+  margin: 0;
 }
 
-.logo{
-   margin-left: 20px;
-   width: 10rem;
-   padding: 20px;
+.logo {
+  margin-left: 20px;
+  width: 10rem;
+  padding: 20px;
 }
 
-.header{
-   display: flex;
-   flex-direction: row;
-   width: 100%;
-   height: 10%;
-   background-color: #8EE4AF;
-   justify-content: space-between;
-   align-items: center;
-   position: sticky;
-   top: 0;
-   z-index: 1;
-   font-weight: 600;
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 10%;
+  background-color: #8ee4af;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-weight: 600;
 }
 
-#nav-menu{
-   height: 100%;
-   width: 50%;
-   padding: 10px;
-   display: flex;
-   flex-direction: row;
-   list-style: none;
-   justify-content: space-evenly;
-   align-items: center;
+#nav-menu {
+  height: 100%;
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.nav-link{
-   color: black;
-   text-decoration: none;
-   font-size: 20px;
+.nav-link {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
 }
 
-.main{
-   display: flex;
-   flex-direction: column;
-   align-items: stretch;
+.hamburger {
+  display: none;
+  cursor: pointer;
 }
 
-.box-1{
-   width: 100%;
-   height: 800px;
-   background-color: white;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   border: white;
-/*    border-radius: 6px;
-   box-shadow: 0 5px 10px rgba(0,0,0,0.5); */
+.bar {
+  display: block;
+  width: 30px;
+  height: 5px;
+  margin: 5px auto;
+  border: none;
+  border-radius: 6px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: black;
 }
 
-.info{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   font:700;
-   font-size: 1.5rem;
+ /* Dropdown Content (Hidden by Default) */
+ .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: fit-content;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
 }
 
-.info img{
-   height: 60%;
-   max-width: 100%;
+.hamburger:hover .dropdown-content {
+  display: block;
+  right: 10px;
+  left: auto;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing {
+  max-height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2vw;
+  margin-bottom:10px;
+}
+
+.landing img {
+  max-width: 100%;
   height: 700px;
   width: auto\9;
 }
 
-.how-it-works{
-   width: 100%;
-}
-
 .how-it-works {
-   background-image: url('/images/Speedy-car-at-night-980x651.jpg');
-   background-repeat: no-repeat;
-   background-size: cover;
-   height: 800px;
-   color:whitesmoke;
-   display: flex;
-   align-items: center;
+  background-image: url("/images/Speedy-car-at-night-980x651.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 800px;
+  width: 100%;
+  padding: 20px;
+  color:#ebecf0;
 }
 
-.how-it-works ol{
-   font-size: 20px;
+.how-it-works ol {
+  font-size: 20px;
+}
+
+.background-img {
+  width: 100%;
+  z-index: -1;
 }
 
 .text-container {
-   width: 80%;
-   display: flex;
-   flex-direction: column;
-   align-items:flex-start;
-   margin-left: 30px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 30px;
 }
 
-.contact-box{
-   width: 100%;
-   height: fit-content;
-   padding: 30px;
-   display: flex;
-   flex-direction: column;
-   justify-content: flex-start;
-   background-color: #EBECF0;
+.contact-box {
+  width: 100%;
+  height: fit-content;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #ebecf0;
 }
 
-.contact-developers{
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   gap: 20px;
-   justify-content: space-evenly;
+.contact-developers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-evenly;
 }
 
 .contact-developers li{
-   list-style: none;
-   letter-spacing: 2px;
-   text-transform:lowercase;
+  list-style: none;
+  font-size: 1.5em;
 }
 
-footer{
-   height: 70px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: black;
-   color: #ccc;
-   font-size: 1.5rem;
+.contact-developers li a{
+  text-decoration: none;
+  color: black;
 }
+
+.contact-developers li a:hover{
+  color: #05386b;
+}
+
+footer {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: #ccc;
+  font-size: 1.5em;
+}
+
+@media screen and (max-width: 750px) {
+  .logo {
+    width: 10rem;
+  }
+  .nav-link {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  .landing{
+   font-size: 3vw;
+   margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav-link {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .header {
+    justify-content: space-around;
+  }
+
+  #nav-menu {
+    justify-content: end;
+  }
+
+  .contact-developers li{
+    font-size: 0.8em;
+  }
+  .landing{
+    display: none;
+    font-size: 4vw;
+  }
+  .how-it-works ol {
+    font-size: 18px;
+  }
+  footer{
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .logo {
+    width: 8rem;
+  }
+
+  form button {
+    padding: 10px 5px;
+  }
+
+  .hamburger:hover .dropdown-content {
+    top: 80px;
+  }
+}
+
+@media screen and (max-height:600px){
+.landing{
+  max-height: 550px;
+}
+
+.landing img{
+  height: 450px;
+}
+}
+
+@media screen and (max-height:800px){
+  .landing{
+    max-height: 800px;
+  }
+  
+  .landing img{
+    height: 600px;
+  }
+  }

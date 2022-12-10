@@ -1,36 +1,38 @@
 "use strict";
-const profileModel = require("../models/profileModel");
+const pictureModel = require("../models/pictureModel");
 const { validationResult } = require("express-validator");
 const { makeThumbnail } = require("../utils/image");
 
-const get_profile_by_person_id = async (req, res) => {
-  const profile = await profileModel.getProfileByUserId(req.params.userId, res);
-  if (profile) {
-    res.json(profile);
+const get_picture_by_reg_no = async (req, res) => {
+  const pictures = await pictureModel.getPictureByRegNo(req.params.regNo, res);
+  if (pictures) {
+    res.json(pictures);
+    console.log("Pictures: ", pictures);
   } else {
     res.sendStatus(404);
   }
 };
 
-const modify_profile_by_person_id = async (req, res) => {
+const add_picture_by_reg_no = async (req, res) => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
-    console.log("adding a profile: ", req.body);
-    const profile = req.body;
-    console.log("hahaha", req.file);
-    if (req.file) {
-      profile.file = req.file.filename;
-      await makeThumbnail(req.file.path, req.file.filename);
-    } else {
-      profile.file = null;
-    }
-    profile.person_id = req.params.userId;
-    const result = await profileModel.addProfileByUserId(profile, res);
-    res.status(201).json({ message: "profile added", newUserId: result });
+    const pictures = req.body;
+
+    pictures.files = [];
+
+    req.files.forEach((element) => {
+      pictures.files.push(element.filename);
+    });
+
+    pictures.reg_no = req.params.regNo;
+
+    const result = await pictureModel.addPictureByRegNo(pictures, res);
+
+    res.status(201).json({ message: "picture added", pictures: result });
   } else {
     res
       .status(400)
-      .json({ message: "add profile failed", errors: errors.array() });
+      .json({ message: "add pictures failed", errors: errors.array() });
   }
 };
 
@@ -63,6 +65,6 @@ const modify_user = async (req, res) => {
 };
 */
 module.exports = {
-  get_profile_by_person_id,
-  modify_profile_by_person_id,
+  get_picture_by_reg_no,
+  add_picture_by_reg_no,
 };
