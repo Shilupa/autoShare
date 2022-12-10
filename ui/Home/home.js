@@ -8,6 +8,9 @@ const btnLogin = document.querySelector("#btn-login");
 const search = document.querySelector("#search");
 const notFound = document.querySelector("#not-found");
 const sortCar = document.querySelectorAll(".sort");
+const carName = document.querySelector(".brand");
+const fuel = document.querySelector(".fuel-value");
+const gearbox = document.querySelector(".gearbox-value");
 
 const token = sessionStorage.getItem("token");
 const user = sessionStorage.getItem("user");
@@ -150,7 +153,5 @@ search.addEventListener("keyup", () => {
     } else {
       notFound.innerHTML = "";
     }
-
-    console.log(searchedCarList.includes(true));
   });
 });

@@ -12,7 +12,17 @@ const endDate = document.querySelector(".end-value");
 const endTime = document.querySelector(".end-time-value");
 const numberOfPeople = document.querySelector(".number-of-people-value");
 const rentPrice = document.querySelector(".rent-price-value");
+const btnLogin = document.querySelector("#btn-login");
 
+const token = sessionStorage.getItem("token");
+//checking token if it exists
+if (token != null) {
+  btnLogin.innerHTML = "Logout";
+  btnLogin.addEventListener("click", () => {
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("user");
+  });
+}
 // get query parameter
 const getQParam = (param) => {
   const queryString = window.location.search;
