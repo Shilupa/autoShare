@@ -5,7 +5,9 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>AutoShare</title>
+   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
    <link rel="stylesheet" href="carDetails.css">
+   <script type="module" src="./map.js"></script>
    <script src="https://kit.fontawesome.com/e1ac683977.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -21,7 +23,7 @@
          </li>
          <li class="nav-item">
             <a href="/ui/Home/home.html" class="nav-link">
-               <i class="fa-solid fa-right-from-bracket fa-lg"></i>&nbsp;&nbsp; Log
+               <i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp; Log
               Out
             </a>
          </li>
@@ -129,14 +131,29 @@
 
    <div class="right-box">
       <div class="map-card">
-         <div id="map"> Map placeholder</div>
+         <div id="map">
+         </div>
       </div>
       <div class="reviews-card">
-         <div class="reviews"> Reviews Placeholder</div>
+         <h1>Reviews</h1>
+         <div class="reviews"> 
+            <div class="booking-ratings">
+               <span class="fa fa-star checked"></span>
+               <span class="fa fa-star checked"></span>
+               <span class="fa fa-star checked"></span>
+               <span class="fa fa-star"></span>
+               <span class="fa fa-star"></span>
+            </div>
+            <div class="comments">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta beatae natus vel, molestiae modi praesentium iste voluptate sequi odio, sit quo necessitatibus excepturi numquam, esse sunt. Totam, necessitatibus officiis. Quod?</div>
+         </div>
+
       </div>
    </div>
   </div>
-
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script>
 </body>
 </body>
 </html>

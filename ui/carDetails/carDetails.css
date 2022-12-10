@@ -259,16 +259,40 @@ body {
   align-items: center;
 }
 
-@media screen and (max-width: 1500px) {
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
+
+.reviews {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: inherit;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  padding: 5px;
+}
+
+
+@media screen and (max-width: 1200px) {
   .main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  .map-card {
+  /* .map-card {
     display: none;
-  }
+  } */
   .right-box {
     width: 100%;
     display: flex;
@@ -308,7 +332,6 @@ body {
 }
 
 @media screen and (max-width: 850px) {
-
   .nav-link {
     display: none;
   }
@@ -322,7 +345,7 @@ body {
   }
 
   #nav-menu {
-    justify-content: end;
+    justify-content: space-between;
   }
 
   .booking-details-rows {

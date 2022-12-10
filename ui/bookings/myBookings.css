@@ -188,8 +188,13 @@ a {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .logo {
     width: 9rem;
+  }
+
+  .booking-list{
+    background-color: white;
+    box-shadow: none;
   }
 }
