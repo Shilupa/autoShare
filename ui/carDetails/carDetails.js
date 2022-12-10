@@ -14,6 +14,11 @@ const numberOfPeople = document.querySelector(".number-of-people-value");
 const rentPrice = document.querySelector(".rent-price-value");
 const btnLogin = document.querySelector("#btn-login");
 
+const user = document.querySelector(".user-value");
+const phone = document.querySelector(".phone-value");
+const email = document.querySelector(".email-value");
+const address = document.querySelector(".address-value");
+
 const token = sessionStorage.getItem("token");
 //checking token if it exists
 if (token != null) {
@@ -49,7 +54,7 @@ const getCar = async (reg_no) => {
   createCarCard(car);
 };
 
-const createCarCard = (car) => {
+const createCarCard = async (car) => {
   const h3 = document.createElement("h3");
   // Setting attribute for brand to use for filtering
   h3.setAttribute("className", "brand");
@@ -62,6 +67,7 @@ const createCarCard = (car) => {
   year.innerHTML = car.year_;
   numberOfPeople.innerHTML = car.seater;
   rentPrice.innerHTML = car.rent_price;
+
   // Splitting date string to remove unnecessary string
   const splittedStartDate = car.pickup_date.split("T");
   const splittedEndDate = car.dropoff_date.split("T");
@@ -70,6 +76,20 @@ const createCarCard = (car) => {
   startTime.innerHTML = car.pickup_time;
   endDate.innerHTML = splittedEndDate[0];
   endTime.innerHTML = car.dropoff_time;
+  const person = await getUser(car.person_id);
+  user.innerHTML = person.name;
+  phone.innerHTML = person.phone_;
+  email.innerHTML = person.email;
+  address.innerHTML = person.street_address;
+};
+const getUser = async (person_id) => {
+  const fetchOptions = {
+    headers: {
+      Authorization: "Bearer " + sessionStorage.getItem("token"),
+    },
+  };
+  const response = await fetch(url + "/user/" + person_id, fetchOptions);
+  return await response.json();
 };
 
 getCar(reg_no);
