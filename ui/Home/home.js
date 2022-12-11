@@ -78,7 +78,6 @@ const createCarCards = (cars) => {
 const sortedCars = (cars) => {
   cars.forEach((car) => {
     const img = document.createElement("img");
-    console.log(car);
     img.src = "../../server/uploads/" + car.file_name;
     img.alt = car.brand;
     img.height = 200;
@@ -172,12 +171,13 @@ const sortedCars = (cars) => {
   });
 };
 
+console.log(ul);
+
 // Filtering car list on user input
 search.addEventListener("keyup", () => {
   let searchedCarList = [];
   let inputValue = search.value.toLowerCase();
-  //console.log("Hahaha", inputValue);
-  const carList = document.querySelectorAll("li.car-list");
+  const carList = document.querySelectorAll(".car-list-item");
   carList.forEach((car) => {
     let brand = car.getElementsByTagName("h4")[0];
     // Searching if brand includes user input value
