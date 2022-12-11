@@ -8,6 +8,8 @@ carForm.addEventListener("submit", async (evt) => {
   evt.preventDefault();
   const fd = new FormData(carForm);
   const data = serializeJson(carForm);
+  console.log(data);
+
   for (const [prop, value] of Object.entries(data)) {
     if (value === "") {
       delete data[prop];
