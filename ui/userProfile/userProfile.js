@@ -4,10 +4,10 @@ const url = "http://localhost:3000";
 const profileForm = document.querySelector("#profile-form");
 const userName = document.querySelector(".name");
 const gender = document.querySelector(".gender");
-const email = document.querySelector(".email");
+//const email = document.querySelector(".email");
 const dob = document.querySelector(".dob");
 const phone = document.querySelector(".phone");
-const adddress = document.querySelector(".adddress");
+const address = document.querySelector(".address");
 const city = document.querySelector(".city");
 const postalCode = document.querySelector(".postal_code");
 const license = document.querySelector(".license");
@@ -29,7 +29,6 @@ console.log(user);
   };
   const response = await fetch(`${url}/profile/${user.id}`, fetchOptions);
   const profile = await response.json();
-  console.log(profile.file);
 
   profileImage.src = `${url}/thumbnails/${profile.file}`;
 })();
@@ -50,18 +49,15 @@ if (token != null) {
 
 userName.value = user.name;
 gender.value = user.gender;
-email.value = user.email;
+//email.value = user.email;
 city.value = user.city;
 phone.value = user.phone_;
 postalCode.value = user.postal_code;
 license.value = user.license;
-// Cannot auto fill
-//dob.value = user.dob
-// Password not in user object
-//password.value = user.password;
-//confrimPassword.value = user.confrimPassword;
-// Cannot assign
-//adddress.value = user.street_address;
+const date = user.dob.split("T");
+console.log(date);
+dob.value = date[0];
+address.value = user.street_address;
 
 profileForm.addEventListener("submit", async (evt) => {
   evt.preventDefault();
@@ -69,7 +65,7 @@ profileForm.addEventListener("submit", async (evt) => {
   const data = serializeJson(profileForm);
   data.name = userName.value;
   data.gender = gender.value;
-  data.email = email.value;
+  /* data.email = email.value; */
   data.phone_ = phone.value;
   data.city = city.value;
   data.postal_code = postalCode.value;
