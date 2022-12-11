@@ -28,6 +28,7 @@ const modify_profile_by_person_id = async (req, res) => {
     // Creating user object
     const user = req.body;
     user.id = req.params.userId;
+    console.log(profileImage);
 
     // Encrpting password
     const salt = await bcrypt.genSalt();

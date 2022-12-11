@@ -24,8 +24,12 @@ const addProfileByUserId = async (profileObject, res) => {
       profileObject.person_id
     );
     if (deleteFile[0][0].file) {
-      fs.unlinkSync("uploads/" + deleteFile[0][0].file);
-      fs.unlinkSync("thumbnails/" + deleteFile[0][0].file);
+      try {
+        fs.unlinkSync("uploads/" + deleteFile[0][0].file);
+        fs.unlinkSync("thumbnails/" + deleteFile[0][0].file);
+      } catch (e) {
+        console.log(e.message);
+      }
     }
 
     const sql = "Update profile set file=? where person_id=?";

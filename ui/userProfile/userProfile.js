@@ -31,6 +31,7 @@ console.log(user);
   const profile = await response.json();
 
   profileImage.src = `${url}/thumbnails/${profile.file}`;
+  console.log(profile);
 })();
 
 if (token != null) {
