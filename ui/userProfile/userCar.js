@@ -6,6 +6,7 @@ const carName = document.querySelector(".brand");
 const fuel = document.querySelector(".fuel");
 const gearbox = document.querySelector(".gearbox");
 const btnLogout = document.querySelector("#btn-logout");
+const hamburgerLogOut = document.querySelector('#hamburger-logout');
 
 const token = sessionStorage.getItem("token");
 const user = JSON.parse(sessionStorage.getItem("user"));
@@ -90,3 +91,8 @@ btnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
 });
+
+hamburgerLogOut.addEventListener("click", () => {
+   sessionStorage.removeItem("token");
+   sessionStorage.removeItem("user");
+ });
