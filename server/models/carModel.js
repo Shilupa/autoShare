@@ -36,7 +36,7 @@ const getCarByUserId = async (userId, res) => {
       "personCar where personCar.id=?";
     const values = [userId];
     const [rows] = await promisePool.query(sql, values);
-    return rows[0];
+    return rows;
   } catch (e) {
     console.error("error", e.message);
     res.status(500).send(e.message);
