@@ -16,7 +16,7 @@ const gearbox = document.querySelector(".gearbox-value");
 
 const token = sessionStorage.getItem("token");
 const user = JSON.parse(sessionStorage.getItem("user"));
-console.log(user, token);
+console.log("From home.js line 19", user, token);
 
 //checking token if it exists
 if (token != null) {
@@ -61,13 +61,10 @@ const createCarCards = (cars) => {
       } else if (sort.innerHTML == "The Cheapest") {
         carToSort.sort((a, b) => a.rent_price - b.rent_price);
         sortedCars(carToSort);
-        //console.log("Cheap", carToSort);
       } else if (sort.innerHTML == "Most Expensive") {
         carToSort.sort((a, b) => b.rent_price - a.rent_price);
-        //console.log("Expensive", cars);
         sortedCars(carToSort);
       } else if (sort.innerHTML == "Popularity") {
-        //console.log("popularity:  ", cars);
         carToSort.sort((a, b) => b.average_rating - a.average_rating);
         sortedCars(carToSort);
       }
@@ -78,7 +75,6 @@ const createCarCards = (cars) => {
 const sortedCars = (cars) => {
   cars.forEach((car) => {
     const img = document.createElement("img");
-    console.log(car);
     img.src = "../../server/uploads/" + car.file_name;
     img.alt = car.brand;
     img.height = 200;
@@ -176,8 +172,7 @@ const sortedCars = (cars) => {
 search.addEventListener("keyup", () => {
   let searchedCarList = [];
   let inputValue = search.value.toLowerCase();
-  //console.log("Hahaha", inputValue);
-  const carList = document.querySelectorAll("li.car-list");
+  const carList = document.querySelectorAll(".car-list-item");
   carList.forEach((car) => {
     let brand = car.getElementsByTagName("h4")[0];
     // Searching if brand includes user input value
@@ -186,7 +181,6 @@ search.addEventListener("keyup", () => {
       searchedCarList.push(
         brand.innerHTML.toLocaleLowerCase().includes(inputValue)
       );
-      //console.log("Search Car", searchedCarList);
       car.style.display = "";
     } else if (!brand.innerHTML.toLocaleLowerCase().includes(inputValue)) {
       // Storing  boolean values (False) to array if searched car not found

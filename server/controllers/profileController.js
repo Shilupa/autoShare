@@ -1,7 +1,9 @@
 "use strict";
 const profileModel = require("../models/profileModel");
+const userModel = require("../models/userModel");
 const { validationResult } = require("express-validator");
 const { makeThumbnail } = require("../utils/image");
+const bcrypt = require("bcryptjs");
 
 const get_profile_by_person_id = async (req, res) => {
   const profile = await profileModel.getProfileByUserId(req.params.userId, res);
@@ -14,19 +16,35 @@ const get_profile_by_person_id = async (req, res) => {
 
 const modify_profile_by_person_id = async (req, res) => {
   const errors = validationResult(req);
-
   if (errors.isEmpty()) {
     console.log("adding a profile: ", req.body);
-    const profile = req.body;
     console.log("hahaha", req.file);
+    // Creating profile image object
+    const profileImage = {
+      file: null,
+      person_id: null,
+    };
+
+    // Creating user object
+    const user = req.body;
+    user.id = req.params.userId;
+
+    // Encrpting password
+    const salt = await bcrypt.genSalt();
+    const passwordHash = await bcrypt.hash(user.password, salt);
+    user.password = passwordHash;
+
     if (req.file) {
-      profile.file = req.file.filename;
+      profileImage.file = req.file.filename;
       await makeThumbnail(req.file.path, req.file.filename);
     } else {
-      profile.file = null;
+      profileImage.file = null;
     }
-    profile.person_id = req.params.userId;
-    const result = await profileModel.addProfileByUserId(profile, res);
+    profileImage.person_id = req.params.userId;
+
+    const result = await profileModel.addProfileByUserId(profileImage, res);
+    const response = await userModel.modifyUserById(user, res);
+    console.log("Update user", response);
     res.status(201).json({ message: "profile added", newUserId: result });
   } else {
     res

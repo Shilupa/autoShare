@@ -78,6 +78,10 @@ build/Release
 # Dependency directories
 server/node_modules 
 jspm_packages/
+server/uploads/*
+!server/uploads/.gitkeep
+server/thumbnails/*
+!server/thumbnails/.gitkeep
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
