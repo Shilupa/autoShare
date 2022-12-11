@@ -2,7 +2,7 @@
 
 const url = "http://localhost:3000";
 
-const ul = document.querySelector(".car-list-item");
+const ul = document.querySelector(".car-list");
 const searchedList = document.querySelector("#searched-list");
 const btnLogin = document.querySelector("#btn-login");
 const search = document.querySelector("#search");
@@ -15,6 +15,13 @@ const gearbox = document.querySelector(".gearbox-value");
 const token = sessionStorage.getItem("token");
 const user = sessionStorage.getItem("user");
 console.log(user, token);
+
+import { library, icon } from '@fortawesome/fontawesome-svg-core'
+import { faCamera } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faUsers)
+
+const seater = icon({ prefix: 'fas', iconName: 'users' })
 
 //checking token if it exists
 if (token != null) {
@@ -31,6 +38,7 @@ if (token != null) {
   // Filter cars by category
   createCarCards(cars);
   //sortCars(cars);
+  console.log(cars);
 })();
 
 //inserting element to the list in html page

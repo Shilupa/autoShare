@@ -38,6 +38,11 @@
           </a>
         </li>
 
+        <li class="nav-item" style="display: none;">
+          <a href="/ui/userProfile/userProfile.html" class="nav-link"> Hi User!
+          </a>
+        </li>
+
         <!-- hamburger is hidden by default and becomes active when the screen size is small -->
         <div class="hamburger">
           <span class="bar"></span>
@@ -47,8 +52,10 @@
           <div class="dropdown-content">
             <a href="/ui/Login/login-1.html" class="nav-link">Log In</a>
             <a href="/ui/About/about.html" class="nav-link">About Us</a>
+
             <!-- should be hidden unless user has logged in -->
-            <a href="/ui/Home/home.html" class="nav-link" style="display: none;">Log Out</a>
+            <a href="/ui/userProfile/userProfile.html" class="nav-link" style="display: none;"> Hi User!</a>
+            <a href="/ui/Home/home.html" class="nav-link" style="display: visible;">Log Out</a>
           </div>
         </div>
       </div>
@@ -100,17 +107,17 @@
               <li class="seats">
                 <i class="fa-solid fa-users"></i>&nbsp;<span
                   class="seat-value"
-                ></span>
+                >5</span>
               </li>
               <li class="fuel">
                 <i class="fa-solid fa-gas-pump"
-                  >&nbsp;<span class="fuel-value"></span
-                ></i>
+                  ></i>&nbsp;<span class="fuel-value">petrol</span
+                >
               </li>
               <li class="gearbox">
                 <i class="fa-solid fa-gears"
-                  >&nbsp;<span class="gear-value"></span
-                ></i>
+                  ></i>&nbsp;<span class="gear-value">automatic</span
+                >
               </li>
             </ul>
           </div>
