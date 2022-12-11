@@ -15,6 +15,7 @@ const password = document.querySelector(".password");
 const confrimPassword = document.querySelector(".confirm-password");
 const btnLogout = document.querySelector("#btn-logout");
 const userHtml = document.querySelector("#user-html");
+const profileImage = document.querySelector("#profile-image");
 
 const token = sessionStorage.getItem("token");
 const user = JSON.parse(sessionStorage.getItem("user"));
@@ -38,11 +39,11 @@ userName.value = user.name;
 gender.value = user.gender;
 email.value = user.email;
 city.value = user.city;
-// Cannot auto fill
-//dob.value = user.dob
 phone.value = user.phone_;
 postalCode.value = user.postal_code;
 license.value = user.license;
+// Cannot auto fill
+//dob.value = user.dob
 // Password not in user object
 //password.value = user.password;
 //confrimPassword.value = user.confrimPassword;
@@ -51,6 +52,7 @@ license.value = user.license;
 
 profileForm.addEventListener("submit", async (evt) => {
   evt.preventDefault();
+  const fd = new FormData(profileForm);
   const data = serializeJson(profileForm);
   data.name = userName.value;
   data.gender = gender.value;
@@ -60,15 +62,25 @@ profileForm.addEventListener("submit", async (evt) => {
   data.postal_code = postalCode.value;
   data.license = license.value;
 
+  for (const [prop, value] of Object.entries(data)) {
+    if (value === "") {
+      delete data[prop];
+    }
+  }
+
+  // Give error message confirm password does not match password
+  if (data.password !== data.confirmPassword) {
+    alert("Password did not match!");
+    return;
+  }
+
   const fetchOptions = {
     method: "PUT",
     headers: {
-      "Content-Type": "application/json",
       Authorization: "Bearer " + token,
     },
-    body: JSON.stringify(data),
+    body: fd,
   };
-
   const response = await fetch(`${url}/profile/${user.id}`, fetchOptions);
   const json = await response.json();
   if (json.error) {

@@ -16,7 +16,7 @@ const gearbox = document.querySelector(".gearbox-value");
 
 const token = sessionStorage.getItem("token");
 const user = JSON.parse(sessionStorage.getItem("user"));
-console.log(user, token);
+console.log("From home.js line 19", user, token);
 
 //checking token if it exists
 if (token != null) {
@@ -61,13 +61,10 @@ const createCarCards = (cars) => {
       } else if (sort.innerHTML == "The Cheapest") {
         carToSort.sort((a, b) => a.rent_price - b.rent_price);
         sortedCars(carToSort);
-        //console.log("Cheap", carToSort);
       } else if (sort.innerHTML == "Most Expensive") {
         carToSort.sort((a, b) => b.rent_price - a.rent_price);
-        //console.log("Expensive", cars);
         sortedCars(carToSort);
       } else if (sort.innerHTML == "Popularity") {
-        //console.log("popularity:  ", cars);
         carToSort.sort((a, b) => b.average_rating - a.average_rating);
         sortedCars(carToSort);
       }
@@ -171,8 +168,6 @@ const sortedCars = (cars) => {
   });
 };
 
-console.log(ul);
-
 // Filtering car list on user input
 search.addEventListener("keyup", () => {
   let searchedCarList = [];
@@ -186,7 +181,6 @@ search.addEventListener("keyup", () => {
       searchedCarList.push(
         brand.innerHTML.toLocaleLowerCase().includes(inputValue)
       );
-      //console.log("Search Car", searchedCarList);
       car.style.display = "";
     } else if (!brand.innerHTML.toLocaleLowerCase().includes(inputValue)) {
       // Storing  boolean values (False) to array if searched car not found
