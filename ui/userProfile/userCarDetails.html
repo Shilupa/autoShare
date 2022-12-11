@@ -81,7 +81,7 @@
           <div class="form-car">
             <div class="form-header">
               <span class="title">Car Info</span>
-              <form
+              <!-- <form
                 action=""
                 method=""
                 enctype="multipart/form-data"
@@ -97,7 +97,7 @@
                     >Only images are allowed for upload</span
                   >
                 </div>
-              </div>
+              </div> -->
             </div>
 
             <form action="#" id="add-car">
@@ -117,6 +117,10 @@
               <div class="input-field">
                 <input type="text" placeholder="Model" name="model" required />
                 <i class="fa-solid fa-car"></i>
+              </div>
+              <div class="input-field">
+                <input type="text" placeholder="Location" name="location" required />
+                <i class="fa-solid fa-location-pin"></i>
               </div>
               <div class="input-field">
                 <input type="text" placeholder="Color" name="color" required />
@@ -177,34 +181,42 @@
                 <legend class="title">Car's Availibility</legend>
                 <div class="input-field">
                   <input
-                    placeholder="starting date and time"
+                    placeholder="starting date"
                     type="text"
-                    onfocus="(this.type='datetime-local')"
+                    onfocus="(this.type='date')"
                     id="start-date"
                   />
-                  <!-- <input
-                    type="datetime-local"
-                    placeholder="rent per hour"
-                    name="rent_price"
-                    required
-                  /> -->
                   <i class="fa-solid fa-hourglass-start"></i>
                 </div>
 
                 <div class="input-field">
                   <input
-                    placeholder="ending date and time"
+                    placeholder="starting time"
+                    type="text"
+                    onfocus="(this.type='time')"
+                    id="start-time"
+                  />
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div class="input-field">
+                  <input
+                    placeholder="ending date"
                     type="text"
                     onfocus="(this.type='datetime-local')"
-                    id="start-date"
+                    id="end-date"
                   />
-                  <!-- <input
-                    type="datetime-local"
-                    placeholder="rent per hour"
-                    name="rent_price"
-                    required
-                  /> -->
                   <i class="fa-solid fa-hourglass-end"></i>
+                </div>
+
+                <div class="input-field">
+                  <input
+                    placeholder="ending time"
+                    type="text"
+                    onfocus="(this.type='time')"
+                    id="end-time"
+                  />
+                  <i class="fa-solid fa-clock"></i>
                 </div>
               </fieldset>
 
