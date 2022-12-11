@@ -19,6 +19,10 @@ app.use(express.json()); // for parsing application json
 app.use(express.urlencoded({ extended: true }));
 //app.use(formData.parse())
 
+//serve uploaded files
+app.use(express.static("uploads"));
+app.use("/thumbnails", express.static("thumbnails"));
+
 app.use("/auth", authRouter);
 app.use("/user", userRouter);
 
@@ -27,8 +31,12 @@ app.use("/car", carRouter);
 // Car route for authentication
 app.use("/car", passport.authenticate("jwt", { session: false }), carRouter);
 app.use("/booking", bookingRouter);
-app.use("/profile", profileRouter);
 app.use("/pictures", pictureRouter);
+app.use(
+  "/profile",
+  passport.authenticate("jwt", { session: false }),
+  profileRouter
+);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
