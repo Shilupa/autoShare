@@ -220,4 +220,9 @@ a {
   .logo {
     width: 9rem;
   }
+
+  .car-list{
+    box-shadow: none;
+    background-color: white;
+  }
 }

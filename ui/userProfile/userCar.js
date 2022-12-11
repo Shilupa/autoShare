@@ -79,7 +79,6 @@ if (token != null) {
 
       // appending one card to the whole container
       ul.prepend(li);
-      
     });
 
     //createCarCards(cars);
