@@ -49,13 +49,14 @@ const createCarCards = (cars) => {
       } else if (sort.innerHTML == "The Cheapest") {
         carToSort.sort((a, b) => a.rent_price - b.rent_price);
         sortedCars(carToSort);
-        console.log("Cheap", carToSort);
+        //console.log("Cheap", carToSort);
       } else if (sort.innerHTML == "Most Expensive") {
         carToSort.sort((a, b) => b.rent_price - a.rent_price);
-        console.log("Expensive", cars);
+        //console.log("Expensive", cars);
         sortedCars(carToSort);
       } else if (sort.innerHTML == "Popularity") {
-        // TODO: Sorting car by popularity
+        //console.log("popularity:  ", cars);
+        carToSort.sort((a, b) => b.average_rating - a.average_rating);
         sortedCars(carToSort);
       }
     });
@@ -80,6 +81,20 @@ const sortedCars = (cars) => {
     const figure = document.createElement("figure").appendChild(img);
 
     const rating = document.createElement("div");
+    rating.setAttribute("class", "overall-ratings");
+    for (let i = 1; i < 6; i++) {
+      if (i <= Math.round(car.average_rating)) {
+        const text = '<span class="fa fa-star checked"></span>';
+        const span = document.createElement("span");
+        span.innerHTML = text;
+        rating.appendChild(span);
+      } else {
+        const text = '<span class="fa fa-star"></span>';
+        const span = document.createElement("span");
+        span.innerHTML = text;
+        rating.appendChild(span);
+      }
+    }
 
     const details =
       '<div class="details">' +
@@ -127,6 +142,7 @@ const sortedCars = (cars) => {
 
     li.appendChild(h4);
     li.appendChild(figure);
+    li.appendChild(rating);
     li.appendChild(detail);
     li.appendChild(price);
 
