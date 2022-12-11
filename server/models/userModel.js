@@ -72,12 +72,12 @@ const deleteUserById = async (userId, res) => {
 };
 
 const modifyUserById = async (userObject, res) => {
+  const role = "User";
   try {
     const sql =
-      "Update person set name=?, email=?, password=?, street_address=?, phone_=?, city=?, postal_code=?, license=?, gender=?, dob=?, role_=? where id=?";
+      "Update person set name=?, password=?, street_address=?, phone_=?, city=?, postal_code=?, license=?, gender=?, dob=?, role_=? where id=?";
     const values = [
       userObject.name,
-      userObject.email,
       userObject.password,
       userObject.street_address,
       userObject.phone_,
@@ -86,7 +86,8 @@ const modifyUserById = async (userObject, res) => {
       userObject.license,
       userObject.gender,
       userObject.dob,
-      userObject.role_,
+      //userObject.role_,
+      role,
       userObject.id,
     ];
     const [result] = await promisePool.query(sql, values);
