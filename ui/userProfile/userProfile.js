@@ -21,6 +21,19 @@ const token = sessionStorage.getItem("token");
 const user = JSON.parse(sessionStorage.getItem("user"));
 console.log(user);
 
+(async () => {
+  const fetchOptions = {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  };
+  const response = await fetch(`${url}/profile/${user.id}`, fetchOptions);
+  const profile = await response.json();
+  console.log(profile.file);
+
+  profileImage.src = `${url}/thumbnails/${profile.file}`;
+})();
+
 if (token != null) {
   btnLogout.style.display = "visible";
   userHtml.style.display = "visible";
