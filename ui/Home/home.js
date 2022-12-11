@@ -2,7 +2,7 @@
 
 const url = "http://localhost:3000";
 
-const ul = document.querySelector(".car-list-item");
+const ul = document.querySelector(".car-list");
 const searchedList = document.querySelector("#searched-list");
 const btnLogin = document.querySelector("#btn-login");
 const search = document.querySelector("#search");
@@ -65,9 +65,8 @@ const createCarCards = (cars) => {
 const sortedCars = (cars) => {
   cars.forEach((car) => {
     const img = document.createElement("img");
-    //console.log(car);
-    //img.src = url + car.filename;
-    img.src = "../../autoshare-logo/png/logo-white.png";
+    console.log(car);
+    img.src = "../../server/uploads/" + car.file_name;
     img.alt = car.brand;
     img.height = 200;
     img.width = 200;
@@ -80,29 +79,58 @@ const sortedCars = (cars) => {
 
     const figure = document.createElement("figure").appendChild(img);
 
-    const p1 = document.createElement("p");
-    p1.innerHTML = `${car.seater}`;
+    const rating = document.createElement("div");
 
-    const p2 = document.createElement("p");
-    p2.innerHTML = `${car.fuel_type}`;
+    const details =
+      '<div class="details">' +
+      "<ul>" +
+      '<li class="seats">' +
+      '<i class="fa-solid fa-users"></i>&nbsp;<span' +
+      '  class="seat-value"' +
+      " >" +
+      `${car.seater}` +
+      "</span>" +
+      "</li>" +
+      '<li class="fuel">' +
+      '<i class="fa-solid fa-gas-pump"' +
+      '  ></i>&nbsp;<span class="fuel-value">' +
+      `${car.fuel_type}` +
+      "</span>" +
+      "</li>" +
+      '<li class="gearbox">' +
+      '<i class="fa-solid fa-gears"' +
+      '  ></i>&nbsp;<span class="gear-value">' +
+      `${car.transmission}` +
+      "</span>" +
+      "</li>" +
+      "</ul>" +
+      "</div>";
 
-    const p3 = document.createElement("p");
-    p3.innerHTML = `${car.transmission}`;
+    const detail = document.createElement("div");
+    detail.innerHTML = details;
 
-    const p4 = document.createElement("p");
-    p4.innerHTML = `${car.rent_price}/hour`;
+    const price = document.createElement("div");
+    const price_text =
+      '<div class="price">' +
+      '<span class="price-value">' +
+      `${car.rent_price}` +
+      "</span>" +
+      '<i class="fa-solid fa-euro-sign"></i> /hour' +
+      "</div>";
+    price.innerHTML = price_text;
+    price.setAttribute("class", "price-and-rent");
 
     const li = document.createElement("li");
     // Setting attribute for li to use for filtering
-    li.setAttribute("class", "car-list");
+    li.setAttribute("class", "car-list-item");
     li.classList.add("light-border");
 
     li.appendChild(h4);
     li.appendChild(figure);
-    li.appendChild(p1);
-    li.appendChild(p2);
-    li.appendChild(p3);
-    li.appendChild(p4);
+    li.appendChild(detail);
+    li.appendChild(price);
+
+    // appending one card to the whole container
     ul.appendChild(li);
 
     li.addEventListener("click", () => {

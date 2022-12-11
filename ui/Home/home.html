@@ -31,7 +31,7 @@
         </li>
 
         <!-- should be hidden unless user has logged in -->
-        <li class="nav-item" style="display: none;">
+        <li class="nav-item" style="display: visible">
           <a href="/ui/Home/home.html" class="nav-link">
             <i class="fa-solid fa-right-from-bracket fa-lg"></i>&nbsp;&nbsp; Log
             Out
@@ -48,7 +48,12 @@
             <a href="/ui/Login/login-1.html" class="nav-link">Log In</a>
             <a href="/ui/About/about.html" class="nav-link">About Us</a>
             <!-- should be hidden unless user has logged in -->
-            <a href="/ui/Home/home.html" class="nav-link" style="display: none;">Log Out</a>
+            <a
+              href="/ui/Home/home.html"
+              class="nav-link"
+              style="display: visible"
+              >Log Out</a
+            >
           </div>
         </div>
       </div>
@@ -79,6 +84,8 @@
 
       <div class="car-list">
         <p id="not-found"></p>
+
+        <!-- Working on right now -->
         <div class="car-list-item">
           <h4 class="brand"></h4>
           <div class="car-image">
