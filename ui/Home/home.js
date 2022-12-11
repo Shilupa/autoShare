@@ -8,7 +8,7 @@ const btnLogin = document.querySelector("#btn-login");
 const btnLogout = document.querySelector("#btn-logout");
 const userHtml = document.querySelector("#user-html");
 const search = document.querySelector("#search");
-const notFound = document.querySelector("#not-found");
+const notFound = document.querySelector("#number-of-cars");
 const sortCar = document.querySelectorAll(".sort");
 const carName = document.querySelector(".brand");
 const fuel = document.querySelector(".fuel-value");
@@ -176,6 +176,7 @@ const sortedCars = (cars) => {
 search.addEventListener("keyup", () => {
   let searchedCarList = [];
   let inputValue = search.value.toLowerCase();
+  //console.log("Hahaha", inputValue);
   const carList = document.querySelectorAll("li.car-list");
   carList.forEach((car) => {
     let brand = car.getElementsByTagName("h4")[0];
@@ -185,6 +186,7 @@ search.addEventListener("keyup", () => {
       searchedCarList.push(
         brand.innerHTML.toLocaleLowerCase().includes(inputValue)
       );
+      //console.log("Search Car", searchedCarList);
       car.style.display = "";
     } else if (!brand.innerHTML.toLocaleLowerCase().includes(inputValue)) {
       // Storing  boolean values (False) to array if searched car not found
@@ -202,7 +204,7 @@ search.addEventListener("keyup", () => {
       !searchedCarList.includes(true) &&
       searchedCarList.length === carList.length
     ) {
-      notFound.innerHTML = "Sorry Car Not Found!!";
+      notFound.innerHTML = "No cars(s) found";
     } else if (inputValue === "") {
       // if no input value restoring notFound value to it's default value
       notFound.innerHTML = "";

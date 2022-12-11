@@ -14,6 +14,7 @@ const get_profile_by_person_id = async (req, res) => {
 
 const modify_profile_by_person_id = async (req, res) => {
   const errors = validationResult(req);
+
   if (errors.isEmpty()) {
     console.log("adding a profile: ", req.body);
     const profile = req.body;

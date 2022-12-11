@@ -69,11 +69,11 @@ profileForm.addEventListener("submit", async (evt) => {
     body: JSON.stringify(data),
   };
 
- /*  const response = await fetch(`${url}/profile/${user.id}`, fetchOptions);
+  const response = await fetch(`${url}/profile/${user.id}`, fetchOptions);
   const json = await response.json();
   if (json.error) {
     alert(json.error.message);
   } else {
     alert(json.message);
-  } */
+  }
 });
