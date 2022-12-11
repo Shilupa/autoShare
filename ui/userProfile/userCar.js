@@ -6,13 +6,20 @@ const carName = document.querySelector(".brand");
 const fuel = document.querySelector(".fuel");
 const gearbox = document.querySelector(".gearbox");
 const btnLogout = document.querySelector("#btn-logout");
-const hamburgerLogOut = document.querySelector('#hamburger-logout');
+const hamburgerLogOut = document.querySelector("#hamburger-logout");
+const userHtml = document.querySelector("#user-html");
 
 const token = sessionStorage.getItem("token");
 const user = JSON.parse(sessionStorage.getItem("user"));
 console.log(user, token);
 
 if (token != null) {
+  // adding user name in header bar
+  userHtml.innerHTML = `Hi ${user.name}!`;
+  userHtml.addEventListener("click", () => {
+    location.href = "../userProfile/userProfile.html";
+  });
+
   // Fetching car data from server
   (async () => {
     const response = await fetch(url + "/car/user/" + user.id);
@@ -93,6 +100,6 @@ btnLogout.addEventListener("click", () => {
 });
 
 hamburgerLogOut.addEventListener("click", () => {
-   sessionStorage.removeItem("token");
-   sessionStorage.removeItem("user");
- });
+  sessionStorage.removeItem("token");
+  sessionStorage.removeItem("user");
+});
