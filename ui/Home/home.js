@@ -5,6 +5,8 @@ const url = "http://localhost:3000";
 const ul = document.querySelector(".car-list");
 const searchedList = document.querySelector("#searched-list");
 const btnLogin = document.querySelector("#btn-login");
+const btnLogout = document.querySelector("#btn-logout");
+const userHtml = document.querySelector("#user-html");
 const search = document.querySelector("#search");
 const notFound = document.querySelector("#not-found");
 const sortCar = document.querySelectorAll(".sort");
@@ -13,17 +15,27 @@ const fuel = document.querySelector(".fuel-value");
 const gearbox = document.querySelector(".gearbox-value");
 
 const token = sessionStorage.getItem("token");
-const user = sessionStorage.getItem("user");
+const user = JSON.parse(sessionStorage.getItem("user"));
 console.log(user, token);
 
 //checking token if it exists
 if (token != null) {
-  btnLogin.innerHTML = "Logout";
-  btnLogin.addEventListener("click", () => {
-    sessionStorage.removeItem("token");
-    sessionStorage.removeItem("user");
+  btnLogin.style.display = "none";
+  btnLogout.style.display = "visible";
+  userHtml.innerHTML = `Hi ${user.name}!`;
+
+  userHtml.addEventListener("click", () => {
+    location.href = "../userProfile/userProfile.html";
   });
+} else {
+  btnLogout.style.display = "none";
 }
+
+btnLogout.addEventListener("click", () => {
+  sessionStorage.removeItem("token");
+  sessionStorage.removeItem("user");
+});
+
 // Fetching car data from server
 (async () => {
   const response = await fetch(url + "/car");
