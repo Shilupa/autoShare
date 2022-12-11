@@ -24,8 +24,8 @@ const add_car = async (req, res) => {
   const errors = validationResult(req);
 
   if (errors.isEmpty()) {
-    const result = await carModel.addCar(newCar, res, req.user.id);
-    res.status(201).json({ message: "car created", newUserId: result });
+    const result = await carModel.addCar(newCar, res, req.params.userId);
+    res.status(201).json({ message: "car created ", status: 200 });
   } else {
     res
       .status(400)

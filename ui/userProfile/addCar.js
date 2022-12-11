@@ -1,6 +1,8 @@
 "use strict";
+
 const url = "http://localhost:3000";
 console.log(sessionStorage.getItem("token"));
+const user = JSON.parse(sessionStorage.getItem("user"));
 
 const carForm = document.getElementById("add-car");
 
@@ -25,7 +27,10 @@ carForm.addEventListener("submit", async (evt) => {
     body: JSON.stringify(data),
   };
   console.log(fetchOptions);
-  const response = await fetch(url + "/car", fetchOptions);
+  const response = await fetch(url + "/car/addcar/" + user.id, fetchOptions);
   const json = await response.json();
-  alert(json.message);
+  if (json.status === 200) {
+    alert(json.message);
+    location.href = "userCar.html";
+  }
 });

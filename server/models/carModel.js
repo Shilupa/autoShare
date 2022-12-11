@@ -77,16 +77,16 @@ const addCar = async (carObject, res, user_id) => {
       carObject.seater,
       carObject.color,
       carObject.rent_price,
-      car_address,
+      /*       car_address,
       pickup_date,
       pickup_time,
       dropoff_date,
-      dropoff_time,
-      /*       carObject.car_address,
+      dropoff_time, */
+      carObject.car_address,
       carObject.pickup_date,
       carObject.pickup_time,
       carObject.dropoff_date,
-      carObject.dropoff_time, */
+      carObject.dropoff_time,
       user_id,
     ];
 
