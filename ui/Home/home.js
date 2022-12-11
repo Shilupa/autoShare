@@ -186,6 +186,7 @@ search.addEventListener("keyup", () => {
       searchedCarList.push(
         brand.innerHTML.toLocaleLowerCase().includes(inputValue)
       );
+      //console.log("Search Car", searchedCarList);
       car.style.display = "";
     } else if (!brand.innerHTML.toLocaleLowerCase().includes(inputValue)) {
       // Storing  boolean values (False) to array if searched car not found
@@ -203,7 +204,7 @@ search.addEventListener("keyup", () => {
       !searchedCarList.includes(true) &&
       searchedCarList.length === carList.length
     ) {
-      notFound.innerHTML = "Sorry Car Not Found!!";
+      notFound.innerHTML = "No cars(s) found";
     } else if (inputValue === "") {
       // if no input value restoring notFound value to it's default value
       notFound.innerHTML = "";
