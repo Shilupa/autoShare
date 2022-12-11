@@ -23,6 +23,26 @@ const getHomeCars = async () => {
   }
 };
 
+const getCarByUserId = async (userId, res) => {
+  try {
+    const sql =
+      "select * from (select *,avg(homeCar.rating) as average_rating from (SELECT p.id, c.reg_no, c.brand, r.rating, c.model, c.seater, c.fuel_type, c.transmission, c.rent_price, homePics.file_name , bp.name as bookingPerson " +
+      "FROM car c " +
+      "left outer join person p on p.id = c.person_id " +
+      "left outer join booking b on b.car_reg_no=c.reg_no " +
+      "left outer join person bp on b.person_id = bp.id " +
+      "left outer join review r on b.id = r.booking_id " +
+      "left outer join (SELECT * FROM pictures group by car_reg_no) homePics on c.reg_no = homePics.car_reg_no) homeCar group by homeCar.reg_no) as " +
+      "personCar where personCar.id=?";
+    const values = [userId];
+    const [rows] = await promisePool.query(sql, values);
+    return rows[0];
+  } catch (e) {
+    console.error("error", e.message);
+    res.status(500).send(e.message);
+  }
+};
+
 const getCarByRegNum = async (carRegNum, res) => {
   try {
     const sql = "select * from car c " + "where c.reg_no=?";
@@ -123,6 +143,7 @@ const modifyCarByRegId = async (carObject, res) => {
 
 module.exports = {
   getHomeCars,
+  getCarByUserId,
   getCarByRegNum,
   addCar,
   deleteCarByRegId,

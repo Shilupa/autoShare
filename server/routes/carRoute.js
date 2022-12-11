@@ -25,6 +25,7 @@ router
     body("dropoff_time").notEmpty(), */
     carController.add_car
   )
+  .get("/user/:userId", carController.get_car_by_userId)
   .get("/:carReg", carController.get_car_by_reg)
   .put("/:carRegId", carController.modify_car)
   .delete("/:carRegId", carController.delete_car);
