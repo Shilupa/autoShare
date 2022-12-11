@@ -26,6 +26,7 @@ const addPictureByRegNo = async (pictureObject, res) => {
     try {
       deleteFile[0].forEach((file) => {
         fs.unlinkSync("./uploads/" + file.file_name);
+        fs.unlinkSync("./thumbnails/" + file.file_name);
       });
     } catch (e) {}
 

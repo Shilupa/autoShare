@@ -22,6 +22,8 @@ const add_picture_by_reg_no = async (req, res) => {
 
     req.files.forEach((element) => {
       pictures.files.push(element.filename);
+      console.log("See this file: ", element);
+      makeThumbnail(element.path, element.filename);
     });
 
     pictures.reg_no = req.params.regNo;

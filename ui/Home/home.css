@@ -285,12 +285,16 @@ form button {
   #nav-menu {
     justify-content: end;
   }
-
 }
 
 @media screen and (max-width: 350px) {
   .logo {
     width: 8rem;
+  }
+
+  .car-list {
+    background-color: white;
+    box-shadow: none;
   }
 
   form button {
