@@ -25,10 +25,12 @@
           <a href="/ui/About/about.html" class="nav-link">About Us</a>
         </li>
         <li class="nav-item">
-          <a href="/ui/Login/login-1.html" class="nav-link">Hi User!</a>
+          <a href="/ui/Login/login-1.html" class="nav-link" id="user-html"
+            >Hi User!</a
+          >
         </li>
         <li class="nav-item">
-          <a href="/ui/Home/home.html" class="nav-link">
+          <a href="/ui/Home/home.html" class="nav-link" id="btn-logout">
             <i class="fa-solid fa-right-from-bracket fa-lg"></i>&nbsp;&nbsp; Log
             Out
           </a>
@@ -43,7 +45,9 @@
           <div class="dropdown-content">
             <a href="/ui/Login/login-1.html" class="nav-link">Hi User!</a>
             <a href="/ui/About/about.html" class="nav-link">About Us</a>
-            <a href="/ui/Home/home.html" class="nav-link">Log Out</a>
+            <a href="/ui/Home/home.html" class="nav-link" id="hamburger-logout"
+              >Log Out</a
+            >
           </div>
         </div>
       </div>
@@ -84,11 +88,8 @@
       <div class="car-list">
         <!-- create list here -->
 
-        <div class="car-list-item">
-          <h4>
-            Toyota
-            <form action=""></form>
-          </h4>
+        <!-- <div class="car-list-item">
+          <h4 class="brand">Toyota</h4>
           <div class="car-image">
             <img
               src="/images/photo-1525609004556-c46c7d6cf023.jfif"
@@ -113,8 +114,7 @@
               </li>
             </ul>
           </div>
-        </div>
-
+        </div> -->
         <a href="/ui/userProfile/userCarDetails.html">
           <div class="add-car-btn">
             <div class="message"><i class="fa-solid fa-plus"></i></div>
@@ -123,5 +123,6 @@
       </div>
     </div>
     <script src="userCar.js"></script>
+    <script src="../serialize.js"></script>
   </body>
 </html>

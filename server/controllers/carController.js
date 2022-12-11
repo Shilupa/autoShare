@@ -7,6 +7,12 @@ const get_home_cars = async (req, res) => {
   res.json(cars);
 };
 
+const get_car_by_userId = async (req, res) => {
+  //console.log(req.params.userId);
+  const cars = await carModel.getCarByUserId(req.params.userId, res);
+  res.json(cars);
+};
+
 const get_car_by_reg = async (req, res) => {
   const cars = await carModel.getCarByRegNum(req.params.carReg, res);
   res.json(cars);
@@ -18,8 +24,8 @@ const add_car = async (req, res) => {
   const errors = validationResult(req);
 
   if (errors.isEmpty()) {
-    const result = await carModel.addCar(newCar, res, req.user.id);
-    res.status(201).json({ message: "car created", newUserId: result });
+    const result = await carModel.addCar(newCar, res, req.params.userId);
+    res.status(201).json({ message: "car created ", status: 200 });
   } else {
     res
       .status(400)
@@ -57,4 +63,5 @@ module.exports = {
   add_car,
   delete_car,
   modify_car,
+  get_car_by_userId,
 };

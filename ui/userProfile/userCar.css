@@ -152,8 +152,8 @@ a {
 }
 
 .car-list-item img {
-  width: 10rem;
-  height: 10rem;
+  width: 10.5rem;
+  height: 10.5rem;
   border-radius: 6px;
 }
 
@@ -168,8 +168,7 @@ a {
 
 .details ul li {
   list-style: none;
-  letter-spacing: 2px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-decoration: none;
 }
 
@@ -220,5 +219,10 @@ a {
 @media screen and (max-width: 450px) {
   .logo {
     width: 9rem;
+  }
+
+  .car-list{
+    box-shadow: none;
+    background-color: white;
   }
 }
