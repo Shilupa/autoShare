@@ -352,6 +352,6 @@ form.addEventListener("submit", async (evt) => {
   if (json.error) {
     alert(json.error.message);
   } else {
-    alert(json.message);
+    location.href = "userCar.html";
   }
 });
