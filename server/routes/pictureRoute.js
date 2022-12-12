@@ -20,8 +20,8 @@ const upload = multer({ storage: fileStorage });
 router
   .get("/:regNo", pictureController.get_picture_by_reg_no)
   .post(
-    "/:regNo",
-    upload.array("file_name", 50),
+    "/:regNo/:placeHolder",
+    upload.array("file_name", 1),
     pictureController.add_picture_by_reg_no
   );
 

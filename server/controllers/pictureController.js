@@ -27,6 +27,7 @@ const add_picture_by_reg_no = async (req, res) => {
     });
 
     pictures.reg_no = req.params.regNo;
+    pictures.placeholder = req.params.placeHolder;
 
     const result = await pictureModel.addPictureByRegNo(pictures, res);
 
