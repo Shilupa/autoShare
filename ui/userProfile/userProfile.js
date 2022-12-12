@@ -4,7 +4,6 @@ const url = "http://localhost:3000";
 const profileForm = document.querySelector("#profile-form");
 const userName = document.querySelector(".name");
 const gender = document.querySelector(".gender");
-//const email = document.querySelector(".email");
 const dob = document.querySelector(".dob");
 const phone = document.querySelector(".phone");
 const address = document.querySelector(".address");
@@ -16,11 +15,15 @@ const confrimPassword = document.querySelector(".confirm-password");
 const btnLogout = document.querySelector("#btn-logout");
 const userHtml = document.querySelector("#user-html");
 const profileImage = document.querySelector("#profile-image");
-const displayPic = document.querySelector(".display-pic");
+
+// place holder for profile
+const profile_pic_form = document.getElementById("upload");
+const profile_pic_img = document.getElementById("profile-image");
+const formPH1 = document.querySelector("#profile_pic_form");
 
 const token = sessionStorage.getItem("token");
 const user = JSON.parse(sessionStorage.getItem("user"));
-console.log(user);
+//console.log(user);
 
 (async () => {
   const fetchOptions = {
@@ -32,7 +35,7 @@ console.log(user);
   const profile = await response.json();
 
   profileImage.src = `${url}/thumbnails/${profile.file}`;
-  console.log(profile);
+  //console.log(profile);
 })();
 
 if (token != null) {
@@ -51,26 +54,17 @@ if (token != null) {
 
 userName.value = user.name;
 gender.value = user.gender;
-//email.value = user.email;
-city.value = user.city;
+const date = user.dob.split("T");
+dob.value = date[0];
 phone.value = user.phone_;
+address.value = user.street_address;
+city.value = user.city;
 postalCode.value = user.postal_code;
 license.value = user.license;
-const date = user.dob.split("T");
-//console.log(date);
-dob.value = date[0];
-address.value = user.street_address;
 
 profileForm.addEventListener("submit", async (evt) => {
-  //evt.preventDefault();
-  const fd = new FormData(profileForm);
+  evt.preventDefault();
   const data = serializeJson(profileForm);
-  /*   data.name = userName.value;
-  data.gender = gender.value;
-  data.phone_ = phone.value;
-  data.city = city.value;
-  data.postal_code = postalCode.value;
-  data.license = license.value; */
 
   for (const [prop, value] of Object.entries(data)) {
     if (value === "") {
@@ -84,7 +78,39 @@ profileForm.addEventListener("submit", async (evt) => {
     return;
   }
 
-   const fetchOptions = {
+  console.log(data);
+
+  const fetchOptions = {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token,
+    },
+    body: JSON.stringify(data),
+  };
+
+  console.log(fetchOptions);
+
+  const response = await fetch(`${url}/user/${user.id}`, fetchOptions);
+  const json = await response.json();
+  if (json.error) {
+    alert(json.error.message);
+  } else {
+    alert(json.message);
+    location.href = "../Login/login-1.html";
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("user");
+  }
+});
+
+// New code
+
+profile_pic_form.onchange = async () => {
+  const selectedFile = profile_pic_form.files[0];
+  //console.log(selectedFile);
+  const fd = new FormData(formPH1);
+
+  const fetchOptions = {
     method: "PUT",
     headers: {
       Authorization: "Bearer " + token,
@@ -97,6 +123,5 @@ profileForm.addEventListener("submit", async (evt) => {
   if (json.error) {
     alert(json.error.message);
   } else {
-    alert(json.message);
   }
-});
+};

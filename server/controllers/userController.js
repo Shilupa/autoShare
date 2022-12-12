@@ -17,7 +17,7 @@ const get_user = async (req, res) => {
   }
 };
 
-const add_user = async (req, res) => {
+/* const add_user = async (req, res) => {
   console.log("creating a new user: ", req.body);
   const newUser = req.body;
   if (!newUser.role_) {
@@ -37,7 +37,7 @@ const add_user = async (req, res) => {
       .status(400)
       .json({ message: "user creation failed", errors: errors.array() });
   }
-};
+}; */
 
 const delete_user = async (req, res) => {
   const result = await userModel.deleteUserById(req.params.userId, res);
@@ -50,11 +50,20 @@ const delete_user = async (req, res) => {
 };
 
 const modify_user = async (req, res) => {
+  // Creating user object
   const user = req.body;
   user.id = req.params.userId;
+
   if (!user.role_) {
     user.role_ = "User";
   }
+  console.log("Hello: ", user);
+
+  // Encrpting password
+  const salt = await bcrypt.genSalt();
+  const passwordHash = await bcrypt.hash(user.password, salt);
+  user.password = passwordHash;
+
   const result = await userModel.modifyUserById(user, res);
   console.log(result.affectedRows);
   if (result.affectedRows > 0) {
@@ -69,7 +78,7 @@ const modify_user = async (req, res) => {
 module.exports = {
   get_all_users,
   get_user,
-  add_user,
+  //add_user,
   modify_user,
   delete_user,
 };

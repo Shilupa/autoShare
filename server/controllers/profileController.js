@@ -1,9 +1,7 @@
 "use strict";
 const profileModel = require("../models/profileModel");
-const userModel = require("../models/userModel");
 const { validationResult } = require("express-validator");
 const { makeThumbnail } = require("../utils/image");
-const bcrypt = require("bcryptjs");
 
 const get_profile_by_person_id = async (req, res) => {
   const profile = await profileModel.getProfileByUserId(req.params.userId, res);
@@ -20,20 +18,11 @@ const modify_profile_by_person_id = async (req, res) => {
     console.log("adding a profile: ", req.body);
     console.log("hahaha", req.file);
     // Creating profile image object
+
     const profileImage = {
       file: null,
       person_id: null,
     };
-
-    // Creating user object
-    const user = req.body;
-    user.id = req.params.userId;
-    console.log(profileImage);
-
-    // Encrpting password
-    const salt = await bcrypt.genSalt();
-    const passwordHash = await bcrypt.hash(user.password, salt);
-    user.password = passwordHash;
 
     if (req.file) {
       profileImage.file = req.file.filename;
@@ -44,8 +33,6 @@ const modify_profile_by_person_id = async (req, res) => {
     profileImage.person_id = req.params.userId;
 
     const result = await profileModel.addProfileByUserId(profileImage, res);
-    const response = await userModel.modifyUserById(user, res);
-    console.log("Update user", response);
     res.status(201).json({ message: "profile added", newUserId: result });
   } else {
     res

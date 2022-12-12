@@ -23,15 +23,23 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("uploads"));
 app.use("/thumbnails", express.static("thumbnails"));
 
-app.use("/auth", authRouter);
-app.use("/user", userRouter);
-
 // Car route for non authentication
 app.use("/car", carRouter);
-// Car route for authentication
+app.use("/auth", authRouter);
+
+// routes with authentication
+app.use("/user", passport.authenticate("jwt", { session: false }), userRouter);
 app.use("/car", passport.authenticate("jwt", { session: false }), carRouter);
-app.use("/booking", bookingRouter);
-app.use("/pictures", pictureRouter);
+app.use(
+  "/booking",
+  passport.authenticate("jwt", { session: false }),
+  bookingRouter
+);
+app.use(
+  "/pictures",
+  passport.authenticate("jwt", { session: false }),
+  pictureRouter
+);
 app.use(
   "/profile",
   passport.authenticate("jwt", { session: false }),
