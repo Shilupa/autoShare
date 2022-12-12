@@ -61,16 +61,17 @@ dob.value = date[0];
 address.value = user.street_address;
 
 profileForm.addEventListener("submit", async (evt) => {
-  evt.preventDefault();
+  //evt.preventDefault();
   const fd = new FormData(profileForm);
   const data = serializeJson(profileForm);
-  data.name = userName.value;
+  /*   data.name = userName.value;
   data.gender = gender.value;
-  /* data.email = email.value; */
   data.phone_ = phone.value;
   data.city = city.value;
   data.postal_code = postalCode.value;
-  data.license = license.value;
+  data.license = license.value; */
+
+  console.log("Fd: ", fd);
 
   for (const [prop, value] of Object.entries(data)) {
     if (value === "") {
@@ -83,8 +84,6 @@ profileForm.addEventListener("submit", async (evt) => {
     alert("Password did not match!");
     return;
   }
-
-  console.log("Bibek bro log: ", data);
 
   const fetchOptions = {
     method: "PUT",

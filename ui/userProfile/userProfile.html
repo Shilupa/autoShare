@@ -1,150 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoShare</title>
+    <link rel="stylesheet" href="userProfile.css" />
+    <script
+      src="https://kit.fontawesome.com/e1ac683977.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>AutoShare</title>
-   <link rel="stylesheet" href="userProfile.css">
-   <script src="https://kit.fontawesome.com/e1ac683977.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-   <div class="header">
-      <a href="/ui/Home/home.html"><img src="/autoshare-logo/png/logo-no-background-cropped.png" alt="company logo" class="logo"></a>
+  <body>
+    <div class="header">
+      <a href="/ui/Home/home.html"
+        ><img
+          src="/autoshare-logo/png/logo-no-background-cropped.png"
+          alt="company logo"
+          class="logo"
+      /></a>
       <div id="nav-menu">
-           <li class="nav-item">
-              <a href="/ui/About/about.html" class="nav-link">About Us</a>
-           </li>
-           <li class="nav-item">
-            <a  class="nav-link" id="user-html"></a>
-         </li>
-         <li class="nav-item">
-            <a href="/ui/Home/home.html" class="nav-link" id="btn-logout">
-              <i class="fa-solid fa-right-from-bracket fa-lg"></i>&nbsp;&nbsp; Log
-              Out
-            </a>
-         </li>
+        <li class="nav-item">
+          <a href="/ui/About/about.html" class="nav-link">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="user-html"></a>
+        </li>
+        <li class="nav-item">
+          <a href="/ui/Home/home.html" class="nav-link" id="btn-logout">
+            <i class="fa-solid fa-right-from-bracket fa-lg"></i>&nbsp;&nbsp; Log
+            Out
+          </a>
+        </li>
 
-         <!-- hamburger is hidden by default and becomes active when the screen size is small -->
+        <!-- hamburger is hidden by default and becomes active when the screen size is small -->
         <div class="hamburger">
-         <span class="bar"></span>
-         <span class="bar"></span>
-         <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
 
-         <div class="dropdown-content">
+          <div class="dropdown-content">
             <a href="/ui/Login/login-1.html" class="nav-link">Hi User!</a>
             <a href="/ui/About/about.html" class="nav-link">About Us</a>
             <a href="/ui/Home/home.html" class="nav-link">Log Out</a>
-         </div>
-       </div>
-
+          </div>
+        </div>
       </div>
-   </div>
+    </div>
 
-  <div class="user-bar">
-
-   <!-- <a href="/ui/userProfile/userCar.html"><h3 class="user-bar-item">My car(s)</h3></a>
+    <div class="user-bar">
+      <!-- <a href="/ui/userProfile/userCar.html"><h3 class="user-bar-item">My car(s)</h3></a>
    <a href="/ui/userProfile/userProfile.html"><h3 class="user-bar-item">My profile</h3></a>
    <a href="/ui/bookings/myBookings.html"><h3 class="user-bar-item">My bookings</h3></a>
    <a href="/ui/Home/home.html"><h3 class="user-bar-item"><i class="fa-solid fa-right-from-bracket"></i> Log out</h3></a> -->
 
-   <div class="user-bar-item">
-      <a href="/ui/userProfile/userCar.html">
-        <i class="fa-solid fa-car fa-lg"></i>&nbsp;&nbsp;
-        <h3 class="user-bar-text">My car(s)</h3>
-      </a>
+      <div class="user-bar-item">
+        <a href="/ui/userProfile/userCar.html">
+          <i class="fa-solid fa-car fa-lg"></i>&nbsp;&nbsp;
+          <h3 class="user-bar-text">My car(s)</h3>
+        </a>
+      </div>
+
+      <div class="user-bar-item">
+        <a
+          href="/ui/userProfile/userProfile.html"
+          style="border-bottom: 3px solid #04aa6d; color: #04aa6d"
+        >
+          <i class="fa-solid fa-user fa-lg"></i>&nbsp;&nbsp;
+          <h3 class="user-bar-text">My profile</h3>
+        </a>
+      </div>
+
+      <div class="user-bar-item">
+        <a href="/ui/bookings/myBookings.html">
+          <i class="fa-solid fa-list-ol fa-lg"></i>&nbsp;&nbsp;
+          <h3 class="user-bar-text">My bookings</h3>
+        </a>
+      </div>
     </div>
 
-    <div class="user-bar-item">
-      <a href="/ui/userProfile/userProfile.html" style="border-bottom: 3px solid #04aa6d; color: #04aa6d">
-        <i class="fa-solid fa-user fa-lg"></i>&nbsp;&nbsp;
-        <h3 class="user-bar-text">My profile</h3>
-      </a>
-    </div>
-
-    <div class="user-bar-item">
-      <a href="/ui/bookings/myBookings.html">
-        <i class="fa-solid fa-list-ol fa-lg"></i>&nbsp;&nbsp;
-        <h3 class="user-bar-text">My bookings</h3>
-      </a>
-    </div>
-
-  </div>
-
-
-  <div class="main">
-   <div class="user-info">
-      <div class="forms">
-         <div class="form-user">
-            <div class="form-header"><span class="title">User Info</span>
-            <div class="display-pic">
-                  <!-- <input type="file" id="actual-btn"hidden/>
+    <div class="main">
+      <div class="user-info">
+        <div class="forms">
+          <div class="form-user">
+            <div class="form-header">
+              <span class="title">User Info</span>
+              <div class="display-pic">
+                <!-- <input type="file" id="actual-btn"hidden/>
                  
                   <label for="actual-btn">U</label> -->
-                  <img id="profile-image"  width="100" height="100">
-               </div> 
+                <img id="profile-image" width="100" height="100" />
+              </div>
             </div>
-         <form action="#" id="profile-form" enctype="multipart/form-data">
-                <!--   <div class="display-pic">
+            <form action="#" id="profile-form" enctype="multipart/form-data">
+              <!--   <div class="display-pic">
                      <input class="light-border" type="file" name="file" accept="image/*" placeholder="Choose file"  hidden required>
                      <label for="actual-btn">U</label>
                   </div> -->
-                  <div class="input-field">
-                     <input type="text" placeholder="Enter your name" name="name" class="name" required>
-                     <i class="fa-solid fa-user"></i>
-                  </div>
-                  <div class="input-field">
-                     <input type="text" placeholder="Enter your gender" name="gender" class="gender"required>
-                     <i class="fa-solid fa-venus-mars"></i>
-                  </div>
-<!--                   <div class="input-field">
+              <div class="input-field">
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  name="name"
+                  class="name"
+                  required
+                />
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  type="text"
+                  placeholder="Enter your gender"
+                  name="gender"
+                  class="gender"
+                  required
+                />
+                <i class="fa-solid fa-venus-mars"></i>
+              </div>
+              <!--                   <div class="input-field">
                      <input type="text" placeholder="Enter your e-mail" name="email" class="email" required>
                      <i class="fa-solid fa-envelope icon"></i>
                   </div> -->
-                  <div class="input-field">
-                     <input type="date" name="dob" class="dob">
-                     <i class="fa-solid fa-cake-candles"></i>
-                  </div>
-                  <div class="input-field">
-                     <input type="text" placeholder="Enter your phone number" name="phone_" class="phone" required>
-                     <i class="fa-solid fa-phone"></i>
-                  </div>
-                  <div class="input-field">
-                     <input type="text" placeholder="Enter your street address" name="street_address" class="address" required>
-                     <i class="fa-solid fa-location-pin"></i>
-                  </div>
-                  <div class="input-field">
-                     <input type="text" placeholder="Enter your city" name="city" class="city" required>
-                     <i class="fa-solid fa-city"></i>
-                  </div>
-                  <div class="input-field">
-                     <input type="text" placeholder="Enter your postal code" name="postal_code" class="postal_code" required>
-                     <i class="fa-solid fa-signs-post"></i>
-                  </div>
-                  <div class="input-field">
-                     <input type="text" placeholder="Enter your driver's license number" name="license" class="license" required>
-                     <i class="fa-solid fa-id-card"></i>
-                  </div>
-                  <div class="input-field">
-                     <input type="password" placeholder="Enter your password" name="password" class="password" required>
-                     <i class="fa-solid fa-lock icon"></i>
-                  </div>
-                  <div class="input-field">
-                     <input type="password" placeholder="Confirm your password" name="confirmPassword" class="confirmPassword" required>
-                     <i class="fa-solid fa-lock icon"></i>
-                  </div>
-                  <input class="light-border" type="file" name="file" accept="image/*" placeholder="Choose file" required>
-               <div class="input-field button">
-                  <input type="submit" >
-               </div>
-            </form> 
-         </div>
-         </div>
-   </div>
-  </div>
-  <script src="../serialize.js"></script>
-  <script src="userProfile.js"></script>
-</body>
+              <div class="input-field">
+                <input type="date" name="dob" class="dob" />
+                <i class="fa-solid fa-cake-candles"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  type="text"
+                  placeholder="Enter your phone number"
+                  name="phone_"
+                  class="phone"
+                  required
+                />
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  type="text"
+                  placeholder="Enter your street address"
+                  name="street_address"
+                  class="address"
+                  required
+                />
+                <i class="fa-solid fa-location-pin"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  type="text"
+                  placeholder="Enter your city"
+                  name="city"
+                  class="city"
+                  required
+                />
+                <i class="fa-solid fa-city"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  type="text"
+                  placeholder="Enter your postal code"
+                  name="postal_code"
+                  class="postal_code"
+                  required
+                />
+                <i class="fa-solid fa-signs-post"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  type="text"
+                  placeholder="Enter your driver's license number"
+                  name="license"
+                  class="license"
+                  required
+                />
+                <i class="fa-solid fa-id-card"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  type="password"
+                  placeholder="Enter your password"
+                  name="password"
+                  class="password"
+                  required
+                />
+                <i class="fa-solid fa-lock icon"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  type="password"
+                  placeholder="Confirm your password"
+                  name="confirmPassword"
+                  class="confirmPassword"
+                  required
+                />
+                <i class="fa-solid fa-lock icon"></i>
+              </div>
+              <input
+                class="light-border"
+                type="file"
+                name="file"
+                accept="image/*"
+                placeholder="Choose file"
+                required
+              />
+              <div class="input-field button">
+                <input type="submit" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../serialize.js"></script>
+    <script src="userProfile.js"></script>
+  </body>
 </html>
