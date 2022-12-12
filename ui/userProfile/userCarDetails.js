@@ -51,6 +51,8 @@ const dropoff_date_text = document.querySelector(".dropoff_date");
 const dropoff_time_text = document.querySelector(".dropoff_time");
 const form = document.querySelector("#add-car");
 
+//const container = document.querySelector('.image-container');
+
 // get query parameter
 const getQParam = (param) => {
   const queryString = window.location.search;
@@ -73,18 +75,28 @@ const getCarPics = async (reg_no) => {
   for (let i = 0; i < pics.length; i++) {
     if (pics[i].placeholder === 1) {
       placeholder_1_img.src = `${url}/thumbnails/${pics[i].file_name}`;
+      delete_PH1.style.display = "block";
+      formPH1.style.border = "none";
     }
     if (pics[i].placeholder == 2) {
       placeholder_2_img.src = `${url}/thumbnails/${pics[i].file_name}`;
+      delete_PH2.style.display = "block";
+      formPH2.style.border = "none";
     }
     if (pics[i].placeholder == 3) {
       placeholder_3_img.src = `${url}/thumbnails/${pics[i].file_name}`;
+      delete_PH3.style.display = "block";
+      formPH3.style.border = "none";
     }
     if (pics[i].placeholder == 4) {
       placeholder_4_img.src = `${url}/thumbnails/${pics[i].file_name}`;
+      delete_PH4.style.display = "block";
+      formPH4.style.border = "none";
     }
     if (pics[i].placeholder == 5) {
       placeholder_5_img.src = `${url}/thumbnails/${pics[i].file_name}`;
+      delete_PH5.style.display = "block";
+      formPH5.style.border = "none";
     }
   }
 };
@@ -135,6 +147,7 @@ placeholder_1.onchange = async () => {
 
   const response = await fetch(`${url}/pictures/${reg_no}/1`, fetchOptions);
   const json = await response.json();
+  container.style.border = none;
   if (json.error) {
     alert(json.error.message);
   } else {
