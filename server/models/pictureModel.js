@@ -19,8 +19,8 @@ const getPictureByRegNo = async (carRegNo, res) => {
 const addPictureByRegNo = async (pictureObject, res) => {
   try {
     const deleteFile = await promisePool.query(
-      "select file_name from pictures where car_reg_no=?",
-      pictureObject.reg_no
+      "select file_name from pictures where car_reg_no=? and placeholder=?",
+      [pictureObject.reg_no, pictureObject.placeholder]
     );
 
     try {
@@ -30,14 +30,15 @@ const addPictureByRegNo = async (pictureObject, res) => {
       });
     } catch (e) {}
 
-    await promisePool.query("Delete from pictures where car_reg_no=?", [
-      pictureObject.reg_no,
-    ]);
+    await promisePool.query(
+      "Delete from pictures where car_reg_no=? and placeholder=?",
+      [pictureObject.reg_no, pictureObject.placeholder]
+    );
 
     await pictureObject.files.forEach((file) => {
       promisePool.query(
-        "Insert into pictures (file_name, car_reg_no) values (?, ?)",
-        [file, pictureObject.reg_no]
+        "Insert into pictures (file_name, car_reg_no, placeholder) values (?, ?, ?)",
+        [file, pictureObject.reg_no, pictureObject.placeholder]
       );
     });
   } catch (e) {
