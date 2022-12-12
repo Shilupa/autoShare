@@ -87,6 +87,15 @@ if (token != null) {
 
       // appending one card to the whole container
       ul.prepend(li);
+
+      li.addEventListener("click", () => {
+        //location.href = "../carDetails/carDetails.html" + car.reg_no;
+        if (token) {
+          location.href = `../userProfile/userCarDetails.html?id=${car.reg_no}`;
+        } else {
+          location.href = "../login/login-1.html";
+        }
+      });
     });
 
     //createCarCards(cars);

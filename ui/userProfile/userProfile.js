@@ -84,6 +84,8 @@ profileForm.addEventListener("submit", async (evt) => {
     return;
   }
 
+  console.log("Bibek bro log: ", data);
+
   const fetchOptions = {
     method: "PUT",
     headers: {

@@ -1,5 +1,7 @@
 "use strict";
 
+// code of add car
+/* 
 const url = "http://localhost:3000";
 console.log(sessionStorage.getItem("token"));
 const user = JSON.parse(sessionStorage.getItem("user"));
@@ -41,4 +43,4 @@ carForm.addEventListener("submit", async (evt) => {
     alert(json.message);
     location.href = "userCar.html";
   }
-});
+}); */
