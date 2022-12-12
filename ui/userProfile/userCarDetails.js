@@ -1,15 +1,30 @@
 "use strict";
 
-// code of add car
-/* 
 const url = "http://localhost:3000";
+
 console.log(sessionStorage.getItem("token"));
 const user = JSON.parse(sessionStorage.getItem("user"));
 
-const carForm = document.getElementById("add-car");
+const placeholder_1 = document.getElementById("file-input_1");
+const formPH1 = document.querySelector("#placeholder1");
 
-const placeholder_1 = document.getElementById("#placeholder1");
+placeholder_1.onchange = () => {
+  const selectedFile = placeholder_1.files[0];
+  console.log(selectedFile);
+  const fd = new FormData(formPH1);
+  console.log(fd);
+};
 
+/* placeholder_1.addEventListener("file", async (evt) => {
+  evt.preventDefault();
+  const fd = new FormData(placeholder_1);
+  console.log(fd);
+}); */
+
+// code of add car
+
+//const carForm = document.getElementById("add-car");
+/* 
 placeholder_1.addEventListener("select", async (evt) => {
   evt.preventDefault();
   const fd = new FormData(placeholder_1);
@@ -43,4 +58,5 @@ carForm.addEventListener("submit", async (evt) => {
     alert(json.message);
     location.href = "userCar.html";
   }
-}); */
+});
+ */
