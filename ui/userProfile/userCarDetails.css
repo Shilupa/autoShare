@@ -230,7 +230,9 @@ a {
 .multiple-uploader {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
   justify-content: center;
+  align-items: center;
   border-radius: 15px;
   border: 2px dashed #858585;
   min-height: 150px;
@@ -239,7 +241,8 @@ a {
   width: 80%;
 }
 
-.mup-msg {
+
+/* .mup-msg {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -258,7 +261,7 @@ a {
 
 .mup-msg .mup-msg {
   color: #737373;
-}
+} */
 
 .image-container {
   margin: 1rem;
@@ -270,7 +273,7 @@ a {
 }
 
 .image-container:before {
-  z-index: 3;
+  /* z-index: 3; */
   content: "\2716";
   align-content: center;
   font-size: 10px;
@@ -287,6 +290,15 @@ a {
   background: #e50000;
   pointer-events: all;
   cursor: pointer;
+}
+
+.image-container input {
+  display: none;
+}
+
+.multiple-uploader img{
+  max-height: 120px ;
+  margin: 5px;
 }
 
 .image-preview {
