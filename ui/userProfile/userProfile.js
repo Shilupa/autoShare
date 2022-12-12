@@ -16,6 +16,7 @@ const confrimPassword = document.querySelector(".confirm-password");
 const btnLogout = document.querySelector("#btn-logout");
 const userHtml = document.querySelector("#user-html");
 const profileImage = document.querySelector("#profile-image");
+const displayPic = document.querySelector(".display-pic")
 
 const token = sessionStorage.getItem("token");
 const user = JSON.parse(sessionStorage.getItem("user"));
