@@ -16,7 +16,7 @@ const confrimPassword = document.querySelector(".confirm-password");
 const btnLogout = document.querySelector("#btn-logout");
 const userHtml = document.querySelector("#user-html");
 const profileImage = document.querySelector("#profile-image");
-const displayPic = document.querySelector(".display-pic")
+const displayPic = document.querySelector(".display-pic");
 
 const token = sessionStorage.getItem("token");
 const user = JSON.parse(sessionStorage.getItem("user"));
@@ -57,7 +57,7 @@ phone.value = user.phone_;
 postalCode.value = user.postal_code;
 license.value = user.license;
 const date = user.dob.split("T");
-console.log(date);
+//console.log(date);
 dob.value = date[0];
 address.value = user.street_address;
 
@@ -72,8 +72,6 @@ profileForm.addEventListener("submit", async (evt) => {
   data.postal_code = postalCode.value;
   data.license = license.value; */
 
-  console.log("Fd: ", fd);
-
   for (const [prop, value] of Object.entries(data)) {
     if (value === "") {
       delete data[prop];
@@ -86,13 +84,14 @@ profileForm.addEventListener("submit", async (evt) => {
     return;
   }
 
-  const fetchOptions = {
+   const fetchOptions = {
     method: "PUT",
     headers: {
       Authorization: "Bearer " + token,
     },
     body: fd,
   };
+
   const response = await fetch(`${url}/profile/${user.id}`, fetchOptions);
   const json = await response.json();
   if (json.error) {

@@ -6,14 +6,6 @@ const user = JSON.parse(sessionStorage.getItem("user"));
 
 const carForm = document.getElementById("add-car");
 
-const placeholder_1 = document.getElementById("#placeholder1");
-
-placeholder_1.addEventListener("select", async (evt) => {
-  evt.preventDefault();
-  const fd = new FormData(placeholder_1);
-  console.log(fd);
-});
-
 carForm.addEventListener("submit", async (evt) => {
   evt.preventDefault();
   //const fd = new FormData(carForm);

@@ -30,7 +30,11 @@ if (token != null) {
 
     cars.forEach((car) => {
       const img = document.createElement("img");
-      img.src = "../../server/uploads/" + car.file_name;
+      if (car.file_name) {
+        img.src = "../../server/uploads/" + car.file_name;
+      } else {
+        img.src = "../../autoshare-logo/png/logo-white.png";
+      }
       img.alt = car.brand;
 
       const h4 = document.createElement("h4");

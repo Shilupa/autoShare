@@ -22,7 +22,7 @@ const add_picture_by_reg_no = async (req, res) => {
 
     req.files.forEach((element) => {
       pictures.files.push(element.filename);
-      console.log("See this file: ", element);
+      //console.log("See this file: ", element);
       makeThumbnail(element.path, element.filename);
     });
 
@@ -30,8 +30,7 @@ const add_picture_by_reg_no = async (req, res) => {
     pictures.placeholder = req.params.placeHolder;
 
     const result = await pictureModel.addPictureByRegNo(pictures, res);
-
-    res.status(201).json({ message: "picture added", pictures: result });
+    //res.status(201).json({ message: "picture added", pictures: result });
   } else {
     res
       .status(400)
@@ -39,9 +38,12 @@ const add_picture_by_reg_no = async (req, res) => {
   }
 };
 
-/*
-const delete_user = async (req, res) => {
-  const result = await userModel.deleteUserById(req.params.userId, res);
+const delete_picture_by_reg_no = async (req, res) => {
+  const result = await pictureModel.deletePictureByRegNo(
+    req.params.regNo,
+    req.params.placeHolder,
+    res
+  );
   console.log("user deleted", result);
   if (result.affectedRows > 0) {
     res.json({ message: "user deleted" });
@@ -50,6 +52,7 @@ const delete_user = async (req, res) => {
   }
 };
 
+/*
 const modify_user = async (req, res) => {
   const user = req.body;
   user.id = req.params.userId;
@@ -70,4 +73,5 @@ const modify_user = async (req, res) => {
 module.exports = {
   get_picture_by_reg_no,
   add_picture_by_reg_no,
+  delete_picture_by_reg_no,
 };

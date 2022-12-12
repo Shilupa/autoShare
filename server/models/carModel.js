@@ -121,7 +121,7 @@ const modifyCarByRegId = async (carObject, res) => {
   console.log("Modifying car", carObject);
   try {
     const sql =
-      "Update car set brand=?, model=?, year_=?, transmission=?, fuel_type=?, seater=?, color=?, rent_price=?, car_address=?, pickup_date=?, pickup_time=?, dropoff_date=?, dropoff_time=?, person_id=? where reg_no=?";
+      "Update car set brand=?, model=?, year_=?, transmission=?, fuel_type=?, seater=?, color=?, rent_price=?, car_address=?, pickup_date=?, pickup_time=?, dropoff_date=?, dropoff_time=? where reg_no=? and person_id=?";
     const values = [
       carObject.brand,
       carObject.model,
@@ -136,8 +136,8 @@ const modifyCarByRegId = async (carObject, res) => {
       carObject.pickup_time,
       carObject.dropoff_date,
       carObject.dropoff_time,
-      carObject.person_id,
       carObject.reg_no,
+      carObject.person_id,
     ];
 
     const [result] = await promisePool.query(sql, values);

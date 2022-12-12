@@ -6,7 +6,7 @@ const fs = require("fs");
 const getPictureByRegNo = async (carRegNo, res) => {
   try {
     const [rows] = await promisePool.query(
-      "SELECT file_name FROM pictures WHERE car_reg_no = ?",
+      "SELECT placeholder, file_name FROM pictures WHERE car_reg_no = ?",
       [carRegNo]
     );
     return rows;
@@ -46,19 +46,20 @@ const addPictureByRegNo = async (pictureObject, res) => {
     res.status(500).send(e.message);
   }
 };
-/*
-const deleteUserById = async (userId, res) => {
+
+const deletePictureByRegNo = async (regNo, placeHolder, res) => {
   try {
-    const [rows] = await promisePool.query("DELETE FROM person WHERE id = ?", [
-      userId,
-    ]);
+    const [rows] = await promisePool.query(
+      "DELETE FROM pictures WHERE car_reg_no = ? and placeholder = ?",
+      [regNo, placeHolder]
+    );
     return rows;
   } catch (e) {
     console.error("error", e.message);
     res.status(500).send(e.message);
   }
 };
-
+/*
 const modifyUserById = async (userObject, res) => {
   try {
     const sql =
@@ -88,4 +89,5 @@ const modifyUserById = async (userObject, res) => {
 module.exports = {
   getPictureByRegNo,
   addPictureByRegNo,
+  deletePictureByRegNo,
 };

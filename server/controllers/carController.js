@@ -46,6 +46,10 @@ const delete_car = async (req, res) => {
 const modify_car = async (req, res) => {
   const car = req.body;
   car.reg_no = req.params.carRegId;
+  car.person_id = req.params.userId;
+
+  console.log("Bibek bro: ", req.params.carRegId, req.params.userId);
+
   const result = await carModel.modifyCarByRegId(car, res);
   console.log(result.affectedRows);
   if (result.affectedRows > 0) {

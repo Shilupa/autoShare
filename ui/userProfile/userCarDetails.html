@@ -115,48 +115,78 @@
                   id="placeholder1"
                   enctype="multipart/form-data"
                 >
+                  <span class="delete" id="delete_PH1">&#10005;</span>
                   <label for="file-input_1">
                     <img
+                      id="PH_1_image"
                       src="https://icons.iconarchive.com/icons/graphicloads/100-flat-2/128/add-icon.png"
                     />
                   </label>
-                  <input id="file-input_1" type="file" />
+                  <input id="file-input_1" type="file" name="file_name" />
                 </form>
-                <!-- 
-                <div class="image-container" id="placeholder2">
-                  <label for="file-input">
-                    <img
-                      src="https://icons.iconarchive.com/icons/graphicloads/100-flat-2/128/add-icon.png"
-                    />
-                  </label>
-                  <input id="file-input" type="file" />
-                </div>
 
-                <div class="image-container" id="placeholder3">
-                  <label for="file-input">
+                <form
+                  action="#"
+                  class="image-container"
+                  id="placeholder2"
+                  enctype="multipart/form-data"
+                >
+                  <span class="delete" id="delete_PH2">&#10005;</span>
+                  <label for="file-input_2">
                     <img
+                      id="PH_2_image"
                       src="https://icons.iconarchive.com/icons/graphicloads/100-flat-2/128/add-icon.png"
                     />
                   </label>
-                  <input id="file-input" type="file" />
-                </div>
+                  <input id="file-input_2" type="file" name="file_name" />
+                </form>
 
-                <div class="image-container" id="placeholder4">
-                  <label for="file-input">
+                <form
+                  action="#"
+                  class="image-container"
+                  id="placeholder3"
+                  enctype="multipart/form-data"
+                >
+                  <span class="delete" id="delete_PH3">&#10005;</span>
+                  <label for="file-input_3">
                     <img
+                      id="PH_3_image"
                       src="https://icons.iconarchive.com/icons/graphicloads/100-flat-2/128/add-icon.png"
                     />
                   </label>
-                  <input id="file-input" type="file" />
-                </div>
-                <div class="image-container" id="placeholder5">
-                  <label for="file-input">
+                  <input id="file-input_3" type="file" name="file_name" />
+                </form>
+
+                <form
+                  action="#"
+                  class="image-container"
+                  id="placeholder4"
+                  enctype="multipart/form-data"
+                >
+                  <span class="delete" id="delete_PH4">&#10005;</span>
+                  <label for="file-input_4">
                     <img
+                      id="PH_4_image"
                       src="https://icons.iconarchive.com/icons/graphicloads/100-flat-2/128/add-icon.png"
                     />
                   </label>
-                  <input id="file-input" type="file" /> 
-                </div>  -->
+                  <input id="file-input_4" type="file" name="file_name" />
+                </form>
+                <form
+                  action="#"
+                  class="image-container"
+                  id="placeholder5"
+                  enctype="multipart/form-data"
+                >
+                  <span class="delete" id="delete_PH5">&#10005;</span>
+                  <label for="file-input_5">
+                    <img
+                      id="PH_5_image"
+                      src="https://icons.iconarchive.com/icons/graphicloads/100-flat-2/128/add-icon.png"
+                    />
+                  </label>
+                  <input id="file-input_5" type="file" name="file_name" />
+                </form>
               </div>
             </div>
 
@@ -166,16 +196,29 @@
                   type="text"
                   placeholder="Enter car registration number"
                   name="reg_no"
+                  class="reg_no"
                   disabled
                 />
                 <i class="fa-solid fa-car"></i>
               </div>
               <div class="input-field">
-                <input type="text" placeholder="Brand" name="brand" required />
+                <input
+                  type="text"
+                  placeholder="Brand"
+                  name="brand"
+                  class="brand"
+                  required
+                />
                 <i class="fa-solid fa-car"></i>
               </div>
               <div class="input-field">
-                <input type="text" placeholder="Model" name="model" required />
+                <input
+                  type="text"
+                  placeholder="Model"
+                  name="model"
+                  class="model"
+                  required
+                />
                 <i class="fa-solid fa-car"></i>
               </div>
               <div class="input-field">
@@ -183,12 +226,19 @@
                   type="text"
                   placeholder="Location"
                   name="car_address"
+                  class="car_address"
                   required
                 />
                 <i class="fa-solid fa-location-pin"></i>
               </div>
               <div class="input-field">
-                <input type="text" placeholder="Color" name="color" required />
+                <input
+                  type="text"
+                  placeholder="Color"
+                  name="color"
+                  class="color"
+                  required
+                />
                 <i class="fa-solid fa-palette"></i>
               </div>
               <div class="input-field">
@@ -199,6 +249,7 @@
                   step="1"
                   placeholder="1990"
                   name="year_"
+                  class="year_"
                 />
                 <i class="fa-solid fa-calendar"></i>
               </div>
@@ -207,6 +258,7 @@
                   type="text"
                   placeholder="Fuel type"
                   name="fuel_type"
+                  class="fuel_type"
                   required
                 />
                 <i class="fa-solid fa-gas-pump"></i>
@@ -216,6 +268,7 @@
                   type="text"
                   placeholder="Transmission"
                   name="transmission"
+                  class="transmission"
                   required
                 />
                 <i class="fa-solid fa-gears"></i>
@@ -228,6 +281,7 @@
                   step="1"
                   placeholder="number of people"
                   name="seater"
+                  class="seater"
                   required
                 />
                 <i class="fa-solid fa-users"></i>
@@ -237,6 +291,7 @@
                   type="text"
                   placeholder="rent per hour"
                   name="rent_price"
+                  class="rent_price"
                   required
                 />
                 <i class="fa-solid fa-coins"></i>
@@ -251,6 +306,7 @@
                     onfocus="(this.type='date')"
                     id="start-date"
                     name="pickup_date"
+                    class="pickup_date"
                   />
                   <i class="fa-solid fa-hourglass-start"></i>
                 </div>
@@ -262,6 +318,7 @@
                     onfocus="(this.type='time')"
                     id="start-time"
                     name="pickup_time"
+                    class="pickup_time"
                   />
                   <i class="fa-solid fa-clock"></i>
                 </div>
@@ -273,6 +330,7 @@
                     onfocus="(this.type='date')"
                     id="end-date"
                     name="dropoff_date"
+                    class="dropoff_date"
                   />
                   <i class="fa-solid fa-hourglass-end"></i>
                 </div>
@@ -284,6 +342,7 @@
                     onfocus="(this.type='time')"
                     id="end-time"
                     name="dropoff_time"
+                    class="dropoff_time"
                   />
                   <i class="fa-solid fa-clock"></i>
                 </div>
@@ -291,7 +350,7 @@
 
               <div class="input-field button">
                 <!-- <input type="button" /> -->
-                <button type="submit" class="upload-btn">Upload</button>
+                <button type="submit" class="upload-btn">Update</button>
               </div>
             </form>
           </div>

@@ -23,6 +23,7 @@ router
     "/:regNo/:placeHolder",
     upload.array("file_name", 1),
     pictureController.add_picture_by_reg_no
-  );
+  )
+  .delete("/:regNo/:placeHolder", pictureController.delete_picture_by_reg_no);
 
 module.exports = router;

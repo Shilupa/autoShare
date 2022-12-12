@@ -241,7 +241,6 @@ a {
   width: 80%;
 }
 
-
 /* .mup-msg {
   text-align: center;
   display: flex;
@@ -272,7 +271,7 @@ a {
   pointer-events: unset;
 }
 
-.image-container:before {
+.delete {
   /* z-index: 3; */
   content: "\2716";
   align-content: center;
@@ -296,8 +295,8 @@ a {
   display: none;
 }
 
-.multiple-uploader img{
-  max-height: 120px ;
+.multiple-uploader img {
+  max-height: 120px;
   margin: 5px;
 }
 
