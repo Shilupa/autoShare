@@ -85,8 +85,16 @@
                 action=""
                 method=""
                 enctype="multipart/form-data"
-                id="example"
-              ></form>
+                id="my-form"
+              >
+                <input
+                  type="file"
+                  name="images[]"
+                  multiple=""
+                  accept="image/*"
+                  style="display: none !important"
+                />
+              </form>
               <div class="multiple-uploader" id="multiple-uploader">
                 <div class="mup-msg">
                   <span class="mup-main-msg">click to upload images.</span>
@@ -97,6 +105,45 @@
                     >Only images are allowed for upload</span
                   >
                 </div>
+
+              </div> -->
+
+              <div class="multiple-uploader" id="multiple-uploader">
+
+                <div class="image-container">
+                  <label for="file-input">
+                    <img src="https://icons.iconarchive.com/icons/graphicloads/100-flat-2/128/add-icon.png"/>
+                  </label>
+                  <input id="file-input" type="file" />
+                </div>
+
+                <div class="image-container">
+                  <label for="file-input">
+                    <img src="https://icons.iconarchive.com/icons/graphicloads/100-flat-2/128/add-icon.png"/>
+                  </label>
+                  <input id="file-input" type="file" />
+                </div>
+
+                <div class="image-container">
+                  <label for="file-input">
+                    <img src="https://icons.iconarchive.com/icons/graphicloads/100-flat-2/128/add-icon.png"/>
+                  </label>
+                  <input id="file-input" type="file" />
+                </div>
+
+                <div class="image-container">
+                  <label for="file-input">
+                    <img src="https://icons.iconarchive.com/icons/graphicloads/100-flat-2/128/add-icon.png"/>
+                  </label>
+                  <input id="file-input" type="file" />
+                </div>
+                <div class="image-container">
+                  <label for="file-input">
+                    <img src="https://icons.iconarchive.com/icons/graphicloads/100-flat-2/128/add-icon.png"/>
+                  </label>
+                  <input id="file-input" type="file" />
+                </div>
+
               </div>
             </div>
 
@@ -240,5 +287,14 @@
     </div>
     <script src="addCar.js"></script>
     <script src="../serialize.js"></script>
+<!--     <script src="multiple-uploader.js"></script>
+    <script>
+      let multipleUploader = new MultipleUploader("#multiple-uploader").init({
+        maxUpload: 20, // maximum number of uploaded images
+        maxSize: 2, // in size in mb
+        filesInpName: "images", // input name sent to backend
+        formSelector: "#my-form", // form selector
+      });
+    </script> -->
   </body>
 </html>
