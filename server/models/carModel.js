@@ -5,23 +5,23 @@ const promisePool = pool.promise();
 const getHomeCars = async () => {
   try {
     const queries =
-/*       "select *,avg(homeCar.rating) as average_rating from (SELECT c.reg_no, c.brand, r.rating, c.model, c.seater, c.fuel_type, c.transmission, c.rent_price, homePics.file_name , bp.name as bookingPerson " +
+      "select *,avg(homeCar.rating) as average_rating from (SELECT c.reg_no, c.brand, r.rating, c.model, c.seater, c.fuel_type, c.transmission, c.rent_price, homePics.file_name , bp.name as bookingPerson " +
       "FROM car c " +
       //"left outer join person p on c.person_id=p.id " +
       "left outer join booking b on b.car_reg_no=c.reg_no " +
       "left outer join person bp on b.person_id = bp.id " +
       "left outer join review r on b.id = r.booking_id " +
-      "left outer join (SELECT * FROM pictures group by car_reg_no) homePics on c.reg_no = homePics.car_reg_no) homeCar group by homeCar.reg_no"; */
+      "left outer join (SELECT * FROM pictures group by car_reg_no) homePics on c.reg_no = homePics.car_reg_no) homeCar group by homeCar.reg_no"; 
     // we need car brand, car name , rating, seater, fuel, transmission rent price and post name
 
     // For Shilpa
-          "SELECT c.reg_no, c.brand, c.model, r.rating, r.comment, c.seater, c.fuel_type, c.transmission, c.rent_price, homePics.file_name, bp.name as bookingPerson " +
+/*           "SELECT c.reg_no, c.brand, c.model, r.rating, r.comment, c.seater, c.fuel_type, c.transmission, c.rent_price, homePics.file_name, bp.name as bookingPerson " +
       "FROM car c " +
       //"left outer join person p on c.person_id=p.id " +
       "left outer join booking b on b.car_reg_no=c.reg_no " +
       "left outer join person bp on b.person_id = bp.id " +
       "left outer join review r on b.id = r.booking_id " +
-      "left outer join pictures homePics on c.reg_no = homePics.car_reg_no"; 
+      "left outer join pictures homePics on c.reg_no = homePics.car_reg_no";  */
     const [rows] = await promisePool.query(queries);
 
     return rows;
