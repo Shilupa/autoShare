@@ -32,6 +32,7 @@ const login = (req, res) => {
 const register = async (req, res) => {
   console.log("creating a new user: ", req.body);
   const newUser = req.body;
+  console.log(newUser);
   if (!newUser.role_) {
     newUser.role_ = "User";
   }

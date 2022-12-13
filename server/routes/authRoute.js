@@ -10,7 +10,7 @@ router
   .post(
     "/register",
     body("name").isLength({ min: 3 }).trim().escape(),
-    body("email").isEmail().normalizeEmail(),
+    body("email").isEmail(),
     body("gender").notEmpty(),
     body("dob").isDate(),
     body("phone_").notEmpty(),
