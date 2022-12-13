@@ -30,5 +30,7 @@ registerForm.addEventListener("submit", async (event) => {
   const json = await response.json();
   alert(json.message);
   //TODO: navigation to login page.
-  location.href = "../login/login-1.html";
+  if (json.status === 201) {
+    location.href = "../login/login-1.html";
+  }else{}
 });

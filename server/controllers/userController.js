@@ -43,7 +43,7 @@ const delete_user = async (req, res) => {
   const result = await userModel.deleteUserById(req.params.userId, res);
   console.log("user deleted", result);
   if (result.affectedRows > 0) {
-    res.json({ message: "user deleted" });
+    res.json({ message: "user deleted", status: 200 });
   } else {
     res.status(404).json({ message: "user delete failed" });
   }

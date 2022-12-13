@@ -44,7 +44,11 @@ const register = async (req, res) => {
     const passwordHash = await bcrypt.hash(newUser.password, salt);
     newUser.password = passwordHash;
     const result = await addUser(newUser, res);
-    res.status(201).json({ message: "user created", newUserId: result });
+    if (result === 0) {
+      res.json({ message: "Email already in use!", status: 400 });
+    } else {
+      res.json({ message: "User created", status: 201 });
+    }
   } else {
     res
       .status(400)

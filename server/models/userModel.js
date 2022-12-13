@@ -26,8 +26,18 @@ const getUserById = async (userId, res) => {
 };
 
 const addUser = async (userObject, res) => {
-  console.log("userModel", userObject);
+  let emailExist = false;
   try {
+    const [userRow] = await promisePool.query("SELECT * from person");
+    userRow.forEach((user) => {
+      if (user.email == userObject.email) {
+        emailExist = true;
+      }
+    });
+
+    if (emailExist) {
+      return 0;
+    }
     const sql =
       "INSERT INTO person (name, email, password, street_address, phone_, city, postal_code,license, gender, dob, role_) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     const values = [

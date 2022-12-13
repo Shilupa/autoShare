@@ -15,7 +15,7 @@ const getHomeCars = async () => {
     // we need car brand, car name , rating, seater, fuel, transmission rent price and post name
 
     // For Shilpa
-    /*           "SELECT c.reg_no, c.brand, c.model, r.rating, r.comment, c.seater, c.fuel_type, c.transmission, c.rent_price, homePics.file_name, bp.name as bookingPerson " +
+     /*         "SELECT c.reg_no, c.brand, c.model, r.rating, r.comment, c.seater, c.fuel_type, c.transmission, c.rent_price, homePics.file_name, bp.name as bookingPerson " +
       "FROM car c " +
       //"left outer join person p on c.person_id=p.id " +
       "left outer join booking b on b.car_reg_no=c.reg_no " +
