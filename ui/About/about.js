@@ -2,9 +2,15 @@
 const url = "http://localhost:3000"; // change url when uploading to server
 //const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
 
+//normal view button
 const btnLogin = document.querySelector("#btn-login");
 const userHtml = document.querySelector("#user-html");
 const btnLogout = document.querySelector("#btn-logout");
+
+//hamburger-menu
+const hamburgerBtnLogin = document.querySelector("#hamburger-login");
+const hamburgerBtnLogout = document.querySelector("#hamburger-logout");
+const hamburgerUserHtml = document.querySelector("#hamburger-user-html");
 
 const token = sessionStorage.getItem("token");
 const user = JSON.parse(sessionStorage.getItem("user"));
@@ -18,10 +24,29 @@ if (token != null) {
   userHtml.addEventListener("click", () => {
     location.href = "../userProfile/userProfile.html";
   });
+
+    //hamburger
+    hamburgerBtnLogin.style.display = "none";
+    hamburgerBtnLogout.style.display = "visible";
+    hamburgerUserHtml.innerHTML = `Hi ${user.name}!`;
+  
+    hamburgerUserHtml.addEventListener("click", () => {
+      location.href = "../userProfile/userProfile.html";
+    });
 } else {
   btnLogout.style.display = "none";
+  hamburgerBtnLogout.style.display = "none";
+  hamburgerUserHtml.style.display = "none";
 }
+
+//normal logout button
 btnLogin.addEventListener("click", () => {
+  sessionStorage.removeItem("token");
+  sessionStorage.removeItem("user");
+});
+
+//hamburger logout button
+hamburgerBtnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
 });

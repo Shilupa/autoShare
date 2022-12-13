@@ -6,18 +6,34 @@ const ul = document.querySelector(".car-list");
 const carName = document.querySelector(".brand");
 const fuel = document.querySelector(".fuel");
 const gearbox = document.querySelector(".gearbox");
+
+//selecting from normal view
 const btnLogout = document.querySelector("#btn-logout");
-const hamburgerLogOut = document.querySelector("#hamburger-logout");
 const userHtml = document.querySelector("#user-html");
+
+//selecting from hamburger
+const hamburgerBtnLogout = document.querySelector("#hamburger-logout");
+const hamburgerUserHtml = document.querySelector("#hamburger-user-html");
 
 const token = sessionStorage.getItem("token");
 const user = JSON.parse(sessionStorage.getItem("user"));
 console.log(user, token);
 
+//checking token if it exists
 if (token != null) {
-  // adding user name in header bar
+
+  //normal page
   userHtml.innerHTML = `Hi ${user.name}!`;
+
   userHtml.addEventListener("click", () => {
+    location.href = "../userProfile/userProfile.html";
+  });
+
+  //hamburger
+  hamburgerBtnLogout.style.display = "visible";
+  hamburgerUserHtml.innerHTML = `Hi ${user.name}!`;
+
+  hamburgerUserHtml.addEventListener("click", () => {
     location.href = "../userProfile/userProfile.html";
   });
 
@@ -109,6 +125,10 @@ if (token != null) {
     //createCarCards(cars);
     //sortCars(cars);
   })();
+}else {
+  btnLogout.style.display = "none";
+  hamburgerBtnLogout.style.display = "none";
+  hamburgerUserHtml.style.display = "none";
 }
 
 btnLogout.addEventListener("click", () => {
@@ -116,7 +136,7 @@ btnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("user");
 });
 
-hamburgerLogOut.addEventListener("click", () => {
+hamburgerBtnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
 });

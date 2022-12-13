@@ -45,6 +45,7 @@ if (token != null) {
 } else {
   btnLogout.style.display = "none";
   hamburgerBtnLogout.style.display = "none";
+  hamburgerUserHtml.style.display = "none";
 }
 
 //normal logout button
