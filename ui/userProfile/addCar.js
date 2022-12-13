@@ -16,7 +16,6 @@ const userHtml = document.querySelector("#user-html");
 //selecting from hamburger
 const hamburgerBtnLogout = document.querySelector("#hamburger-logout");
 const hamburgerUserHtml = document.querySelector("#hamburger-user-html");
-
 //checking token if it exists
 if (token != null) {
 
@@ -30,12 +29,12 @@ if (token != null) {
   //hamburger
   hamburgerBtnLogout.style.display = "visible";
   hamburgerUserHtml.innerHTML = `Hi ${user.name}!`;
-
   hamburgerUserHtml.addEventListener("click", () => {
     location.href = "../userProfile/userProfile.html";
   });
 
 } else {
+  location.href="../Home/home.html";
   btnLogout.style.display = "none";
   hamburgerBtnLogout.style.display = "none";
   hamburgerUserHtml.style.display = "none";
@@ -44,11 +43,13 @@ if (token != null) {
 btnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
+  location.href="../Home/home.html";
 });
 
 hamburgerBtnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
+  location.href="../Home/home.html";
 });
 
 

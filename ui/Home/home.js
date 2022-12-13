@@ -20,11 +20,16 @@ const gearbox = document.querySelector(".gearbox-value");
 
 const token = sessionStorage.getItem("token");
 const user = JSON.parse(sessionStorage.getItem("user"));
-console.log("From home.js line 19", user, token);
+/* console.log("From home.js line 19", user, token); */
 
 //checking token if it exists
 if (token != null) {
-  //normal page
+
+  //create cookie
+  let x = document.cookie;
+  document.cookie = "username=John Doe";
+  //read a cookie
+  console.log('cookie:'+ document.cookie);
   btnLogin.style.display = "none";
   btnLogout.style.display = "visible";
   userHtml.innerHTML = `Hi ${user.name}!`;
@@ -52,12 +57,14 @@ if (token != null) {
 btnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
+  document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 });
 
 //hamburger logout button
 hamburgerBtnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
+  document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 });
 
 // Fetching car data from server

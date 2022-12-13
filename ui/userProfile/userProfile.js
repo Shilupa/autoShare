@@ -15,6 +15,8 @@ const password = document.querySelector(".password");
 const confrimPassword = document.querySelector(".confirm-password");
 const profileImage = document.querySelector("#profile-image");
 
+console.log('cookie:'+ document.cookie);
+
 // place holder for profile
 const profile_pic_form = document.getElementById("upload");
 const profile_pic_img = document.getElementById("profile-image");
@@ -50,7 +52,6 @@ if (token != null) {
 
   //normal page
   userHtml.innerHTML = `Hi ${user.name}!`;
-
   userHtml.addEventListener("click", () => {
     location.href = "../userProfile/userProfile.html";
   });
@@ -58,11 +59,11 @@ if (token != null) {
   //hamburger
   hamburgerBtnLogout.style.display = "visible";
   hamburgerUserHtml.innerHTML = `Hi ${user.name}!`;
-
   hamburgerUserHtml.addEventListener("click", () => {
     location.href = "../userProfile/userProfile.html";
   });
 }else {
+  location.href="../Home/home.html";
   btnLogout.style.display = "none";
   hamburgerBtnLogout.style.display = "none";
   hamburgerUserHtml.style.display = "none";

@@ -131,21 +131,21 @@ const createCarCard = async (car) => {
     const details =
       '<div class="details">' +
       // hardcoded image file to be replaced with image.file_name
-      `<img src="${url}/thumbnails/9f485ee5215ccb772bde1048b6f13f06"  alt=""  class="car-img"/>` +
+      `<img src="${url}/uploads/1670879191510-191530.jpg"  alt=""  class="car-img"/>` +
       `<p> ${image.file_name} </p>` +
       "</div>";
     const detail = document.createElement("div");
     detail.innerHTML = details;
     htmlImage.append(detail);
   });
-  const selectAll = document.querySelectorAll(".details");
+/*   const selectAll = document.querySelectorAll(".details");
   selectAll[0].style.display = "none";
   selectAll[1].style.display = "visible";
 
   swipeLeft.addEventListener("click", () => {
     selectAll[0].style.display = "visible";
     selectAll[1].style.display = "none";
-  });
+  }); */
 };
 
 // Fetching user data or car images from respective databases
