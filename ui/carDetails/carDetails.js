@@ -131,7 +131,7 @@ const createCarCard = async (car) => {
     const details =
       '<div class="details">' +
       // hardcoded image file to be replaced with image.file_name
-      `<img src="${url}/uploads/1670879191510-191530.jpg"  alt=""  class="car-img"/>` +
+      `<img src="${url}/thumbnails/${image.file_name}"  alt=""  class="car-img"/>` +
       `<p> ${image.file_name} </p>` +
       "</div>";
     const detail = document.createElement("div");
@@ -142,7 +142,6 @@ const createCarCard = async (car) => {
   const bookingUrl = `${url}/booking/${car.reg_no}`;
   const booking = await getData(bookingUrl);
   console.log("booking id", booking.id);
-
 };
 
 // Fetching user data or car images from respective databases
