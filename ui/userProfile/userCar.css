@@ -172,6 +172,22 @@ a {
   text-decoration: none;
 }
 
+.details ul li:last-of-type {
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  color: red;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.details ul li:last-of-type:hover{
+  color: #d11a2a;
+}
+
+
 .checked {
   color: orange;
 }
@@ -181,7 +197,7 @@ a {
   margin-top: 30px;
   margin-bottom: 30px;
   width: 240px;
-  height: 360px;
+  height: 390px;
   display: flex;
   flex-direction: column;
   justify-content: center;

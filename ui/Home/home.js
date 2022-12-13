@@ -1,13 +1,16 @@
 "use strict";
 
-//const url = "http://localhost:3000"; // change url when uploading to server
-const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
+const url = "http://localhost:3000"; // change url when uploading to server
+//const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
 
 const ul = document.querySelector(".car-list");
 const searchedList = document.querySelector("#searched-list");
 const btnLogin = document.querySelector("#btn-login");
 const btnLogout = document.querySelector("#btn-logout");
 const userHtml = document.querySelector("#user-html");
+const hamburgerBtnLogin = document.querySelector("#hamburger-login");
+const hamburgerBtnLogout = document.querySelector("#hamburger-logout");
+const hamburgerUserHtml = document.querySelector("#hamburger-user-html");
 const search = document.querySelector("#search");
 const notFound = document.querySelector("#number-of-cars");
 const sortCar = document.querySelectorAll(".sort");
@@ -21,6 +24,7 @@ console.log("From home.js line 19", user, token);
 
 //checking token if it exists
 if (token != null) {
+  //normal page
   btnLogin.style.display = "none";
   btnLogout.style.display = "visible";
   userHtml.innerHTML = `Hi ${user.name}!`;
@@ -28,11 +32,29 @@ if (token != null) {
   userHtml.addEventListener("click", () => {
     location.href = "../userProfile/userProfile.html";
   });
+
+  //hamburger
+  hamburgerBtnLogin.style.display = "none";
+  hamburgerBtnLogout.style.display = "visible";
+  hamburgerUserHtml.innerHTML = `Hi ${user.name}!`;
+
+  hamburgerUserHtml.addEventListener("click", () => {
+    location.href = "../userProfile/userProfile.html";
+  });
+
 } else {
   btnLogout.style.display = "none";
+  hamburgerBtnLogout.style.display = "none";
 }
 
+//normal logout button
 btnLogout.addEventListener("click", () => {
+  sessionStorage.removeItem("token");
+  sessionStorage.removeItem("user");
+});
+
+//hamburger logout button
+hamburgerBtnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
 });
