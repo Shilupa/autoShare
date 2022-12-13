@@ -14,6 +14,7 @@ const license = document.querySelector(".license");
 const password = document.querySelector(".password");
 const confrimPassword = document.querySelector(".confirm-password");
 const profileImage = document.querySelector("#profile-image");
+const deleteBtn = document.querySelector("#delete-button");
 
 // place holder for profile
 const profile_pic_form = document.getElementById("upload");
@@ -47,7 +48,6 @@ const user = JSON.parse(sessionStorage.getItem("user"));
 
 //checking token if it exists
 if (token != null) {
-
   //normal page
   userHtml.innerHTML = `Hi ${user.name}!`;
 
@@ -62,7 +62,7 @@ if (token != null) {
   hamburgerUserHtml.addEventListener("click", () => {
     location.href = "../userProfile/userProfile.html";
   });
-}else {
+} else {
   btnLogout.style.display = "none";
   hamburgerBtnLogout.style.display = "none";
   hamburgerUserHtml.style.display = "none";
@@ -151,3 +151,21 @@ profile_pic_form.onchange = async () => {
   } else {
   }
 };
+
+deleteBtn.addEventListener("click", async () => {
+  console.log("hello", user.id);
+  const fetchOptions = {
+    method: "DELETE",
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  };
+  const response = await fetch(`${url}/user/${user.id}`, fetchOptions);
+  const json = await response.json();
+  if (json.status === 200) {
+    alert(json.message);
+    location.href = "../login/login-1.html";
+  } else {
+    alert("Something went wrong!!");
+  }
+});

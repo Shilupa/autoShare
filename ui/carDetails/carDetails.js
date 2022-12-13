@@ -35,7 +35,6 @@ const tokenUser = JSON.parse(sessionStorage.getItem("user"));
 
 //checking token if it exists
 if (token != null) {
-
   //normal page
   userHtml.innerHTML = `Hi ${tokenUser.name}!`;
 
@@ -50,7 +49,7 @@ if (token != null) {
   hamburgerUserHtml.addEventListener("click", () => {
     location.href = "../userProfile/userProfile.html";
   });
-}else {
+} else {
   btnLogout.style.display = "none";
   hamburgerBtnLogout.style.display = "none";
   hamburgerUserHtml.style.display = "none";
@@ -125,6 +124,7 @@ const createCarCard = async (car) => {
   // Fetching car images
   const carUrl = `${url}/pictures/${car.reg_no}`;
   const carImages = await getData(carUrl);
+  console.log(carImages.length);
 
   carImages.forEach((image) => {
     console.log(image.file_name);
@@ -138,14 +138,10 @@ const createCarCard = async (car) => {
     detail.innerHTML = details;
     htmlImage.append(detail);
   });
-  const selectAll = document.querySelectorAll(".details");
-  selectAll[0].style.display = "none";
-  selectAll[1].style.display = "visible";
 
-  swipeLeft.addEventListener("click", () => {
-    selectAll[0].style.display = "visible";
-    selectAll[1].style.display = "none";
-  });
+  const bookingUrl = `${url}/booking/${car.reg_no}`;
+  const booking = await getData(bookingUrl);
+  console.log("booking id", booking.id);
 };
 
 // Fetching user data or car images from respective databases
