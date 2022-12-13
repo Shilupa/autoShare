@@ -21,10 +21,11 @@ const user = document.querySelector(".user-value");
 const phone = document.querySelector(".phone-value");
 const email = document.querySelector(".email-value");
 const address = document.querySelector(".address-value");
+const htmlImage = document.querySelector(".images");
 
 const token = sessionStorage.getItem("token");
 const tokenUser = JSON.parse(sessionStorage.getItem("user"));
-console.log(tokenUser, token);
+//console.log(tokenUser, token);
 //checking token if it exists
 if (token != null) {
   btnLogin.style.display = "none";
@@ -73,13 +74,6 @@ const createCarCard = async (car) => {
   // Setting attribute for brand to use for filtering
   h3.setAttribute("className", "brand");
   h3.innerHTML = car.brand;
-
-  /*   const img = document.createElement("img");
-  img.src = url + "/thumbnails/" + car.filename;
-  img.alt = car.brand;
-  img.classList.add("resp"); */
-
-  //const figure = document.createElement("figure").appendChild(img);
   carName.innerHTML = car.brand;
   fuel.innerHTML = car.fuel_type;
   gearbox.innerHTML = car.transmission;
@@ -95,19 +89,43 @@ const createCarCard = async (car) => {
   startTime.innerHTML = car.pickup_time;
   endDate.innerHTML = splittedEndDate[0];
   endTime.innerHTML = car.dropoff_time;
-  const person = await getUser(car.person_id);
+
+  // Fetching person data
+  const personUrl = `${url}/user/${car.person_id}`;
+  const person = await getData(personUrl);
+
   user.innerHTML = person.name;
   phone.innerHTML = person.phone_;
   email.innerHTML = person.email;
   address.innerHTML = person.street_address;
+
+  // Fetching car images
+  const carUrl = `${url}/pictures/${car.reg_no}`;
+  const carImages = await getData(carUrl);
+
+  carImages.forEach((image) => {
+    console.log(image.file_name);
+    const details =
+      '<div class="details">' +
+      '<i class="fa-solid fa-circle-left"></i>' +
+      // hardcoded image file to be replaced with image.file_name
+      `<img src="${url}/thumbnails/9f485ee5215ccb772bde1048b6f13f06"  alt=""  class="car-img"/>` +
+      '<i class="fa-solid fa-circle-right"></i>';
+    ("</div>");
+    const detail = document.createElement("div");
+    detail.innerHTML = details;
+    htmlImage.append(detail);
+  });
 };
-const getUser = async (person_id) => {
+
+// Fetching user data or car images from respective databases
+const getData = async (url) => {
   const fetchOptions = {
     headers: {
       Authorization: "Bearer " + sessionStorage.getItem("token"),
     },
   };
-  const response = await fetch(url + "/user/" + person_id, fetchOptions);
+  const response = await fetch(url, fetchOptions);
   return await response.json();
 };
 
