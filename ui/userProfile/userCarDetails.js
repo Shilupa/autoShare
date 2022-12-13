@@ -51,30 +51,48 @@ const dropoff_date_text = document.querySelector(".dropoff_date");
 const dropoff_time_text = document.querySelector(".dropoff_time");
 const form = document.querySelector("#add-car");
 
-//selecting header menu
+//selecting from normal view
 const btnLogout = document.querySelector("#btn-logout");
 const userHtml = document.querySelector("#user-html");
 
+//selecting from hamburger
+const hamburgerBtnLogout = document.querySelector("#hamburger-logout");
+const hamburgerUserHtml = document.querySelector("#hamburger-user-html");
+
 //const container = document.querySelector('.image-container');
 
+//checking token if it exists
 if (token != null) {
-  btnLogout.style.display = "visible";
-  userHtml.style.display = "visible";
+
+  //normal page
   userHtml.innerHTML = `Hi ${user.name}!`;
-  userHtml.style.color = "#006400";
 
   userHtml.addEventListener("click", () => {
     location.href = "../userProfile/userProfile.html";
   });
 
-  btnLogout.addEventListener("click", () => {
-    sessionStorage.removeItem("token");
-    sessionStorage.removeItem("user");
+  //hamburger
+  hamburgerBtnLogout.style.display = "visible";
+  hamburgerUserHtml.innerHTML = `Hi ${user.name}!`;
+
+  hamburgerUserHtml.addEventListener("click", () => {
+    location.href = "../userProfile/userProfile.html";
   });
-} else {
+}else {
   btnLogout.style.display = "none";
-  userHtml.style.display = "none";
+  hamburgerBtnLogout.style.display = "none";
+  hamburgerUserHtml.style.display = "none";
 }
+
+btnLogout.addEventListener("click", () => {
+  sessionStorage.removeItem("token");
+  sessionStorage.removeItem("user");
+});
+
+hamburgerBtnLogout.addEventListener("click", () => {
+  sessionStorage.removeItem("token");
+  sessionStorage.removeItem("user");
+});
 
 // get query parameter
 const getQParam = (param) => {

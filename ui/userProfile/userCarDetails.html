@@ -25,7 +25,7 @@
           <a href="/ui/About/about.html" class="nav-link">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../userProfile/userProfile.html" id="user-html" ></a>
+          <a class="nav-link" href="../userProfile/userProfile.html" id="user-html" style="color: #006400;" ></a>
         </li>
         <li class="nav-item">
           <a href="/ui/Home/home.html" class="nav-link" id="btn-logout">
@@ -41,9 +41,10 @@
           <span class="bar"></span>
 
           <div class="dropdown-content">
-            <a href="/ui/Login/login-1.html" class="nav-link">Hi User!</a>
+            <a class="nav-link" href="../userProfile/userProfile.html" id="hamburger-user-html" ></a>
             <a href="/ui/About/about.html" class="nav-link">About Us</a>
-            <a href="/ui/Home/home.html" class="nav-link">Log Out</a>
+            <!-- should be hidden unless user has logged in -->
+            <a href="/ui/Home/home.html" class="nav-link" id="hamburger-logout">Log Out</a>
           </div>
         </div>
       </div>

@@ -13,14 +13,20 @@ const postalCode = document.querySelector(".postal_code");
 const license = document.querySelector(".license");
 const password = document.querySelector(".password");
 const confrimPassword = document.querySelector(".confirm-password");
-const btnLogout = document.querySelector("#btn-logout");
-const userHtml = document.querySelector("#user-html");
 const profileImage = document.querySelector("#profile-image");
 
 // place holder for profile
 const profile_pic_form = document.getElementById("upload");
 const profile_pic_img = document.getElementById("profile-image");
 const formPH1 = document.querySelector("#profile_pic_form");
+
+//selecting from normal view
+const btnLogout = document.querySelector("#btn-logout");
+const userHtml = document.querySelector("#user-html");
+
+//selecting from hamburger
+const hamburgerBtnLogout = document.querySelector("#hamburger-logout");
+const hamburgerUserHtml = document.querySelector("#hamburger-user-html");
 
 const token = sessionStorage.getItem("token");
 const user = JSON.parse(sessionStorage.getItem("user"));
@@ -39,24 +45,38 @@ const user = JSON.parse(sessionStorage.getItem("user"));
   //console.log(profile);
 })();
 
+//checking token if it exists
 if (token != null) {
-  btnLogout.style.display = "visible";
-  userHtml.style.display = "visible";
+
+  //normal page
   userHtml.innerHTML = `Hi ${user.name}!`;
-  userHtml.style.color = "#006400";
 
   userHtml.addEventListener("click", () => {
     location.href = "../userProfile/userProfile.html";
   });
 
-  btnLogout.addEventListener("click", () => {
-    sessionStorage.removeItem("token");
-    sessionStorage.removeItem("user");
+  //hamburger
+  hamburgerBtnLogout.style.display = "visible";
+  hamburgerUserHtml.innerHTML = `Hi ${user.name}!`;
+
+  hamburgerUserHtml.addEventListener("click", () => {
+    location.href = "../userProfile/userProfile.html";
   });
-} else {
+}else {
   btnLogout.style.display = "none";
-  userHtml.style.display = "none";
+  hamburgerBtnLogout.style.display = "none";
+  hamburgerUserHtml.style.display = "none";
 }
+
+btnLogout.addEventListener("click", () => {
+  sessionStorage.removeItem("token");
+  sessionStorage.removeItem("user");
+});
+
+hamburgerBtnLogout.addEventListener("click", () => {
+  sessionStorage.removeItem("token");
+  sessionStorage.removeItem("user");
+});
 
 userName.value = user.name;
 gender.value = user.gender;
