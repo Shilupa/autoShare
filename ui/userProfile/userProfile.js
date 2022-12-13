@@ -43,6 +43,11 @@ if (token != null) {
   btnLogout.style.display = "visible";
   userHtml.style.display = "visible";
   userHtml.innerHTML = `Hi ${user.name}!`;
+  userHtml.style.color = "#006400";
+
+  userHtml.addEventListener("click", () => {
+    location.href = "../userProfile/userProfile.html";
+  });
 
   btnLogout.addEventListener("click", () => {
     sessionStorage.removeItem("token");

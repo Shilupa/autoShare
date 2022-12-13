@@ -25,6 +25,7 @@ btnLogin.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
 });
+
 // Self invoking fuction which gets list of cars from database
 (async () => {
   try {

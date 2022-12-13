@@ -1,6 +1,6 @@
 "use strict";
-//const url = "http://localhost:3000"; // change url when uploading to server
-const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
+const url = "http://localhost:3000"; // change url when uploading to server
+//const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
 
 const ul = document.querySelector(".car-list");
 const carName = document.querySelector(".brand");
@@ -73,6 +73,9 @@ if (token != null) {
         '<li class="gearbox">' +
         '<i class="fa-solid fa-gears">&nbsp;</i>' +
         `${car.transmission}` +
+        "</li>" +
+        '<li class="delete">' +
+        '<i class="fa-solid fa-trash fa-xl">&nbsp;</i>' +
         "</li>" +
         "</ul>" +
         "</div>";

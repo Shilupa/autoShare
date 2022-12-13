@@ -1,10 +1,9 @@
 "use strict";
 
-//const url = "http://localhost:3000"; // change url when uploading to server
-const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
+const url = "http://localhost:3000"; // change url when uploading to server
+//const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
 
 const token = sessionStorage.getItem("token");
-
 const user = JSON.parse(sessionStorage.getItem("user"));
 
 // placeholder for pictueres
@@ -52,7 +51,30 @@ const dropoff_date_text = document.querySelector(".dropoff_date");
 const dropoff_time_text = document.querySelector(".dropoff_time");
 const form = document.querySelector("#add-car");
 
+//selecting header menu
+const btnLogout = document.querySelector("#btn-logout");
+const userHtml = document.querySelector("#user-html");
+
 //const container = document.querySelector('.image-container');
+
+if (token != null) {
+  btnLogout.style.display = "visible";
+  userHtml.style.display = "visible";
+  userHtml.innerHTML = `Hi ${user.name}!`;
+  userHtml.style.color = "#006400";
+
+  userHtml.addEventListener("click", () => {
+    location.href = "../userProfile/userProfile.html";
+  });
+
+  btnLogout.addEventListener("click", () => {
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("user");
+  });
+} else {
+  btnLogout.style.display = "none";
+  userHtml.style.display = "none";
+}
 
 // get query parameter
 const getQParam = (param) => {

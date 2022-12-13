@@ -39,6 +39,8 @@ body {
   align-items: center;
 }
 
+
+
 .nav-link {
   color: black;
   text-decoration: none;
@@ -219,12 +221,6 @@ label:hover {
   left: 0;
 }
 
-.form-user .forgot-password {
-  display: flex;
-  flex-direction: row-reverse;
-  margin-top: 10px;
-  padding: 5px;
-}
 
 .form-user a {
   color: #4070f4;
@@ -235,11 +231,8 @@ label:hover {
   text-decoration: underline;
 }
 
-.form-user .button {
-  margin-top: 35px;
-}
 
-.form-user .button input {
+.form-user .update-button input {
   border: none;
   font-size: 17px;
   font-weight: 500;
@@ -251,16 +244,27 @@ label:hover {
   transition: all 0.5s ease;
 }
 
-.button input:hover {
+.update-button input:hover {
   background-color: #4070f4;
 }
 
-.form-user .signup {
-  margin-top: 30px;
-  text-align: center;
+.form-user .delete-button input {
+  border: none;
+  font-size: 17px;
+  font-weight: 500;
+  color: #ccc;
+  background-color: #d11a2a;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
-@media screen and (max-width: 850px) {
+.form-user .delete-button input:hover {
+  background-color: red;
+}
+
+@media screen and (max-width: 950px) {
   .car-info {
     max-width: 95%;
   }

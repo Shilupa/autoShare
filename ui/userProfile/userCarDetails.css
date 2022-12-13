@@ -204,7 +204,7 @@ a {
   justify-content: center;
 }
 
-.upload-btn {
+.upload-btn, .delete-btn {
   height: 80%;
   width: 80%;
   border: none;
@@ -221,6 +221,15 @@ a {
 .upload-btn:hover {
   background-color: #4070f4;
 }
+
+.delete-btn{
+  background-color: #e50000;
+}
+
+.delete-btn:hover{
+  background-color: red;
+}
+
 
 .form-car .signup {
   margin-top: 30px;
