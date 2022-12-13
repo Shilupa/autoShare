@@ -1,9 +1,12 @@
 "use strict";
 
 const express = require("express");
+const cookieParser = require('cookie-parser');
 const app = express();
 const port = 3000;
 const cors = require("cors");
+
+
 //const formData = require("express-form-data");
 // routes
 const carRouter = require("./routes/carRoute");
@@ -18,6 +21,9 @@ app.use(cors());
 app.use(express.json()); // for parsing application json
 app.use(express.urlencoded({ extended: true }));
 //app.use(formData.parse())
+
+//cookie
+app.use(cookieParser());
 
 //serve uploaded files
 app.use(express.static("uploads"));
@@ -45,6 +51,16 @@ app.use(
   passport.authenticate("jwt", { session: false }),
   profileRouter
 );
+
+app.get('/setCookie', (req, res) => {
+  res.cookie('foo','bar');
+  res.send('cookie is set foo is bar');
+});
+
+app.get('/getCookie',(req,res)=>{
+  console.log(req.cookies);
+  res.send(req.cookies);
+})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
