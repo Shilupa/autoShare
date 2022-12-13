@@ -10,6 +10,9 @@ const userHtml = document.querySelector("#user-html");
 const hamburgerBtnLogout = document.querySelector("#hamburger-logout");
 const hamburgerUserHtml = document.querySelector("#hamburger-user-html");
 
+//imagecontainer
+const imageContainer = document.querySelector(".slideshow-container");
+
 const carCard = document.querySelector(".card");
 const carName = document.querySelector(".car-name");
 const fuel = document.querySelector(".fuel-value");
@@ -126,7 +129,19 @@ const createCarCard = async (car) => {
   const carImages = await getData(carUrl);
   console.log(carImages.length);
 
-  carImages.forEach((image) => {
+ /*  if(!carImages){
+    const slides = 
+    '<div class="mySlides fade">'+
+    '<div class="numbertext">1 / 3</div>'+
+    '<img src="/upl" style="width:100%">'+
+ ' </div>';
+
+ const mySlides = document.createElement("div");
+ mySlides.innerHTML = slides
+ imageContainer.prepend(mySlides);
+  } */
+
+/*   carImages.forEach((image) => {
     console.log(image.file_name);
     const details =
       '<div class="details">' +
@@ -137,7 +152,7 @@ const createCarCard = async (car) => {
     const detail = document.createElement("div");
     detail.innerHTML = details;
     htmlImage.append(detail);
-  });
+  }); */
 
   const bookingUrl = `${url}/booking/${car.reg_no}`;
   const booking = await getData(bookingUrl);
