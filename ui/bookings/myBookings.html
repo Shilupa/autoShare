@@ -24,15 +24,23 @@
         <li class="nav-item">
           <a href="/ui/About/about.html" class="nav-link">About Us</a>
         </li>
-        <li class="nav-item">
-          <a href="/ui/Login/login-1.html" class="nav-link">Hi User!</a>
-        </li>
-        <li class="nav-item">
-          <a href="/ui/Home/home.html" class="nav-link">
-            <i class="fa-solid fa-right-from-bracket fa-lg"></i>&nbsp;&nbsp; Log
-            Out
-          </a>
-        </li>
+        <a class="nav-link" href="../userProfile/userProfile.html" id="user-html" ></a>
+      </li>
+       <li class="nav-item">
+         <a href="/ui/Login/login-1.html" class="nav-link" id="btn-login"
+           >Log In</a
+         >
+       </li>
+
+       <!-- should be hidden unless user has logged in -->
+
+       <li class="nav-item">
+         <a href="../Login/login-1.html" class="nav-link" id="btn-logout" >
+
+           <i class="fa-solid fa-right-from-bracket fa-lg"></i>&nbsp;&nbsp; Log
+           Out
+         </a>
+       </li>
 
         <!-- hamburger is hidden by default and becomes active when the screen size is small -->
         <div class="hamburger">
@@ -100,5 +108,7 @@
         </div>
       </div>
     </div>
+    <script src="../serialize.js"></script>
+    <script src="myBookings.js"></script>
   </body>
 </html>
