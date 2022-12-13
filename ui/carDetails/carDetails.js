@@ -22,6 +22,8 @@ const phone = document.querySelector(".phone-value");
 const email = document.querySelector(".email-value");
 const address = document.querySelector(".address-value");
 const htmlImage = document.querySelector(".images");
+const swipeLeft = document.querySelector("#left");
+const swipeRight = document.querySelector("#right");
 
 const token = sessionStorage.getItem("token");
 const tokenUser = JSON.parse(sessionStorage.getItem("user"));
@@ -107,14 +109,21 @@ const createCarCard = async (car) => {
     console.log(image.file_name);
     const details =
       '<div class="details">' +
-      '<i class="fa-solid fa-circle-left"></i>' +
       // hardcoded image file to be replaced with image.file_name
       `<img src="${url}/thumbnails/9f485ee5215ccb772bde1048b6f13f06"  alt=""  class="car-img"/>` +
-      '<i class="fa-solid fa-circle-right"></i>';
-    ("</div>");
+      `<p> ${image.file_name} </p>` +
+      "</div>";
     const detail = document.createElement("div");
     detail.innerHTML = details;
     htmlImage.append(detail);
+  });
+  const selectAll = document.querySelectorAll(".details");
+  selectAll[0].style.display = "none";
+  selectAll[1].style.display = "visible";
+
+  swipeLeft.addEventListener("click", () => {
+    selectAll[0].style.display = "visible";
+    selectAll[1].style.display = "none";
   });
 };
 
