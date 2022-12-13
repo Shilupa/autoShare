@@ -1,7 +1,7 @@
 "use strict";
 
 //const url = "http://localhost:3000"; // change url when uploading to server
-const url = "suraj-bcwt.northeurope.cloudapp.azure.com/app";
+const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
 
 console.log(sessionStorage.getItem("token"));
 const user = JSON.parse(sessionStorage.getItem("user"));
