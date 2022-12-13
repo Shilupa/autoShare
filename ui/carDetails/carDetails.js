@@ -2,6 +2,10 @@
 const url = "http://localhost:3000"; // change url when uploading to server
 //const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
 
+const btnLogin = document.querySelector("#btn-login");
+const btnLogout = document.querySelector("#btn-logout");
+const userHtml = document.querySelector("#user-html");
+
 const carCard = document.querySelector(".card");
 const carName = document.querySelector(".car-name");
 const fuel = document.querySelector(".fuel-value");
@@ -13,22 +17,31 @@ const endDate = document.querySelector(".end-value");
 const endTime = document.querySelector(".end-time-value");
 const numberOfPeople = document.querySelector(".number-of-people-value");
 const rentPrice = document.querySelector(".rent-price-value");
-const btnLogin = document.querySelector("#btn-login");
-
 const user = document.querySelector(".user-value");
 const phone = document.querySelector(".phone-value");
 const email = document.querySelector(".email-value");
 const address = document.querySelector(".address-value");
 
 const token = sessionStorage.getItem("token");
+const tokenUser = JSON.parse(sessionStorage.getItem("user"));
+console.log(tokenUser, token);
 //checking token if it exists
 if (token != null) {
-  btnLogin.innerHTML = "Logout";
-  btnLogin.addEventListener("click", () => {
-    sessionStorage.removeItem("token");
-    sessionStorage.removeItem("user");
+  btnLogin.style.display = "none";
+  btnLogout.style.display = "visible";
+  userHtml.innerHTML = `Hi ${tokenUser.name}!`;
+
+  userHtml.addEventListener("click", () => {
+    location.href = "../userProfile/userProfile.html";
   });
+} else {
+  btnLogout.style.display = "none";
 }
+
+btnLogout.addEventListener("click", () => {
+  sessionStorage.removeItem("token");
+  sessionStorage.removeItem("user");
+});
 // get query parameter
 const getQParam = (param) => {
   const queryString = window.location.search;
@@ -48,7 +61,7 @@ const getCar = async (reg_no) => {
   };
   const response = await fetch(url + "/car/" + reg_no, fetchOptions);
   const car = await response.json();
-  console.log(car);
+  console.log("details", car);
   //img.src = `${url}/${car.filename}`;
   //addMarker(JSON.parse(car.coords));
 
