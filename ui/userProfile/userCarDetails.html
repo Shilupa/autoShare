@@ -175,6 +175,7 @@
                   placeholder="Brand"
                   name="brand"
                   class="brand"
+                  minlength="3"
                   required
                 />
                 <i class="fa-solid fa-car"></i>
@@ -185,6 +186,7 @@
                   placeholder="Model"
                   name="model"
                   class="model"
+                  minlength="1"
                   required
                 />
                 <i class="fa-solid fa-car"></i>
@@ -195,6 +197,7 @@
                   placeholder="Location"
                   name="car_address"
                   class="car_address"
+                  minlength="5"
                   required
                 />
                 <i class="fa-solid fa-location-pin"></i>
@@ -205,6 +208,7 @@
                   placeholder="Color"
                   name="color"
                   class="color"
+                  minlength="3"
                   required
                 />
                 <i class="fa-solid fa-palette"></i>
@@ -215,7 +219,7 @@
                   min="1990"
                   max="2022"
                   step="1"
-                  placeholder="1990"
+                  placeholder="manufactured year (1990-2022)"
                   name="year_"
                   class="year_"
                 />
@@ -227,6 +231,7 @@
                   placeholder="Fuel type"
                   name="fuel_type"
                   class="fuel_type"
+                  minlength="3"
                   required
                 />
                 <i class="fa-solid fa-gas-pump"></i>
@@ -237,6 +242,7 @@
                   placeholder="Transmission"
                   name="transmission"
                   class="transmission"
+                  minlength="4"
                   required
                 />
                 <i class="fa-solid fa-gears"></i>
@@ -247,7 +253,7 @@
                   min="1"
                   max="10"
                   step="1"
-                  placeholder="number of people"
+                  placeholder="number of people (1-10)"
                   name="seater"
                   class="seater"
                   required
@@ -256,7 +262,7 @@
               </div>
               <div class="input-field">
                 <input
-                  type="text"
+                  type="number"
                   placeholder="rent per hour"
                   name="rent_price"
                   class="rent_price"
@@ -275,6 +281,7 @@
                     id="start-date"
                     name="pickup_date"
                     class="pickup_date"
+                    required
                   />
                   <i class="fa-solid fa-hourglass-start"></i>
                 </div>
@@ -287,6 +294,7 @@
                     id="start-time"
                     name="pickup_time"
                     class="pickup_time"
+                    required
                   />
                   <i class="fa-solid fa-clock"></i>
                 </div>
@@ -299,6 +307,7 @@
                     id="end-date"
                     name="dropoff_date"
                     class="dropoff_date"
+                    required
                   />
                   <i class="fa-solid fa-hourglass-end"></i>
                 </div>
@@ -311,6 +320,7 @@
                     id="end-time"
                     name="dropoff_time"
                     class="dropoff_time"
+                    required
                   />
                   <i class="fa-solid fa-clock"></i>
                 </div>

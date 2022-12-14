@@ -30,7 +30,12 @@ const add_car = async (req, res) => {
 
   if (errors.isEmpty()) {
     const result = await carModel.addCar(newCar, res, req.params.userId);
-    res.status(201).json({ message: "car created ", status: 200 });
+    //res.status(201).json({ message: "car created ", status: 200 });
+    if (result === 0) {
+      res.json({ message: "Car already exists!", status: 400 });
+    } else {
+      res.json({ message: "Car created", status: 201 });
+    }
   } else {
     res
       .status(400)

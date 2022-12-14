@@ -120,6 +120,11 @@ body {
   overflow-x: hidden;
 }
 
+/* .reviews-card h1{
+  position: sticky;
+  z-index: 1;
+} */
+
 /* .images {
   width: 90%;
   height: fit-content;
@@ -369,7 +374,7 @@ body {
   height: fit-content;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background-color: whitesmoke;
   border-radius: 6px;
@@ -383,7 +388,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-bottom: 5px;
 }
 

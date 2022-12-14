@@ -25,7 +25,12 @@
           <a href="/ui/About/about.html" class="nav-link">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../userProfile/userProfile.html" id="user-html" style="color: #006400;"></a>
+          <a
+            class="nav-link"
+            href="../userProfile/userProfile.html"
+            id="user-html"
+            style="color: #006400"
+          ></a>
         </li>
         <li class="nav-item">
           <a href="/ui/Home/home.html" class="nav-link" id="btn-logout">
@@ -41,17 +46,22 @@
           <span class="bar"></span>
 
           <div class="dropdown-content">
-            <a class="nav-link" href="../userProfile/userProfile.html" id="hamburger-user-html" ></a>
+            <a
+              class="nav-link"
+              href="../userProfile/userProfile.html"
+              id="hamburger-user-html"
+            ></a>
             <a href="/ui/About/about.html" class="nav-link">About Us</a>
             <!-- should be hidden unless user has logged in -->
-            <a href="/ui/Home/home.html" class="nav-link" id="hamburger-logout">Log Out</a>
+            <a href="/ui/Home/home.html" class="nav-link" id="hamburger-logout"
+              >Log Out</a
+            >
           </div>
         </div>
       </div>
     </div>
 
     <div class="user-bar">
-
       <div class="user-bar-item">
         <a href="/ui/userProfile/userCar.html">
           <i class="fa-solid fa-car fa-lg"></i>&nbsp;&nbsp;
@@ -99,7 +109,10 @@
               enctype="multipart/form-data"
             >
               <label for="upload">
-                <img id="profile-image" src="/server/thumbnails/1670971425867-191530.jpg">
+                <img
+                  id="profile-image"
+                  src="/server/thumbnails/1670971425867-191530.jpg"
+                />
               </label>
               <input
                 id="upload"
@@ -116,6 +129,7 @@
                   placeholder="Enter your name"
                   name="name"
                   class="name"
+                  minlength="3"
                   required
                 />
                 <i class="fa-solid fa-user"></i>
@@ -126,6 +140,8 @@
                   placeholder="Enter your gender"
                   name="gender"
                   class="gender"
+                  minlength="3"
+                  maxlength="10"
                   required
                 />
                 <i class="fa-solid fa-venus-mars"></i>
@@ -135,13 +151,16 @@
                      <i class="fa-solid fa-envelope icon"></i>
                   </div> -->
               <div class="input-field">
-                <input type="date" name="dob" class="dob" />
+                <input type="date" name="dob" class="dob" required />
                 <i class="fa-solid fa-cake-candles"></i>
               </div>
               <div class="input-field">
                 <input
                   type="text"
-                  placeholder="Enter your phone number"
+                  placeholder="Enter your phone number (eg. 0442419169)"
+                  pattern="[0-9]{10}"
+                  minlength="10"
+                  maxlength="10"
                   name="phone_"
                   class="phone"
                   required
@@ -153,6 +172,8 @@
                   type="text"
                   placeholder="Enter your street address"
                   name="street_address"
+                  minlength="5"
+                  maxlength="10"
                   class="address"
                   required
                 />
@@ -162,6 +183,8 @@
                 <input
                   type="text"
                   placeholder="Enter your city"
+                  minlength="5"
+                  maxlength="10"
                   name="city"
                   class="city"
                   required
@@ -171,8 +194,11 @@
               <div class="input-field">
                 <input
                   type="text"
-                  placeholder="Enter your postal code"
-                  name="postal_code"
+                  pattern="[0-9]{5}"
+                  minlength="5"
+                  maxlength="5"
+                  placeholder="Postal code (eg. 02260)"
+                  name="postal_code_"
                   class="postal_code"
                   required
                 />
@@ -181,7 +207,10 @@
               <div class="input-field">
                 <input
                   type="text"
-                  placeholder="Enter your driver's license number"
+                  placeholder="Enter 16-digit driver's license no."
+                  pattern="[0-9]{16}"
+                  minlength="16"
+                  maxlength="16"
                   name="license"
                   class="license"
                   required
@@ -192,6 +221,7 @@
                 <input
                   type="password"
                   placeholder="Enter your password"
+                  minlength="8"
                   name="password"
                   class="password"
                   required
@@ -202,6 +232,7 @@
                 <input
                   type="password"
                   placeholder="Confirm your password"
+                  minlength="8"
                   name="confirmPassword"
                   class="confirmPassword"
                   required
@@ -214,7 +245,7 @@
               </div>
             </form>
             <div class="input-field delete-button" id="delete-button">
-                <input type="button" value="Delete My Profile" />
+              <input type="button" value="Delete My Profile" />
             </div>
           </div>
         </div>

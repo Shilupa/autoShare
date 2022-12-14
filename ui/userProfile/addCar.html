@@ -26,10 +26,14 @@
           <a href="/ui/About/about.html" class="nav-link">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../userProfile/userProfile.html" id="user-html" style="color: #006400;"></a>
-       </li>
+          <a
+            class="nav-link"
+            href="../userProfile/userProfile.html"
+            id="user-html"
+            style="color: #006400"
+          ></a>
+        </li>
         <li class="nav-item">
-
           <a href="/ui/Home/home.html" class="nav-link" id="btn-logout">
             <i class="fa-solid fa-right-from-bracket fa-lg"></i>&nbsp;&nbsp; Log
             Out
@@ -45,10 +49,16 @@
           <div class="dropdown-content">
             <!-- <a href="/ui/Login/login-1.html" class="nav-link" id="hamburger-login">Log In</a> -->
             <!-- should be hidden unless user has logged in -->
-            <a class="nav-link" href="../userProfile/userProfile.html" id="hamburger-user-html" ></a>
+            <a
+              class="nav-link"
+              href="../userProfile/userProfile.html"
+              id="hamburger-user-html"
+            ></a>
             <a href="/ui/About/about.html" class="nav-link">About Us</a>
             <!-- should be hidden unless user has logged in -->
-            <a href="/ui/Home/home.html" class="nav-link" id="hamburger-logout">Log Out</a>
+            <a href="/ui/Home/home.html" class="nav-link" id="hamburger-logout"
+              >Log Out</a
+            >
           </div>
         </div>
       </div>
@@ -56,7 +66,7 @@
 
     <div class="user-bar">
       <div class="user-bar-item">
-        <a href="/ui/userProfile/userCar.html" style="color: #04aa6d" >
+        <a href="/ui/userProfile/userCar.html" style="color: #04aa6d">
           <i class="fa-solid fa-car fa-lg"></i>&nbsp;&nbsp;
           <h3 class="user-bar-text">My car(s)</h3>
         </a>
@@ -166,18 +176,31 @@
               <div class="input-field">
                 <input
                   type="text"
-                  placeholder="Enter car registration number"
+                  placeholder="Enter car registration number (eg. VVO-245)"
                   name="reg_no"
+                  pattern="[a-zA-Z]{2,3}-[0-9]{1,3}"
                   required
                 />
                 <i class="fa-solid fa-car"></i>
               </div>
               <div class="input-field">
-                <input type="text" placeholder="Brand" name="brand" required />
+                <input
+                  type="text"
+                  placeholder="Brand"
+                  name="brand"
+                  minlength="3"
+                  required
+                />
                 <i class="fa-solid fa-car"></i>
               </div>
               <div class="input-field">
-                <input type="text" placeholder="Model" name="model" required />
+                <input
+                  type="text"
+                  placeholder="Model"
+                  name="model"
+                  minlength="1"
+                  required
+                />
                 <i class="fa-solid fa-car"></i>
               </div>
               <div class="input-field">
@@ -185,12 +208,19 @@
                   type="text"
                   placeholder="Location"
                   name="car_address"
+                  minlength="5"
                   required
                 />
                 <i class="fa-solid fa-location-pin"></i>
               </div>
               <div class="input-field">
-                <input type="text" placeholder="Color" name="color" required />
+                <input
+                  type="text"
+                  placeholder="Color"
+                  name="color"
+                  minlength="3"
+                  required
+                />
                 <i class="fa-solid fa-palette"></i>
               </div>
               <div class="input-field">
@@ -199,7 +229,7 @@
                   min="1990"
                   max="2022"
                   step="1"
-                  placeholder="1990"
+                  placeholder="manufactured year (1990-2022)"
                   name="year_"
                 />
                 <i class="fa-solid fa-calendar"></i>
@@ -209,6 +239,7 @@
                   type="text"
                   placeholder="Fuel type"
                   name="fuel_type"
+                  minlength="3"
                   required
                 />
                 <i class="fa-solid fa-gas-pump"></i>
@@ -218,6 +249,7 @@
                   type="text"
                   placeholder="Transmission"
                   name="transmission"
+                  minlength="4"
                   required
                 />
                 <i class="fa-solid fa-gears"></i>
@@ -228,7 +260,7 @@
                   min="1"
                   max="10"
                   step="1"
-                  placeholder="number of people"
+                  placeholder="number of people (1-10)"
                   name="seater"
                   required
                 />
@@ -236,7 +268,7 @@
               </div>
               <div class="input-field">
                 <input
-                  type="text"
+                  type="number"
                   placeholder="rent per hour"
                   name="rent_price"
                   required
@@ -253,6 +285,7 @@
                     onfocus="(this.type='date')"
                     id="start-date"
                     name="pickup_date"
+                    required
                   />
                   <i class="fa-solid fa-hourglass-start"></i>
                 </div>
@@ -264,6 +297,7 @@
                     onfocus="(this.type='time')"
                     id="start-time"
                     name="pickup_time"
+                    required
                   />
                   <i class="fa-solid fa-clock"></i>
                 </div>
@@ -275,6 +309,7 @@
                     onfocus="(this.type='date')"
                     id="end-date"
                     name="dropoff_date"
+                    required
                   />
                   <i class="fa-solid fa-hourglass-end"></i>
                 </div>
@@ -286,6 +321,7 @@
                     onfocus="(this.type='time')"
                     id="end-time"
                     name="dropoff_time"
+                    required
                   />
                   <i class="fa-solid fa-clock"></i>
                 </div>
