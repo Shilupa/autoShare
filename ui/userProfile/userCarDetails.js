@@ -118,7 +118,6 @@ const getCarPics = async (reg_no) => {
   };
   const response = await fetch(url + "/pictures/" + reg_no, fetchOptions);
   const pics = await response.json();
-  console.log(pics.length);
 
   for (let i = 0; i < pics.length; i++) {
     if (pics[i].placeholder === 1) {
@@ -182,7 +181,6 @@ getCar(reg_no);
 
 placeholder_1.onchange = async () => {
   const selectedFile = placeholder_1.files[0];
-  //console.log(selectedFile);
   const fd = new FormData(formPH1);
 
   const fetchOptions = {
@@ -205,7 +203,6 @@ placeholder_1.onchange = async () => {
 
 placeholder_2.onchange = async () => {
   const selectedFile = placeholder_2.files[0];
-  //console.log(selectedFile);
   const fd = new FormData(formPH2);
 
   const fetchOptions = {
@@ -400,7 +397,6 @@ form.addEventListener("submit", async (evt) => {
     },
     body: JSON.stringify(data),
   };
-  console.log(user.id);
   const response = await fetch(`${url}/car/${reg_no}/` + user.id, fetchOptions);
   const json = await response.json();
   if (json.error) {

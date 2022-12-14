@@ -21,7 +21,6 @@ loginForm.addEventListener("submit", async (event) => {
   };
   const response = await fetch(url + "/auth/login", fetchOptions);
   const json = await response.json();
-  console.log("login response", json);
   if (!json.user) {
     alert(json.message);
   } else {

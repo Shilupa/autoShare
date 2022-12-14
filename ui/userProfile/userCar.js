@@ -38,13 +38,10 @@ if (token != null) {
   // Fetching car data from server
   (async () => {
     const response = await fetch(url + "/car/user/" + user.id);
-    console.log(response);
     const cars = await response.json();
     // Filter cars by category
-    console.log(cars);
 
     cars.forEach((car) => {
-      // console.log(car.reg_no);
       const img = document.createElement("img");
       if (car.file_name) {
         img.src = `${url}/thumbnails/` + car.file_name;
@@ -113,7 +110,7 @@ if (token != null) {
         if (token) {
           location.href = `../userProfile/userCarDetails.html?id=${car.reg_no}`;
         } else {
-          location.href = "../login/login-1.html";
+          location.href = "../Login/login-1.html";
         }
       });
     });

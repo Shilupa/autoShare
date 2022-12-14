@@ -3,7 +3,6 @@
 const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
 
 const token = sessionStorage.getItem("token");
-console.log(sessionStorage.getItem("token"));
 const user = JSON.parse(sessionStorage.getItem("user"));
 
 const carForm = document.getElementById("add-car");
@@ -90,7 +89,6 @@ carForm.addEventListener("submit", async (evt) => {
     },
     body: JSON.stringify(data),
   };
-  console.log(fetchOptions);
   const response = await fetch(url + "/car/addcar/" + user.id, fetchOptions);
   const json = await response.json();
   alert(json.message);

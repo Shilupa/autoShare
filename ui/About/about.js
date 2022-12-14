@@ -14,7 +14,6 @@ const hamburgerUserHtml = document.querySelector("#hamburger-user-html");
 
 const token = sessionStorage.getItem("token");
 const user = JSON.parse(sessionStorage.getItem("user"));
-console.log("From home.js line 19", user, token);
 //checking token if it exists
 if (token != null) {
   btnLogin.style.display = "none";
@@ -57,8 +56,6 @@ hamburgerBtnLogout.addEventListener("click", () => {
   try {
     const response = await fetch(url + "/car");
     const cars = await response.json();
-    console.log(cars);
   } catch (e) {
-    console.log(e.message);
   }
 })();
