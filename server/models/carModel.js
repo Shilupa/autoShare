@@ -73,7 +73,7 @@ const getCarAllInfoByRegNum = async (carRegNum, res) => {
       "p.street_address as owner_address, " +
       "p.phone_ as owner_phone, " +
       "p.city as owner_city, " +
-      "p.postal_code as owner_postal_code, " +
+      "p.postal_code_ as owner_postal_code, " +
       "p.license as owner_license, " +
       "p.gender as owner_gender, " +
       "p.dob as owner_dob, " +
@@ -84,7 +84,7 @@ const getCarAllInfoByRegNum = async (carRegNum, res) => {
       "bp.street_address as bp_address, " +
       "bp.phone_ as bp_phone, " +
       "bp.city as bp_city, " +
-      "bp.postal_code as bp_postal_code, " +
+      "bp.postal_code_ as bp_postal_code, " +
       "bp.license as bp_license, " +
       "bp.gender as bp_gender, " +
       "bp.dob as bp_dob, " +

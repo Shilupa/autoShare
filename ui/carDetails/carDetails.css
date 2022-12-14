@@ -102,6 +102,7 @@ body {
   margin-top: 30px;
   margin-left: 20px;
   margin-bottom: 20px;
+  margin-right: 10px;
   width: 90%;
   height: fit-content;
   display: flex;
@@ -120,31 +121,10 @@ body {
   overflow-x: hidden;
 }
 
-/* .reviews-card h1{
-  position: sticky;
-  z-index: 1;
-} */
-
-/* .images {
-  width: 90%;
-  height: fit-content;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.car-img {
-  width: 300px;
-  height: 300px;
-  margin-top: 20px;
-} */
-
 /* Slideshow container */
 .slideshow-container {
   margin-top: 10px;
   width: 85%;
-  height: 400px;
   position: relative;
   margin: auto;
 }
@@ -157,7 +137,7 @@ body {
 .mySlides img {
   margin-top: 20px;
   width: 100%;
-  height: 400px;
+  height: 450px;
   border-radius: 15px;
 }
 
@@ -484,6 +464,11 @@ body {
     margin: 10px;
     width: 290px;
   }
+
+  .mySlides img {
+    height: 350px;
+    border-radius: 15px;
+  }
 }
 
 @media screen and (max-width: 850px) {
@@ -513,7 +498,7 @@ body {
   }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 470px) {
   .logo {
     width: 9rem;
   }
@@ -529,5 +514,10 @@ body {
 
   .card {
     font-size: 12px;
+  }
+
+  .mySlides img {
+    height: 250px;
+    border-radius: 15px;
   }
 }
