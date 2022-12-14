@@ -26,7 +26,11 @@ const getBookingByRegNum = async (carRegNum, res) => {
 
 const getBookingByUserId = async (userId, res) => {
   try {
-    const sql = "select * from booking where person_id=?";
+    const sql =
+      "select car.brand, car.pickup_date, car.rent_price, booking.intended_hour_of_booking, pics.file_name  from booking " +
+      "inner join car on car.reg_no = booking.car_reg_no " +
+      "left outer join (SELECT * FROM pictures group by car_reg_no) pics on car.reg_no = pics.car_reg_no " +
+      "where booking.person_id=?";
     const values = [userId];
     const [rows] = await promisePool.query(sql, values);
     console.log(rows);

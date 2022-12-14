@@ -8,21 +8,12 @@ const getHomeCars = async () => {
     const queries =
       "select *,avg(homeCar.rating) as average_rating from (SELECT c.reg_no, c.brand, r.rating, c.model, c.seater, c.fuel_type, c.transmission, c.rent_price, homePics.file_name , bp.name as bookingPerson " +
       "FROM car c " +
-      //"left outer join person p on c.person_id=p.id " +
       "left outer join booking b on b.car_reg_no=c.reg_no " +
       "left outer join person bp on b.person_id = bp.id " +
       "left outer join review r on b.id = r.booking_id " +
       "left outer join (SELECT * FROM pictures group by car_reg_no) homePics on c.reg_no = homePics.car_reg_no) homeCar group by homeCar.reg_no";
     // we need car brand, car name , rating, seater, fuel, transmission rent price and post name
 
-    // For Shilpa
-    /*         "SELECT c.reg_no, c.brand, c.model, r.rating, r.comment, c.seater, c.fuel_type, c.transmission, c.rent_price, homePics.file_name, bp.name as bookingPerson " +
-      "FROM car c " +
-      //"left outer join person p on c.person_id=p.id " +
-      "left outer join booking b on b.car_reg_no=c.reg_no " +
-      "left outer join person bp on b.person_id = bp.id " +
-      "left outer join review r on b.id = r.booking_id " +
-      "left outer join pictures homePics on c.reg_no = homePics.car_reg_no";  */
     const [rows] = await promisePool.query(queries);
 
     return rows;
@@ -73,7 +64,7 @@ const getCarAllInfoByRegNum = async (carRegNum, res) => {
       "p.street_address as owner_address, " +
       "p.phone_ as owner_phone, " +
       "p.city as owner_city, " +
-      "p.postal_code as owner_postal_code, " +
+      "p.postal_code_ as owner_postal_code, " +
       "p.license as owner_license, " +
       "p.gender as owner_gender, " +
       "p.dob as owner_dob, " +
@@ -84,7 +75,7 @@ const getCarAllInfoByRegNum = async (carRegNum, res) => {
       "bp.street_address as bp_address, " +
       "bp.phone_ as bp_phone, " +
       "bp.city as bp_city, " +
-      "bp.postal_code as bp_postal_code, " +
+      "bp.postal_code_ as bp_postal_code, " +
       "bp.license as bp_license, " +
       "bp.gender as bp_gender, " +
       "bp.dob as bp_dob, " +

@@ -65,14 +65,19 @@ const createBookingCard = (bookingList) => {
   bookingList.forEach((booking) => {
     const details =
       '<div class="booking-list-item">' +
-      `<h4>${user.name}</h4>` +
+      `<h4>${booking.brand}</h4>` +
       '<div class="car-image">' +
-      `<img src="${url}/thumbnails/9f485ee5215ccb772bde1048b6f13f06" alt="car"/>` +
+      `<img src="${url}/thumbnails/${booking.file_name}" alt="car"/>` +
       "</div>" +
       '<div class="booking-details">' +
-      `<span id="booking-date"> Booking date : 12/12/2022</span>` +
+      `<span id="booking-date"> Pickup date : ${booking.pickup_date.substring(
+        0,
+        10
+      )}</span>` +
       `<span id="booked-hrs">Booked for : ${booking.intended_hour_of_booking} hours</span>` +
-      `<span id="total-cost">Total estimated cost : ${booking.car_reg_no}</span>` +
+      `<span id="total-cost">Total estimated cost : ${
+        booking.intended_hour_of_booking * booking.rent_price
+      } Euros</span>` +
       "</div>" +
       "</div>";
     const detail = document.createElement("div");

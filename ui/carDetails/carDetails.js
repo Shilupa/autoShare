@@ -189,7 +189,7 @@ const createReviewCard = (rev) => {
     booker_review.setAttribute("class", "booker-review");
 
     // creating booker profile
-    const booker_profile_text = `<img src="../../server/uploads/${element.profile}" alt="user image">`;
+    const booker_profile_text = `<img src="${url}/thumbnails/${element.profile}" alt="user image">`;
     const booker_profile = document.createElement("div");
     booker_profile.setAttribute("class", "booker-profile");
     const name = document.createTextNode(element.bp_name);
@@ -236,11 +236,11 @@ const createPicSlide = (pics) => {
       if (element.file_name) {
         if (i == 0) {
           def_image_number.innerHTML = `1/${pics.length}`;
-          def_image_src.src = `../../server/uploads/${element.file_name}`;
+          def_image_src.src = `${url}/thumbnails/${element.file_name}`;
         } else if (i > 0) {
           const picText =
             `<div class="numbertext">${i + 1}/${pics.length}</div>` +
-            `<img src="../../server/uploads/${element.file_name}" style="width:100%" id="img1">`;
+            `<img src="${url}/thumbnails/${element.file_name}" style="width:100%" id="img1">`;
           const picture = document.createElement("div");
           picture.setAttribute("class", "mySlides fade");
           picture.innerHTML = picText;
