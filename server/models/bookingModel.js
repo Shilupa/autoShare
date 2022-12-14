@@ -57,21 +57,63 @@ const addBooking = async (bookingObject, res) => {
 
     const random = Math.floor(Math.random() * 6);
 
+    const randomquote = Math.floor(Math.random() * 3);
+    const badreview = [
+      "Car was aweful, I would not recommend this car for anyone.",
+      "Car condition id not good, need some maintenance.",
+      "Car seat was uncomfortable, not a good experience.",
+      "Horrible experience ever. Car owner could have considered in the maintenance.",
+      "The car had dent already before but then the car owner said it was my fault. Not happy with it and won't recommend."
+    ];
+    const okreview = [
+      "Car was okay. But, I would still not recommend for the rent.",
+      "Car was normal, nothing extra. I'd choose other cars than this.",
+      "Car needs cleaning and was smelly. Until than I'd not recommend anyone.",
+      "The car stopped suddenly in the highway and this happened much often. Needs fixing",
+      "There was something sticky in the car seat all over. Informed the owner but he assumed it was us who created the problem. Not happy with overall experience"
+    ]
+    const averagereview = [
+      "Car was okay. Had some problem with front glass wiper and seat warmer.",
+      "Car was average.",
+      "Wished it had summer tires already. Other than that everything was ok.",
+      "The price was much more than the experience we got with the car. Except that everything was good.",
+      "Had a nice experience but there was some smell in the car."
+    ]
+    const goodreview = [
+      "We booked car for a week and was a good experience.",
+      "Car was fine. I would appriciate if the car was a bit cleaner.",
+      "Car war fair and worked as expected. Price was slightly more than expected.",
+      "Car's door had some issue. Apparently it can be fixed. That's the only issue we had.",
+      "Nothing extra. Good experience though."
+    ]
+
+    const greatreview = [
+      "Car was good. Best value for money.",
+      "My partner got really happy with the car. Now I'm also really impressed.",
+      "I would book this car again in future. Had a smooth and comfortable ride.",
+      "I booked the car for 10 days and had a pleasant experience.",
+      "The pickup location was nearby to my place and price was affordable. In overall I recommend and would book this car again."
+    ]
+    const excellentreview = [
+      "Car was perfect. Luxurious car at reasonable price. Humble car owner. I did not had any issue while pickup and dropoff.",
+      "The most affortable car rent I ever rented and would recommend to anyone who are on a budget.",
+      "Owner was really easy to deal with and had the best experience with the car.",
+      "Extremely glad that I chose autoshare. Booking was really easy and the car was very comfortable. Our family loved it.",
+      "I am not rich but the car made me feel rich. Great deal and awesome memory with this car. Srongly recommend."
+    ]
     let Comment;
     if (random == 0) {
-      Comment = "Car was aweful, I would not recommend this car for anyone.";
+      Comment = badreview[randomquote];
     } else if (random == 1) {
-      Comment = "Car was okay. But, I would still not recommend for the rent.";
+      Comment = okreview[randomquote];
     } else if (random == 2) {
-      Comment =
-        "Car was okay. Had some problem with front glass wiper and seat warmer.";
+      Comment = averagereview[randomquote];  
     } else if (random == 3) {
-      Comment = "Car was fine. I would appriciate if the car was bot cleaner.";
+      Comment = goodreview[randomquote]
     } else if (random == 4) {
-      Comment = "Car was good. Best value for money.";
+      Comment = greatreview[randomquote];
     } else {
-      Comment =
-        "Car was perfect. Luxurious car at reasonable price. Humble car owner. I did not had any issue while pickup and dropoff.";
+      Comment = excellentreview[randomquote];
     }
 
     const sql2 =
