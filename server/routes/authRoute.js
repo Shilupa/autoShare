@@ -13,11 +13,11 @@ router
     body("email").isEmail(),
     body("gender").notEmpty(),
     body("dob").isDate(),
-    body("phone_").notEmpty(),
+    body("phone_").notEmpty().isNumeric().isLength({min:10 ,max:10}),
     body("street_address").notEmpty(),
     body("city").notEmpty(),
-    body("postal_code").notEmpty(),
-    body("license").notEmpty(),
+    body("postal_code_").notEmpty().isLength({min:5 ,max:5}),
+    body("license").notEmpty().isNumeric().isLength({min:16 ,max:16}),
     body("password").isLength({ min: 8 }).trim(),
     register
   );

@@ -12,7 +12,7 @@ const login = (req, res) => {
     console.log("login", user, info);
     if (err || !user) {
       return res.status(400).json({
-        message: "Something is not right",
+        message: "Entered email or password is not correct",
         user: user,
       });
     }

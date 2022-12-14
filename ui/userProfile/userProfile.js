@@ -35,6 +35,11 @@ const token = sessionStorage.getItem("token");
 const user = JSON.parse(sessionStorage.getItem("user"));
 //console.log(user);
 
+//calendar and time
+var today = new Date().toISOString().split('T')[0];
+document.querySelector(".dob").setAttribute('max', today);
+
+
 (async () => {
   const fetchOptions = {
     headers: {
@@ -86,7 +91,7 @@ dob.value = date[0];
 phone.value = user.phone_;
 address.value = user.street_address;
 city.value = user.city;
-postalCode.value = user.postal_code;
+postalCode.value = user.postal_code_;
 license.value = user.license;
 
 profileForm.addEventListener("submit", async (evt) => {

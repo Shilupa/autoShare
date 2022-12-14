@@ -1,5 +1,4 @@
 "use strict";
-
 const url = "http://localhost:3000"; // change url when uploading to server
 //const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
 
@@ -16,6 +15,14 @@ const userHtml = document.querySelector("#user-html");
 //selecting from hamburger
 const hamburgerBtnLogout = document.querySelector("#hamburger-logout");
 const hamburgerUserHtml = document.querySelector("#hamburger-user-html");
+
+
+//calendar and time
+var today = new Date().toISOString().split('T')[0];
+document.querySelector("#start-date").setAttribute('min', today);
+document.querySelector("#end-date").setAttribute('min', today);
+
+
 //checking token if it exists
 if (token != null) {
 
@@ -57,14 +64,29 @@ carForm.addEventListener("submit", async (evt) => {
   evt.preventDefault();
   //const fd = new FormData(carForm);
   const data = serializeJson(carForm);
-  console.log(data);
+  console.log("HelloCAR:",data);
 
   for (const [prop, value] of Object.entries(data)) {
     if (value === "") {
       delete data[prop];
     }
   }
-  console.log(data);
+
+  //making sure user cannot choose end time before start time
+  const pickup_date = data.pickup_date;
+  const dropoff_date =  data.dropoff_date;
+  const pickup_time = data.pickup_time;
+  const dropoff_time = data.dropoff_time;
+
+  if(pickup_date>dropoff_date){
+    alert("Dont be stupid! You cannot return car before pickup day");
+    return;
+  } else if(pickup_date===dropoff_date && dropoff_time<pickup_time){
+    alert("Dont be stupid! You cannot return car before pickup time");
+    return;
+  }
+
+
   const fetchOptions = {
     method: "POST",
     headers: {
@@ -76,9 +98,9 @@ carForm.addEventListener("submit", async (evt) => {
   console.log(fetchOptions);
   const response = await fetch(url + "/car/addcar/" + user.id, fetchOptions);
   const json = await response.json();
-  if (json.status === 200) {
-    alert(json.message);
+  alert(json.message);
+  if (json.status === 201) {
     location.href = "userCar.html";
-  }
+  }else{}
 });
 

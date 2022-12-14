@@ -39,7 +39,7 @@ const addUser = async (userObject, res) => {
       return 0;
     }
     const sql =
-      "INSERT INTO person (name, email, password, street_address, phone_, city, postal_code,license, gender, dob, role_) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+      "INSERT INTO person (name, email, password, street_address, phone_, city, postal_code_,license, gender, dob, role_) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     const values = [
       userObject.name,
       userObject.email,
@@ -47,7 +47,7 @@ const addUser = async (userObject, res) => {
       userObject.street_address,
       userObject.phone_,
       userObject.city,
-      userObject.postal_code,
+      userObject.postal_code_,
       userObject.license,
       userObject.gender,
       userObject.dob,
@@ -84,14 +84,14 @@ const deleteUserById = async (userId, res) => {
 const modifyUserById = async (userObject, res) => {
   try {
     const sql =
-      "Update person set name=?, password=?, street_address=?, phone_=?, city=?, postal_code=?, license=?, gender=?, dob=?, role_=? where id=?";
+      "Update person set name=?, password=?, street_address=?, phone_=?, city=?, postal_code_=?, license=?, gender=?, dob=?, role_=? where id=?";
     const values = [
       userObject.name,
       userObject.password,
       userObject.street_address,
       userObject.phone_,
       userObject.city,
-      userObject.postal_code,
+      userObject.postal_code_,
       userObject.license,
       userObject.gender,
       userObject.dob,

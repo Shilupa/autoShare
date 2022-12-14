@@ -35,11 +35,10 @@
           <span class="bar"></span>
 
           <div class="dropdown-content">
-             <a href="/ui/About/about.html" class="nav-link">About Us</a>
-             <a href="/ui/Login/login-1.html" class="nav-link">Log In</a>
+            <a href="/ui/About/about.html" class="nav-link">About Us</a>
+            <a href="/ui/Login/login-1.html" class="nav-link">Log In</a>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -63,13 +62,16 @@
                 <input
                   type="text"
                   name="gender"
-                  placeholder="Enter your gender"/>
+                  placeholder="Enter your gender"
+                  required
+                />
                 <i class="fa-solid fa-venus-mars"></i>
               </div>
               <div class="input-field">
                 <input
                   type="text"
                   name="email"
+                  pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
                   placeholder="Enter your e-mail"
                   required
                 />
@@ -79,6 +81,7 @@
                 <input
                   type="date"
                   name="dob"
+                  class="dob"
                   placeholder="Date of birth"
                   required
                 />
@@ -87,8 +90,10 @@
               <div class="input-field">
                 <input
                   type="text"
+                  placeholder="eg. 0442419169"
+                  pattern="[0-9]{10}"
                   name="phone_"
-                  placeholder="Enter your phone no."
+                  class="phone"
                   required
                 />
                 <i class="fa-solid fa-phone"></i>
@@ -114,8 +119,9 @@
               <div class="input-field">
                 <input
                   type="text"
-                  name="postal_code"
-                  placeholder="Enter your postal code"
+                  name="postal_code_"
+                  pattern="[0-9]{5}"
+                  placeholder="Postal code (eg. 02260)"
                   required
                 />
                 <i class="fa-solid fa-signs-post"></i>
@@ -124,7 +130,8 @@
                 <input
                   type="text"
                   name="license"
-                  placeholder="Enter your driver's license no."
+                  placeholder="Enter 16-digit driver's license no."
+                  pattern="[0-9]{16}"
                   required
                 />
                 <i class="fa-solid fa-id-card"></i>
@@ -147,7 +154,9 @@
                 />
                 <i class="fa-solid fa-lock icon"></i>
               </div>
-              <button class="light-border" type="submit" id="btn">Create an account</button>
+              <button class="light-border" type="submit" id="btn">
+                Create an account
+              </button>
             </form>
           </div>
         </div>

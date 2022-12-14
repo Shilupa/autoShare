@@ -5,6 +5,10 @@ const url = "http://localhost:3000"; // change url when uploading to server
 const registerForm = document.getElementById("register-form");
 const errorMessage = document.getElementById("error-message");
 
+//calendar and time
+var today = new Date().toISOString().split('T')[0];
+document.querySelector(".dob").setAttribute('max', today);
+
 registerForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const data = serializeJson(registerForm);

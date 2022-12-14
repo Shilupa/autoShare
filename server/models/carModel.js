@@ -1,4 +1,5 @@
 "use strict";
+const { end } = require("../database/db");
 const pool = require("../database/db");
 const promisePool = pool.promise();
 
@@ -134,13 +135,19 @@ const getCarAllInfoByRegNum = async (carRegNum, res) => {
 const addCar = async (carObject, res, user_id) => {
   console.log("Adding car", carObject);
 
-  // Hard coded values to be changed later
-  const car_address = "Espoo ";
-  const pickup_date = "2022-11-10";
-  const pickup_time = "10:30:00";
-  const dropoff_date = "2022-11-12";
-  const dropoff_time = "10:30:00";
+  let carExist = false;
   try {
+    const [carRow] = await promisePool.query("SELECT * from car");
+    carRow.forEach((car) => {
+      if (car.reg_no == carObject.reg_no) {
+        carExist = true;
+      }
+    });
+
+    if (carExist) {
+      return 0;
+    }
+
     const sql =
       "INSERT INTO car (reg_no, brand, model, year_, transmission, fuel_type, seater, color, rent_price, car_address, pickup_date, pickup_time, dropoff_date, dropoff_time, person_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     const values = [
@@ -153,11 +160,6 @@ const addCar = async (carObject, res, user_id) => {
       carObject.seater,
       carObject.color,
       carObject.rent_price,
-      /*       car_address,
-      pickup_date,
-      pickup_time,
-      dropoff_date,
-      dropoff_time, */
       carObject.car_address,
       carObject.pickup_date,
       carObject.pickup_time,
@@ -167,7 +169,7 @@ const addCar = async (carObject, res, user_id) => {
     ];
 
     const [result] = await promisePool.query(sql, values);
-    return result.insertId;
+    return result.affectedRows;
   } catch (e) {
     console.error("error", e.message);
     res.status(500).send(e.message);
