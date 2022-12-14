@@ -24,12 +24,11 @@ const user = JSON.parse(sessionStorage.getItem("user"));
 
 //checking token if it exists
 if (token != null) {
-
   //create cookie
   let x = document.cookie;
   document.cookie = "username=John Doe";
   //read a cookie
-  console.log('cookie:'+ document.cookie);
+  console.log("cookie:" + document.cookie);
   btnLogin.style.display = "none";
   btnLogout.style.display = "visible";
   userHtml.innerHTML = `Hi ${user.name}!`;
@@ -46,7 +45,6 @@ if (token != null) {
   hamburgerUserHtml.addEventListener("click", () => {
     location.href = "../userProfile/userProfile.html";
   });
-
 } else {
   btnLogout.style.display = "none";
   hamburgerBtnLogout.style.display = "none";
@@ -95,7 +93,7 @@ const createCarCards = (cars) => {
       } else if (sort.innerHTML == "Most Expensive") {
         carToSort.sort((a, b) => b.rent_price - a.rent_price);
         sortedCars(carToSort);
-      } else if (sort.innerHTML == "Popularity") {
+      } else if (sort.innerHTML == "Avg. Rating") {
         carToSort.sort((a, b) => b.average_rating - a.average_rating);
         sortedCars(carToSort);
       }
@@ -229,7 +227,7 @@ search.addEventListener("keyup", () => {
       !searchedCarList.includes(true) &&
       searchedCarList.length === carList.length
     ) {
-      notFound.innerHTML = "No cars(s) found";
+      notFound.innerHTML = "No cars found";
     } else if (inputValue === "") {
       // if no input value restoring notFound value to it's default value
       notFound.innerHTML = "";
