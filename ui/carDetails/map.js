@@ -3,11 +3,7 @@ const mapAddress = document.querySelector("#latlng");
 
 // Initializing google map
 
-// Map address
-const map_address_2 = document.querySelector("#latlng");
-
 const initMap = () => {
-  console.log("Map address: ", map_address_2.value);
   const geocoder = new google.maps.Geocoder();
   const infowindow = new google.maps.InfoWindow();
 
@@ -41,7 +37,6 @@ const initMap = () => {
     });
   })();
 };
-
 // Displaying address in map on click
 const geocodeLatLng = (geocoder, map, infowindow, latitude, longitude) => {
   const latlng = {
