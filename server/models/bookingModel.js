@@ -24,6 +24,19 @@ const getBookingByRegNum = async (carRegNum, res) => {
   }
 };
 
+const getBookingByUserId = async (userId, res) => {
+  try {
+    const sql = "select * from booking where person_id=?";
+    const values = [userId];
+    const [rows] = await promisePool.query(sql, values);
+    console.log(rows);
+    return rows;
+  } catch (e) {
+    console.error("error", e.message);
+    res.status(500).send(e.message);
+  }
+};
+
 const addBooking = async (bookingObject, res) => {
   console.log("Adding booking", bookingObject);
   try {
@@ -107,4 +120,5 @@ module.exports = {
   addBooking,
   deleteBookingById,
   modifyBookingById,
+  getBookingByUserId,
 };
