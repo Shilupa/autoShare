@@ -10,6 +10,10 @@
       src="https://kit.fontawesome.com/e1ac683977.js"
       crossorigin="anonymous"
     ></script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0g55sCzgjFb626M3auODLTNAGYmyxRes&callback=initMap&libraries=&v=weekly"
+    defer
+  ></script>
   </head>
   <body>
     <div class="header">
@@ -64,8 +68,13 @@
 
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
+    <div class="numbertext"></div>
     <img src="/autoshare-logo/png/logo-white.png" style="width:100%" id="img1">
-  </div>
+  </div> 
+
+<!--   <div class="mySlides fade">
+    <img src="/autoshare-logo/png/logo-white.png" style="width:100%" id="img1">
+  </div>  -->
 
   <!-- Next and previous buttons -->
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -75,13 +84,13 @@
 
         <div class="car-header">
           <h2 class="car-name"></h2>
-          <div class="overall-ratings">
+ <!--          <div class="overall-ratings">
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star"></span>
             <span class="fa fa-star"></span>
-          </div>
+          </div> -->
         </div>
 
         <div class="car-and-owner">
@@ -168,19 +177,7 @@
         </div>
 
         <div class="booking">
-          <div class="booking-details">
-            <!-- <div class="booking-details-rows">
-               Booking starts
-               <input type="date" name="start-date" id="date-picker">
-               <input type="time" class="time-picker"/>
-               <input type="text" placeholder="pick-up location" id="distance">
-            </div>
-            <div class="booking-details-rows">
-               Booking ends
-               <input type="date" name="start-date" id="date-picker">
-               <input type="time" class="time-picker"/>
-               <input type="text" placeholder="drop-off location" id="distance">
-            </div> -->
+          <form action="#" class="booking-details" enctype="multipart/form-data">
             <div class="booking-details-rows">
               <input
                 type="number"
@@ -188,6 +185,8 @@
                 step="0.1"
                 min="0.5"
                 id="distance"
+                name="intended_hour_of_booking"
+                required
               />
             </div>
             <div class="booking-details-rows">
@@ -197,22 +196,32 @@
                 step="0.1"
                 min="0.5"
                 id="distance"
+                name="intended_distance_of_travel"
+                required
               />
             </div>
-          </div>
+            <div class="send-request">
+              <button class="request-btn" type="submit">Reserve Now</button>
+            </div>
+          </form>
 
-          <div class="send-request">
-            <button class="request-btn" type="button">Reserve Now</button>
-          </div>
+
+
         </div>
       </div>
    <div class="right-box">
       <div class="map-card">
+        <div id="floating-panel">
+          <input id="latlng" type="text" />
+          <input id="submit" type="button" value="Locate in map" />
+        </div>
          <div id="map">
          </div>
       </div>
       <div class="reviews-card">
         <h1>Reviews</h1>
+<!-- 
+        
         <div class="reviews">
           <div class="booker-review">
             <div class="booker-profile">
@@ -264,7 +273,6 @@
           <div class="comments">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta beatae natus vel, molestiae modi praesentium iste voluptate sequi odio, sit quo necessitatibus excepturi numquam, esse sunt. Totam, necessitatibus officiis. Quod?</div>
         </div>
 
-
         <div class="reviews">
           <div class="booker-review">
             <div class="booker-profile">
@@ -281,6 +289,7 @@
           </div>
           <div class="comments">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta beatae natus vel, molestiae modi praesentium iste voluptate sequi odio, sit quo necessitatibus excepturi numquam, esse sunt. Totam, necessitatibus officiis. Quod?</div>
         </div>
+
         <div class="reviews">
           <div class="booker-review">
             <div class="booker-profile">
@@ -297,6 +306,7 @@
           </div>
           <div class="comments">temolestiae modi praesentium </div>
         </div>
+ -->
       </div>
    </div>
    <!-- TODO : Map installation ? -->
@@ -304,7 +314,9 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
       defer
     ></script> -->
-    <script src="carDetails.js"></script>
+    <script src="carDetails.js" ></script>
     <script src="imageSlider.js" defer></script>
+    <script src="map.js" ></script>
+    <script src="../serialize.js"></script>
   </body>
 </html>

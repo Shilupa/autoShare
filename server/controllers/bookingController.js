@@ -12,6 +12,12 @@ const get_booking_by_reg = async (req, res) => {
   res.json(cars);
 };
 
+const get_booking_by_user_id = async (req, res) => {
+  console.log(req.user.id);
+  const cars = await bookingModel.getBookingByUserId(req.user.id, res);
+  res.json(cars);
+};
+
 const add_booking = async (req, res) => {
   console.log("creating a new booking: ", req.body);
   const newBooking = req.body;
@@ -20,7 +26,7 @@ const add_booking = async (req, res) => {
 
   if (errors.isEmpty()) {
     const result = await bookingModel.addBooking(newBooking, res);
-    res.status(201).json({ message: "booking created", newUserId: result });
+    res.json({ message: "booking created", status: 201, newUserId: result });
   } else {
     res
       .status(400)
@@ -61,4 +67,5 @@ module.exports = {
   add_booking,
   delete_booking,
   modify_booking,
+  get_booking_by_user_id,
 };
