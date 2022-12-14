@@ -157,7 +157,7 @@ const createCarCard = (car) => {
   gearbox.innerHTML = car.transmission;
   year.innerHTML = car.year_;
   numberOfPeople.innerHTML = car.seater;
-  rentPrice.innerHTML = car.rent_price;
+  rentPrice.innerHTML = car.rent_price + " Euros/hour.";
   map_address.value = car.car_address;
 
   // Splitting date string to remove unnecessary string
