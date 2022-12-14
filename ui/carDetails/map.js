@@ -2,7 +2,6 @@
 const mapAddress = document.querySelector("#latlng");
 
 // Initializing google map
-
 const initMap = () => {
   const geocoder = new google.maps.Geocoder();
   const infowindow = new google.maps.InfoWindow();

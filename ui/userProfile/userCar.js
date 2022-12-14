@@ -1,6 +1,6 @@
 "use strict";
-const url = "http://localhost:3000"; // change url when uploading to server
-//const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
+//const url = "http://localhost:3000"; // change url when uploading to server
+const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
 
 const ul = document.querySelector(".car-list");
 const carName = document.querySelector(".brand");
@@ -47,7 +47,7 @@ if (token != null) {
       // console.log(car.reg_no);
       const img = document.createElement("img");
       if (car.file_name) {
-        img.src = "../../server/thumbnails/" + car.file_name;
+        img.src = `${url}/thumbnails/` + car.file_name;
       } else {
         img.src = "../../autoshare-logo/png/logo-white.png";
       }

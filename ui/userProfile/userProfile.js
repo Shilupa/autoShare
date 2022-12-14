@@ -1,6 +1,6 @@
 "use strict";
-const url = "http://localhost:3000"; // change url when uploading to server
-//const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
+//const url = "http://localhost:3000"; // change url when uploading to server
+const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
 
 const profileForm = document.querySelector("#profile-form");
 const userName = document.querySelector(".name");
@@ -16,7 +16,7 @@ const confrimPassword = document.querySelector(".confirm-password");
 const profileImage = document.querySelector("#profile-image");
 const deleteBtn = document.querySelector("#delete-button");
 
-console.log('cookie:'+ document.cookie);
+console.log("cookie:" + document.cookie);
 
 // place holder for profile
 const profile_pic_form = document.getElementById("upload");
@@ -36,9 +36,8 @@ const user = JSON.parse(sessionStorage.getItem("user"));
 //console.log(user);
 
 //calendar and time
-var today = new Date().toISOString().split('T')[0];
-document.querySelector(".dob").setAttribute('max', today);
-
+var today = new Date().toISOString().split("T")[0];
+document.querySelector(".dob").setAttribute("max", today);
 
 (async () => {
   const fetchOptions = {
@@ -67,8 +66,8 @@ if (token != null) {
   hamburgerUserHtml.addEventListener("click", () => {
     location.href = "../userProfile/userProfile.html";
   });
-}else {
-  location.href="../Home/home.html";
+} else {
+  location.href = "../Home/home.html";
   btnLogout.style.display = "none";
   hamburgerBtnLogout.style.display = "none";
   hamburgerUserHtml.style.display = "none";

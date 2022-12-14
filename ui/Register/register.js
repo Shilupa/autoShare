@@ -1,6 +1,6 @@
 "use strict";
-const url = "http://localhost:3000"; // change url when uploading to server
-//const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
+//const url = "http://localhost:3000"; // change url when uploading to server
+const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
 
 const registerForm = document.getElementById("register-form");
 const errorMessage = document.getElementById("error-message");
@@ -36,5 +36,5 @@ registerForm.addEventListener("submit", async (event) => {
   //navigation to login page.
   if (json.status === 201) {
     location.href = "../Login/login-1.html";
-  }else{}
+  }
 });

@@ -1,7 +1,7 @@
 "use strict";
 
-const url = "http://localhost:3000"; // change url when uploading to server
-//const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
+//const url = "http://localhost:3000"; // change url when uploading to server
+const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
 
 const ul = document.querySelector(".car-list");
 const searchedList = document.querySelector("#searched-list");
@@ -97,7 +97,7 @@ const createCarCards = (cars) => {
 const sortedCars = (cars) => {
   cars.forEach((car) => {
     const img = document.createElement("img");
-    img.src = "../../server/thumbnails/" + car.file_name;
+    img.src = `${url}/thumbnails/` + car.file_name;
     img.alt = car.brand;
     img.classList.add("resp");
 
