@@ -21,7 +21,6 @@ console.log(user, token);
 
 //checking token if it exists
 if (token != null) {
-
   //normal page
   userHtml.innerHTML = `Hi ${user.name}!`;
 
@@ -46,6 +45,7 @@ if (token != null) {
     console.log(cars);
 
     cars.forEach((car) => {
+      // console.log(car.reg_no);
       const img = document.createElement("img");
       if (car.file_name) {
         img.src = "../../server/uploads/" + car.file_name;
@@ -90,9 +90,6 @@ if (token != null) {
         '<i class="fa-solid fa-gears">&nbsp;</i>' +
         `${car.transmission}` +
         "</li>" +
-        '<li class="delete">' +
-        '<i class="fa-solid fa-trash fa-xl">&nbsp;</i>' +
-        "</li>" +
         "</ul>" +
         "</div>";
 
@@ -112,8 +109,8 @@ if (token != null) {
       // appending one card to the whole container
       ul.prepend(li);
 
+      // Get inside the car
       li.addEventListener("click", () => {
-        //location.href = "../carDetails/carDetails.html" + car.reg_no;
         if (token) {
           location.href = `../userProfile/userCarDetails.html?id=${car.reg_no}`;
         } else {
@@ -121,11 +118,8 @@ if (token != null) {
         }
       });
     });
-
-    //createCarCards(cars);
-    //sortCars(cars);
   })();
-}else {
+} else {
   btnLogout.style.display = "none";
   hamburgerBtnLogout.style.display = "none";
   hamburgerUserHtml.style.display = "none";

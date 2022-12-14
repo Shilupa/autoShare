@@ -107,8 +107,8 @@ const createCarCard = async (car) => {
   rentPrice.innerHTML = car.rent_price;
 
   // Splitting date string to remove unnecessary string
-  const splittedStartDate = car.pickup_date.split("T");
-  const splittedEndDate = car.dropoff_date.split("T");
+  const splittedStartDate = car.pickup_date.substring(0, 10);
+  const splittedEndDate = car.dropoff_date.substring(0, 10);
 
   startDate.innerHTML = splittedStartDate[0];
   startTime.innerHTML = car.pickup_time;
@@ -127,8 +127,26 @@ const createCarCard = async (car) => {
   // Fetching car images
   const carUrl = `${url}/pictures/${car.reg_no}`;
   const carImages = await getData(carUrl);
+
   
 /*   carImages.forEach((image) => {
+
+  console.log(carImages.length);
+
+  /*  if(!carImages){
+    const slides = 
+    '<div class="mySlides fade">'+
+    '<div class="numbertext">1 / 3</div>'+
+    '<img src="/upl" style="width:100%">'+
+ ' </div>';
+
+ const mySlides = document.createElement("div");
+ mySlides.innerHTML = slides
+ imageContainer.prepend(mySlides);
+  } */
+
+  /*   carImages.forEach((image) => {
+
     console.log(image.file_name);
     const details =
       '<div class="details">' +
