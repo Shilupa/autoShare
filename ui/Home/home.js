@@ -104,7 +104,7 @@ const createCarCards = (cars) => {
 const sortedCars = (cars) => {
   cars.forEach((car) => {
     const img = document.createElement("img");
-    img.src = "../../server/thumbnails/" + car.file_name;
+    img.src = `${url}/thumbnails/` + car.file_name;
     img.alt = car.brand;
     img.classList.add("resp");
 

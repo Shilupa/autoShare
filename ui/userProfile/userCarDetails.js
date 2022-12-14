@@ -52,10 +52,9 @@ const dropoff_time_text = document.querySelector(".dropoff_time");
 const form = document.querySelector("#add-car");
 
 //calendar and time
-var today = new Date().toISOString().split('T')[0];
-document.querySelector("#start-date").setAttribute('min', today);
-document.querySelector("#end-date").setAttribute('min', today);
-
+var today = new Date().toISOString().split("T")[0];
+document.querySelector("#start-date").setAttribute("min", today);
+document.querySelector("#end-date").setAttribute("min", today);
 
 //selecting from normal view
 const btnLogout = document.querySelector("#btn-logout");
@@ -384,19 +383,19 @@ form.addEventListener("submit", async (evt) => {
     }
   }
 
-    //making sure user cannot choose end time before start time
-    const pickup_date = data.pickup_date;
-    const dropoff_date =  data.dropoff_date;
-    const pickup_time = data.pickup_time;
-    const dropoff_time = data.dropoff_time;
-  
-    if(pickup_date>dropoff_date){
-      alert("Dont be stupid! You cannot return car before pickup day");
-      return;
-    } else if(pickup_date===dropoff_date && dropoff_time<pickup_time){
-      alert("Dont be stupid! You cannot return car before pickup time");
-      return;
-    }
+  //making sure user cannot choose end time before start time
+  const pickup_date = data.pickup_date;
+  const dropoff_date = data.dropoff_date;
+  const pickup_time = data.pickup_time;
+  const dropoff_time = data.dropoff_time;
+
+  if (pickup_date > dropoff_date) {
+    alert("Dont be stupid! You cannot return car before pickup day");
+    return;
+  } else if (pickup_date === dropoff_date && dropoff_time < pickup_time) {
+    alert("Dont be stupid! You cannot return car before pickup time");
+    return;
+  }
 
   const fetchOptions = {
     method: "PUT",
