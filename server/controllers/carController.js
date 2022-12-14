@@ -18,6 +18,11 @@ const get_car_by_reg = async (req, res) => {
   res.json(cars);
 };
 
+const get_car_all_info_by_reg = async (req, res) => {
+  const cars = await carModel.getCarAllInfoByRegNum(req.params.carReg, res);
+  res.json(cars);
+};
+
 const add_car = async (req, res) => {
   console.log("creating a new car: ", req.body);
   const newCar = req.body;
@@ -64,6 +69,7 @@ const modify_car = async (req, res) => {
 module.exports = {
   get_home_cars,
   get_car_by_reg,
+  get_car_all_info_by_reg,
   add_car,
   delete_car,
   modify_car,

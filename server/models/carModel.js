@@ -50,7 +50,7 @@ const getCarByUserId = async (userId, res) => {
   }
 };
 
-/* const getCarByRegNum = async (carRegNum, res) => {
+const getCarByRegNum = async (carRegNum, res) => {
   try {
     const sql = "select * from car c " + "where c.reg_no=?";
     const values = [carRegNum];
@@ -60,9 +60,9 @@ const getCarByUserId = async (userId, res) => {
     console.error("error", e.message);
     res.status(500).send(e.message);
   }
-}; */
+};
 
-const getCarByRegNum = async (carRegNum, res) => {
+const getCarAllInfoByRegNum = async (carRegNum, res) => {
   try {
     const sql =
       "select " +
@@ -221,6 +221,7 @@ module.exports = {
   getHomeCars,
   getCarByUserId,
   getCarByRegNum,
+  getCarAllInfoByRegNum,
   addCar,
   deleteCarByRegId,
   modifyCarByRegId,
