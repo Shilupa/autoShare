@@ -127,20 +127,7 @@ const createCarCard = async (car) => {
   // Fetching car images
   const carUrl = `${url}/pictures/${car.reg_no}`;
   const carImages = await getData(carUrl);
-  console.log(carImages.length);
-
- /*  if(!carImages){
-    const slides = 
-    '<div class="mySlides fade">'+
-    '<div class="numbertext">1 / 3</div>'+
-    '<img src="/upl" style="width:100%">'+
- ' </div>';
-
- const mySlides = document.createElement("div");
- mySlides.innerHTML = slides
- imageContainer.prepend(mySlides);
-  } */
-
+  
 /*   carImages.forEach((image) => {
     console.log(image.file_name);
     const details =
