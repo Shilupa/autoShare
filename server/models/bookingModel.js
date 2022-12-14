@@ -63,7 +63,15 @@ const addBooking = async (bookingObject, res) => {
       "Had a nice experience but there was some smell in the car."
     ]
     const goodreview = [
+      "We booked car for a week and was a good experience.",
       "Car was fine. I would appriciate if the car was a bit cleaner.",
+      "Car war fair and worked as expected. Price was slightly more than expected.",
+      "Car's door had some issue. Apparently it can be fixed. That's the only issue we had.",
+      "Nothing extra. Good experience though."
+    ]
+
+    const greatreview = [
+      "Car was good. Best value for money.",
       "My partner got really happy with the car. Now I'm also really impressed.",
       "I would book this car again in future. Had a smooth and comfortable ride.",
       "I booked the car for 10 days and had a pleasant experience.",
@@ -84,11 +92,11 @@ const addBooking = async (bookingObject, res) => {
     } else if (random == 2) {
       Comment = averagereview[randomquote];  
     } else if (random == 3) {
-      Comment = ;
+      Comment = goodreview[randomquote]
     } else if (random == 4) {
-      Comment = averagereview[randomquote];
+      Comment = greatreview[randomquote];
     } else {
-      Comment = averagereview[randomquote];
+      Comment = excellentreview[randomquote];
     }
 
     const sql2 =
