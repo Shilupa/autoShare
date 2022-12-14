@@ -91,7 +91,7 @@ const getCarAllInfoByRegNum = async (carRegNum, res) => {
       "c.reg_no as reg_no, " +
       "c.brand as brand, " +
       "c.model as model, " +
-      "c.year_ as yeay_, " +
+      "c.year_ as year_, " +
       "c.transmission as transmission, " +
       "c.fuel_type as fuel_type, " +
       "c.seater as seater, " +
@@ -119,7 +119,7 @@ const getCarAllInfoByRegNum = async (carRegNum, res) => {
       "left outer join person bp on b.person_id = bp.id " +
       "left outer join review r on b.id = r.booking_id " +
       "left outer join profile ownpr on p.id = ownpr.person_id " +
-      "left outer join profile bpr on p.id = bpr.person_id " +
+      "left outer join profile bpr on bp.id = bpr.person_id " +
       "left outer join pictures pic on c.reg_no = pic.car_reg_no " +
       "where c.reg_no = ?";
     const values = [carRegNum];
