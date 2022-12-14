@@ -3,8 +3,8 @@ const initMap = () => {
   const geocoder = new google.maps.Geocoder();
   const infowindow = new google.maps.InfoWindow();
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 8,
-    center: { lat: 40.731, lng: -73.997 },
+    zoom: 6,
+    center: { lat: 61.9241, lng: 25.7482 },
   });
 
   geocoder.geocode({ address: "Maininkitie" }, function (results, status) {
@@ -20,8 +20,6 @@ const initMap = () => {
 };
 
 const geocodeLatLng = (geocoder, map, infowindow, latitude, longitude) => {
-  /*   const input = document.getElementById("latlng").value;
-  const latlngStr = input.split(",", 2); */
   const latlng = {
     lat: latitude,
     lng: longitude,

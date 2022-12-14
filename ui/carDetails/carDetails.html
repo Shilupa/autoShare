@@ -10,6 +10,10 @@
       src="https://kit.fontawesome.com/e1ac683977.js"
       crossorigin="anonymous"
     ></script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0g55sCzgjFb626M3auODLTNAGYmyxRes&callback=initMap&libraries=&v=weekly"
+    defer
+  ></script>
   </head>
   <body>
     <div class="header">
@@ -208,6 +212,10 @@
       </div>
    <div class="right-box">
       <div class="map-card">
+        <div id="floating-panel">
+          <input id="latlng" type="text" />
+          <input id="submit" type="button" value="Locate in map" />
+        </div>
          <div id="map">
          </div>
       </div>
@@ -306,5 +314,6 @@
     ></script> -->
     <script src="carDetails.js"></script>
     <script src="imageSlider.js" defer></script>
+    <script src="map.js" ></script>
   </body>
 </html>
