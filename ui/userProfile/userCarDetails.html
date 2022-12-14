@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoShare</title>
+    <link rel="stylesheet" href="userCarDetails.css" />
+    <script
+      src="https://kit.fontawesome.com/e1ac683977.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <a href="/ui/Home/home.html"
+        ><img
+          src="/autoshare-logo/png/logo-no-background-cropped.png"
+          alt="company logo"
+          class="logo"
+      /></a>
+      <div id="nav-menu">
+        <li class="nav-item">
+          <a href="/ui/About/about.html" class="nav-link">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="../userProfile/userProfile.html"
+            id="user-html"
+            style="color: #006400"
+          ></a>
+        </li>
+        <li class="nav-item">
+          <a href="/ui/Home/home.html" class="nav-link" id="btn-logout">
+            <i class="fa-solid fa-right-from-bracket fa-lg"></i>&nbsp;&nbsp; Log
+            Out
+          </a>
+        </li>
+
+        <!-- hamburger is hidden by default and becomes active when the screen size is small -->
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+
+          <div class="dropdown-content">
+            <a
+              class="nav-link"
+              href="../userProfile/userProfile.html"
+              id="hamburger-user-html"
+            ></a>
+            <a href="/ui/About/about.html" class="nav-link">About Us</a>
+            <!-- should be hidden unless user has logged in -->
+            <a href="/ui/Home/home.html" class="nav-link" id="hamburger-logout"
+              >Log Out</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="user-bar">
+      <div class="user-bar-item">
+        <a href="/ui/userProfile/userCar.html">
+          <i class="fa-solid fa-car fa-lg"></i>&nbsp;&nbsp;
+          <h3 class="user-bar-text">My car(s)</h3>
+        </a>
+      </div>
+
+      <div class="user-bar-item">
+        <a href="/ui/userProfile/userProfile.html">
+          <i class="fa-solid fa-user fa-lg"></i>&nbsp;&nbsp;
+          <h3 class="user-bar-text">My profile</h3>
+        </a>
+      </div>
+
+      <div class="user-bar-item">
+        <a href="/ui/bookings/myBookings.html">
+          <i class="fa-solid fa-list-ol fa-lg"></i>&nbsp;&nbsp;
+          <h3 class="user-bar-text">My bookings</h3>
+        </a>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="car-info">
+        <div class="forms">
+          <div class="form-car">
+            <div class="form-header">
+              <span class="title">Car Info</span>
+
+              <div class="multiple-uploader" id="multiple-uploader">
+                <form
+                  action="#"
+                  class="image-container"
+                  id="placeholder1"
+                  enctype="multipart/form-data"
+                >
+                  <span class="delete" id="delete_PH1">&#10005;</span>
+                  <label for="file-input_1">
+                    <img id="PH_1_image" src="/images/add.png" />
+                  </label>
+                  <input id="file-input_1" type="file" name="file_name" />
+                </form>
+
+                <form
+                  action="#"
+                  class="image-container"
+                  id="placeholder2"
+                  enctype="multipart/form-data"
+                >
+                  <span class="delete" id="delete_PH2">&#10005;</span>
+                  <label for="file-input_2">
+                    <img id="PH_2_image" src="/images/add.png" />
+                  </label>
+                  <input id="file-input_2" type="file" name="file_name" />
+                </form>
+
+                <form
+                  action="#"
+                  class="image-container"
+                  id="placeholder3"
+                  enctype="multipart/form-data"
+                >
+                  <span class="delete" id="delete_PH3">&#10005;</span>
+                  <label for="file-input_3">
+                    <img id="PH_3_image" src="/images/add.png" />
+                  </label>
+                  <input id="file-input_3" type="file" name="file_name" />
+                </form>
+
+                <form
+                  action="#"
+                  class="image-container"
+                  id="placeholder4"
+                  enctype="multipart/form-data"
+                >
+                  <span class="delete" id="delete_PH4">&#10005;</span>
+                  <label for="file-input_4">
+                    <img id="PH_4_image" src="/images/add.png" />
+                  </label>
+                  <input id="file-input_4" type="file" name="file_name" />
+                </form>
+                <form
+                  action="#"
+                  class="image-container"
+                  id="placeholder5"
+                  enctype="multipart/form-data"
+                >
+                  <span class="delete" id="delete_PH5">&#10005;</span>
+                  <label for="file-input_5">
+                    <img id="PH_5_image" src="/images/add.png" />
+                  </label>
+                  <input id="file-input_5" type="file" name="file_name" />
+                </form>
+              </div>
+            </div>
+
+            <form action="#" id="add-car">
+              <div class="input-field">
+                <input
+                  type="text"
+                  placeholder="Enter car registration number"
+                  name="reg_no"
+                  class="reg_no"
+                  disabled
+                />
+                <i class="fa-solid fa-car"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  type="text"
+                  placeholder="Brand"
+                  name="brand"
+                  class="brand"
+                  minlength="3"
+                  required
+                />
+                <i class="fa-solid fa-car"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  type="text"
+                  placeholder="Model"
+                  name="model"
+                  class="model"
+                  minlength="1"
+                  required
+                />
+                <i class="fa-solid fa-car"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  type="text"
+                  placeholder="Location"
+                  name="car_address"
+                  class="car_address"
+                  minlength="5"
+                  required
+                />
+                <i class="fa-solid fa-location-pin"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  type="text"
+                  placeholder="Color"
+                  name="color"
+                  class="color"
+                  minlength="3"
+                  required
+                />
+                <i class="fa-solid fa-palette"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  type="number"
+                  min="1990"
+                  max="2022"
+                  step="1"
+                  placeholder="manufactured year (1990-2022)"
+                  name="year_"
+                  class="year_"
+                />
+                <i class="fa-solid fa-calendar"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  type="text"
+                  placeholder="Fuel type"
+                  name="fuel_type"
+                  class="fuel_type"
+                  minlength="3"
+                  required
+                />
+                <i class="fa-solid fa-gas-pump"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  type="text"
+                  placeholder="Transmission"
+                  name="transmission"
+                  class="transmission"
+                  minlength="4"
+                  required
+                />
+                <i class="fa-solid fa-gears"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  type="number"
+                  min="1"
+                  max="10"
+                  step="1"
+                  placeholder="number of people (1-10)"
+                  name="seater"
+                  class="seater"
+                  required
+                />
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  type="number"
+                  placeholder="rent per hour"
+                  name="rent_price"
+                  class="rent_price"
+                  required
+                />
+                <i class="fa-solid fa-coins"></i>
+              </div>
+
+              <fieldset class="availibility">
+                <legend class="title">Car's Availibility</legend>
+                <div class="input-field">
+                  <input
+                    placeholder="starting date"
+                    type="text"
+                    onfocus="(this.type='date')"
+                    id="start-date"
+                    name="pickup_date"
+                    class="pickup_date"
+                    required
+                  />
+                  <i class="fa-solid fa-hourglass-start"></i>
+                </div>
+
+                <div class="input-field">
+                  <input
+                    placeholder="starting time"
+                    type="text"
+                    onfocus="(this.type='time')"
+                    id="start-time"
+                    name="pickup_time"
+                    class="pickup_time"
+                    required
+                  />
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div class="input-field">
+                  <input
+                    placeholder="ending date"
+                    type="text"
+                    onfocus="(this.type='date')"
+                    id="end-date"
+                    name="dropoff_date"
+                    class="dropoff_date"
+                    required
+                  />
+                  <i class="fa-solid fa-hourglass-end"></i>
+                </div>
+
+                <div class="input-field">
+                  <input
+                    placeholder="ending time"
+                    type="text"
+                    onfocus="(this.type='time')"
+                    id="end-time"
+                    name="dropoff_time"
+                    class="dropoff_time"
+                    required
+                  />
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+              </fieldset>
+
+              <div class="input-field button">
+                <!-- <input type="button" /> -->
+                <button type="submit" class="upload-btn">Update</button>
+              </div>
+            </form>
+            <div class="input-field button">
+              <!-- <input type="button" /> -->
+              <button type="button" class="delete-btn">Delete car</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="userCarDetails.js"></script>
+    <script src="../serialize.js"></script>
+  </body>
+</html>

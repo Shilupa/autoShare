@@ -1,224 +1,306 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@100;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@100;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 * {
-   box-sizing: border-box;
-   font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-   margin: 0;
+  margin: 0;
 }
 
-.logo{
-   margin-left: 20px;
-   width: 10rem;
-   padding: 20px;
+.logo {
+  margin-left: 20px;
+  width: 10rem;
+  padding: 20px;
 }
 
-.header{
-   display: flex;
-   flex-direction: row;
-   height: 10%;
-   background-color: #8EE4AF;
-   justify-content: space-between;
-   align-items: center;
-   position: sticky; top: 0;
-   z-index: 1;
-   font-weight: 600;
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 10%;
+  background-color: #8ee4af;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-weight: 600;
 }
 
-#nav-menu{
-   height: 100%;
-   width: 50%;
-   padding: 10px;
-   display: flex;
-   flex-direction: row;
-   list-style: none;
-   justify-content: space-evenly;
-   align-items: center;
+#nav-menu {
+  height: 100%;
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.nav-link{
-   color: black;
-   text-decoration: none;
-   font-size: 20px;
+.nav-link {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
 }
 
-.main{
-   display: flex;
-   align-items: stretch;
-   justify-content: space-evenly;
+.hamburger {
+  display: none;
+  cursor: pointer;
 }
 
-.left-box{
-   width: 50%;
-   display: flex;
-   justify-content: center;
+.bar {
+  display: block;
+  width: 30px;
+  height: 5px;
+  margin: 5px auto;
+  border: none;
+  border-radius: 6px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: black;
 }
 
-.right-box{
-   width: 50%;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: fit-content;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
 }
 
-.user-info{
-   margin-top: 100px;
-   margin-bottom: 50px;
-   max-width: 430px;
-   width: 100%;
-   background-color: white;
-   border-radius: 10px;
-   box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+.hamburger:hover .dropdown-content {
+  display: block;
+  right: 10px;
+  left: auto;
 }
 
-.form-login{
-   padding: 30px;
+.user-bar {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
 }
 
-.form-login .title{
-   position: relative;
-   font-size: 30px;
-   font-weight: 700;
+.user-bar-item a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.form-login .title::before{
-   content: '';
-   position: absolute;
-   left: 0;
-   bottom: 0;
-   height: 3px;
-   width: 30px;
-   border-radius: 25px;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-.input-field{
-   position: relative;
-   height: 50px;
-   width: 100%;
-   margin-top: 30px;
+.user-bar-item a:hover {
+  color: #04aa6d;
 }
 
-.input-field input{
-   position: absolute;
-   height: 100%;
-   width: 100%;
-   padding: 0 35px;
-   border: none;
-   font-size: 16px;
-   outline: none;
-   border-bottom: 2px solid #ccc;
-   border-top: 2px solid transparent;
+.main {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
 }
 
-.input-field input:is(:focus, :valid){
-   border-bottom-color:#05386B;
+.form-header {
+  display: flex;
+  justify-content: space-between;
 }
 
-.input-field i{
-   position:absolute;
-   top: 50%;
-   left: 0;
-   transform: translateY(-50%);
-   color: #999;
-   font-size: 23px ;
+.user-info {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  max-width: 500px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.input-field i.icon{
-   left: 0;
+.display-pic, #profile-image {
+  border-radius: 50%;
+  background-color: #cccccc;
+  width: 3em;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: #ffffff;
 }
 
-.form-login .forgot-password{
-   display: flex;
-   flex-direction: row-reverse;
-   margin-top: 10px;
-   padding: 5px;
+label:hover {
+  cursor: pointer;
 }
 
-.form-login a{
-   color: #4070f4;
-   text-decoration: none;
+.image-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
-.form-login a:hover{
-   text-decoration: underline;
+.image-container input {
+  display: none;
 }
 
-.form-login .button{
-   margin-top: 35px;
+.form-user {
+  padding: 30px;
 }
 
-.form-login .button input{
-   border: none;
-   font-size: 17px;
-   font-weight: 500;
-   color: #ccc;
-   background-color: #05386B;
-   letter-spacing: 1px;
-   border-radius: 6px;
-   cursor: pointer;
-   transition: all 0.5s ease;
+.form-user .title {
+  position: relative;
+  font-size: 30px;
+  font-weight: 700;
 }
 
-.button input:hover{
-   background-color: #4070f4;
+.form-user .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 25px;
 }
 
-.form-login .signup{
-   margin-top:30px;
-   text-align: center;
+.input-field {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
 }
 
-.car-info{
-   margin-top: 100px;
-   margin-bottom: 50px;
-   max-width: 430px;
-   width: 100%;
-   height: fit-content;
-   background-color: white;
-   border-radius: 10px;
-   box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+.input-field input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0 35px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  border-bottom: 2px solid #ccc;
+  border-top: 2px solid transparent;
 }
 
-.add-another-car{
-   margin-top: 10px;
-   height: 65px;
-   width: 400px;
-   background-color: #05386B;
-   color: #ccc;
-   text-align: center;
-   border-radius: 6px;
-   box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+.input-field input:is(:focus, :valid) {
+  border-bottom-color: #05386b;
 }
 
-.add-another-car:hover{
-   background-color: #4070f4;
-   cursor: pointer;
+.input-field i {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 23px;
 }
 
-.choose-file{
-   margin-top:25px;
+.input-field i.icon {
+  left: 0;
 }
 
 
-
-label {
-   background-color: #05386B;
-   color: white;
-   padding: 0.5rem;
-   font-family: sans-serif;
-   border-radius: 6px;
-   cursor: pointer;
-   margin-top: 1rem;
- }
-
- label:hover{
-   background-color: #4070f4;
-   cursor: pointer;
+.form-user a {
+  color: #4070f4;
+  text-decoration: none;
 }
- 
- #file-chosen{
-   margin-left: 0.3rem;
-   font-family: sans-serif;
- }
+
+.form-user a:hover {
+  text-decoration: underline;
+}
+
+
+.form-user .update-button input {
+  border: none;
+  font-size: 17px;
+  font-weight: 500;
+  color: #ccc;
+  background-color: #05386b;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.update-button input:hover {
+  background-color: #4070f4;
+}
+
+.form-user .delete-button input {
+  border: none;
+  font-size: 17px;
+  font-weight: 500;
+  color: #ccc;
+  background-color: #d11a2a;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.form-user .delete-button input:hover {
+  background-color: red;
+}
+
+@media screen and (max-width: 950px) {
+  .car-info {
+    max-width: 95%;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .header {
+    justify-content: space-around;
+  }
+
+  #nav-menu {
+    justify-content: end;
+  }
+  .user-info {
+    max-width: 95%;
+  }
+
+  .user-bar-item h3 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .logo {
+    width: 9rem;
+  }
+
+  .form-user .title {
+    font-size: 20px;
+  }
+
+  .form-user input {
+    font-size: 0.7rem;
+  }
+}

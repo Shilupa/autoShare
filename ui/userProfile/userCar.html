@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoShare</title>
+    <link rel="stylesheet" href="userCar.css" />
+    <script
+      src="https://kit.fontawesome.com/e1ac683977.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <a href="/ui/Home/home.html"
+        ><img
+          src="/autoshare-logo/png/logo-no-background-cropped.png"
+          alt="company logo"
+          class="logo"
+      /></a>
+      <div id="nav-menu">
+        <li class="nav-item">
+          <a href="/ui/About/about.html" class="nav-link">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a
+            href="/ui/userProfile/userProfile.html"
+            class="nav-link"
+            id="user-html"
+            style="color: #006400"
+          ></a>
+        </li>
+        <li class="nav-item">
+          <a href="/ui/Home/home.html" class="nav-link" id="btn-logout">
+            <i class="fa-solid fa-right-from-bracket fa-lg"></i>&nbsp;&nbsp; Log
+            Out
+          </a>
+        </li>
+
+        <!-- hamburger is hidden by default and becomes active when the screen size is small -->
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+
+          <div class="dropdown-content">
+            <a
+              class="nav-link"
+              href="../userProfile/userProfile.html"
+              id="hamburger-user-html"
+            ></a>
+            <a href="/ui/About/about.html" class="nav-link">About Us</a>
+            <!-- should be hidden unless user has logged in -->
+            <a href="/ui/Home/home.html" class="nav-link" id="hamburger-logout"
+              >Log Out</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="user-bar">
+      <div class="user-bar-item">
+        <a
+          href="/ui/userProfile/userCar.html"
+          style="border-bottom: 3px solid #04aa6d; color: #04aa6d"
+        >
+          <i class="fa-solid fa-car fa-lg"></i>&nbsp;&nbsp;
+          <h3 class="user-bar-text">My car(s)</h3>
+        </a>
+      </div>
+
+      <div class="user-bar-item">
+        <a href="/ui/userProfile/userProfile.html">
+          <i class="fa-solid fa-user fa-lg"></i>&nbsp;&nbsp;
+          <h3 class="user-bar-text">My profile</h3>
+        </a>
+      </div>
+
+      <div class="user-bar-item">
+        <a href="/ui/bookings/myBookings.html">
+          <i class="fa-solid fa-list-ol fa-lg"></i>&nbsp;&nbsp;
+          <h3 class="user-bar-text">My bookings</h3>
+        </a>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="car-list">
+        <!-- create list here -->
+        <a href="addCar.html">
+          <div class="add-car-btn">
+            <div class="message">
+              <img src="/images/add-car.png" alt="add-car" />
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <script src="userCar.js"></script>
+    <script src="../serialize.js"></script>
+  </body>
+</html>
