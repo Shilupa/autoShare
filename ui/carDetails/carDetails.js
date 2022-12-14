@@ -277,7 +277,6 @@ const overallRating = (rating) => {
 };
 
 // booking click listener
-
 booking_form.addEventListener("submit", async (event) => {
   event.preventDefault();
   //const fd = new FormData(carForm);

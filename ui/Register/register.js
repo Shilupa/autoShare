@@ -5,7 +5,7 @@ const url = "http://localhost:3000"; // change url when uploading to server
 const registerForm = document.getElementById("register-form");
 const errorMessage = document.getElementById("error-message");
 
-//calendar and time
+//setting dob calendar to max today
 var today = new Date().toISOString().split('T')[0];
 document.querySelector(".dob").setAttribute('max', today);
 
@@ -33,7 +33,7 @@ registerForm.addEventListener("submit", async (event) => {
   const response = await fetch(url + "/auth/register", fetchOptions);
   const json = await response.json();
   alert(json.message);
-  //TODO: navigation to login page.
+  //navigation to login page.
   if (json.status === 201) {
     location.href = "../login/login-1.html";
   }else{}

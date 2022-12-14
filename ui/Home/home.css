@@ -265,12 +265,6 @@ form button {
   background-color: #4070f4;
 }
 
-/* @media screen and (max-width: 1200px) {
-  .car-list-item {
-    width: 230px;
-  }
-} */
-
 @media screen and (max-width: 950px) {
   .nav-link {
     display: none;

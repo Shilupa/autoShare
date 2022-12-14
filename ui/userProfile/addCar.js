@@ -22,13 +22,11 @@ var today = new Date().toISOString().split('T')[0];
 document.querySelector("#start-date").setAttribute('min', today);
 document.querySelector("#end-date").setAttribute('min', today);
 
-
 //checking token if it exists
 if (token != null) {
 
   //normal page
   userHtml.innerHTML = `Hi ${user.name}!`;
-
   userHtml.addEventListener("click", () => {
     location.href = "../userProfile/userProfile.html";
   });
@@ -62,9 +60,7 @@ hamburgerBtnLogout.addEventListener("click", () => {
 
 carForm.addEventListener("submit", async (evt) => {
   evt.preventDefault();
-  //const fd = new FormData(carForm);
   const data = serializeJson(carForm);
-  console.log("HelloCAR:",data);
 
   for (const [prop, value] of Object.entries(data)) {
     if (value === "") {
@@ -79,13 +75,12 @@ carForm.addEventListener("submit", async (evt) => {
   const dropoff_time = data.dropoff_time;
 
   if(pickup_date>dropoff_date){
-    alert("Dont be stupid! You cannot return car before pickup day");
+    alert("Drop off date cannot be before pick up date");
     return;
   } else if(pickup_date===dropoff_date && dropoff_time<pickup_time){
-    alert("Dont be stupid! You cannot return car before pickup time");
+    alert("Drop off time cannot be before pick up time");
     return;
   }
-
 
   const fetchOptions = {
     method: "POST",
@@ -103,4 +98,3 @@ carForm.addEventListener("submit", async (evt) => {
     location.href = "userCar.html";
   }else{}
 });
-
