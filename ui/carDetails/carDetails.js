@@ -45,7 +45,6 @@ const map_address = document.querySelector("#latlng");
 
 const token = sessionStorage.getItem("token");
 const tokenUser = JSON.parse(sessionStorage.getItem("user"));
-//console.log(tokenUser, token);
 
 //checking token if it exists
 if (token != null) {
@@ -126,9 +125,6 @@ const getCar = async (reg_no) => {
   const average_rating = sum / car.length;
   overallRating(average_rating);
 
-  console.log("details", car);
-  //console.log("average rating", average_rating);
-
   const reviewseen = new Set();
   const uniqueReviews = reviews.filter((el) => {
     const duplicate = reviewseen.has(el.booking_id);
@@ -138,8 +134,6 @@ const getCar = async (reg_no) => {
   if (uniqueReviews[0].booking_id) {
     createReviewCard(uniqueReviews);
   }
-  console.log("unique reviews: ", uniqueReviews);
-
   const pictureseen = new Set();
   const uniquePictures = pictures.filter((el) => {
     const duplicate = pictureseen.has(el.placeholder);
@@ -147,7 +141,6 @@ const getCar = async (reg_no) => {
     return !duplicate;
   });
   createPicSlide(uniquePictures);
-  //console.log("unique pictures: ", uniquePictures);
 
   // sending car info and car owner information
   createCarCard(car[0]);
@@ -232,9 +225,7 @@ const createReviewCard = (rev) => {
 };
 
 const createPicSlide = (pics) => {
-  console.log("pic length: ", pics);
   if (pics.length > 0) {
-    console.log("pic length: ", pics.length);
     pics.forEach((element, i) => {
       if (element.file_name) {
         if (i == 0) {

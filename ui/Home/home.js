@@ -26,7 +26,6 @@ if (token != null) {
   btnLogin.style.display = "none";
   btnLogout.style.display = "visible";
   userHtml.innerHTML = `Hi ${user.name}!`;
-
   userHtml.addEventListener("click", () => {
     location.href = "../userProfile/userProfile.html";
   });
@@ -181,7 +180,7 @@ const sortedCars = (cars) => {
       if (token) {
         location.href = `../carDetails/carDetails.html?id=${car.reg_no}`;
       } else {
-        location.href = "../login/login-1.html";
+        location.href = "../Login/login-1.html";
       }
     });
   });

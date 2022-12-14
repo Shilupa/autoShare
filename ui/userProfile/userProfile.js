@@ -16,8 +16,6 @@ const confrimPassword = document.querySelector(".confirm-password");
 const profileImage = document.querySelector("#profile-image");
 const deleteBtn = document.querySelector("#delete-button");
 
-console.log("cookie:" + document.cookie);
-
 // place holder for profile
 const profile_pic_form = document.getElementById("upload");
 const profile_pic_img = document.getElementById("profile-image");
@@ -33,7 +31,6 @@ const hamburgerUserHtml = document.querySelector("#hamburger-user-html");
 
 const token = sessionStorage.getItem("token");
 const user = JSON.parse(sessionStorage.getItem("user"));
-//console.log(user);
 
 //calendar and time
 var today = new Date().toISOString().split("T")[0];
@@ -49,7 +46,6 @@ document.querySelector(".dob").setAttribute("max", today);
   const profile = await response.json();
 
   profileImage.src = `${url}/thumbnails/${profile.file}`;
-  //console.log(profile);
 })();
 
 //checking token if it exists
@@ -111,8 +107,6 @@ profileForm.addEventListener("submit", async (evt) => {
     return;
   }
 
-  console.log(data);
-
   const fetchOptions = {
     method: "PUT",
     headers: {
@@ -121,8 +115,6 @@ profileForm.addEventListener("submit", async (evt) => {
     },
     body: JSON.stringify(data),
   };
-
-  console.log(fetchOptions);
 
   const response = await fetch(`${url}/user/${user.id}`, fetchOptions);
   const json = await response.json();
@@ -140,7 +132,6 @@ profileForm.addEventListener("submit", async (evt) => {
 
 profile_pic_form.onchange = async () => {
   const selectedFile = profile_pic_form.files[0];
-  //console.log(selectedFile);
   const fd = new FormData(formPH1);
 
   const fetchOptions = {
@@ -160,7 +151,6 @@ profile_pic_form.onchange = async () => {
 };
 
 deleteBtn.addEventListener("click", async () => {
-  console.log("hello", user.id);
   const fetchOptions = {
     method: "DELETE",
     headers: {
@@ -171,7 +161,7 @@ deleteBtn.addEventListener("click", async () => {
   const json = await response.json();
   if (json.status === 200) {
     alert(json.message);
-    location.href = "../login/login-1.html";
+    location.href = "../Login/login-1.html";
   } else {
     alert("Something went wrong!!");
   }

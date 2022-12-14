@@ -13,7 +13,6 @@ const mainList = document.querySelector(".booking-list");
 
 const token = sessionStorage.getItem("token");
 const user = JSON.parse(sessionStorage.getItem("user"));
-console.log("From home.js line 19", user, token);
 
 //checking token if it exists
 if (token != null) {
@@ -62,8 +61,6 @@ hamburgerBtnLogout.addEventListener("click", () => {
 })();
 
 const createBookingCard = (bookingList) => {
-  console.log(bookingList);
-  console.log(user.name);
   bookingList.forEach((booking) => {
     const details =
       '<div class="booking-list-item">' +
