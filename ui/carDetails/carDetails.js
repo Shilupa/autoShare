@@ -35,6 +35,9 @@ const swipeRight = document.querySelector("#right");
 // reviews -card selector
 const reviews_card = document.querySelector(".reviews-card");
 
+// Map address
+const map_address = document.querySelector("#latlng");
+
 const token = sessionStorage.getItem("token");
 const tokenUser = JSON.parse(sessionStorage.getItem("user"));
 //console.log(tokenUser, token);
@@ -145,6 +148,7 @@ const createCarCard = (car) => {
   year.innerHTML = car.year_;
   numberOfPeople.innerHTML = car.seater;
   rentPrice.innerHTML = car.rent_price;
+  map_address.value = car.car_address;
 
   // Splitting date string to remove unnecessary string
   const splittedStartDate = car.pickup_date.substring(0, 10);
@@ -210,11 +214,10 @@ const createReviewCard = (rev) => {
   });
 };
 
-
-const createPicSlide = (pics) => {
+/* const createPicSlide = (pics) => {
   pics.forEach((element) => {
 
-}
+} */
 
 // Fetching user data or car images from respective databases
 /* const getData = async (url) => {

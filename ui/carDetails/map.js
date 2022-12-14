@@ -1,6 +1,11 @@
 "use strict";
 // Initializing google map
+
+// Map address
+const map_address_2 = document.querySelector("#latlng");
+
 const initMap = () => {
+  console.log("Map address: ", map_address_2.value);
   const geocoder = new google.maps.Geocoder();
   const infowindow = new google.maps.InfoWindow();
   const map = new google.maps.Map(document.getElementById("map"), {
