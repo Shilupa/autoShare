@@ -59,11 +59,10 @@ const userHtml = document.querySelector("#user-html");
 const hamburgerBtnLogout = document.querySelector("#hamburger-logout");
 const hamburgerUserHtml = document.querySelector("#hamburger-user-html");
 
-//const container = document.querySelector('.image-container');
+const delete_btn = document.querySelector(".delete-btn");
 
 //checking token if it exists
 if (token != null) {
-
   //normal page
   userHtml.innerHTML = `Hi ${user.name}!`;
 
@@ -78,7 +77,7 @@ if (token != null) {
   hamburgerUserHtml.addEventListener("click", () => {
     location.href = "../userProfile/userProfile.html";
   });
-}else {
+} else {
   btnLogout.style.display = "none";
   hamburgerBtnLogout.style.display = "none";
   hamburgerUserHtml.style.display = "none";
@@ -394,5 +393,26 @@ form.addEventListener("submit", async (evt) => {
     alert(json.error.message);
   } else {
     location.href = "userCar.html";
+  }
+});
+
+delete_btn.addEventListener("click", async (evt) => {
+  evt.preventDefault();
+  const fetchOptions = {
+    method: "DELETE",
+    headers: {
+      Authorization: "Bearer " + sessionStorage.getItem("token"),
+    },
+  };
+
+  if (confirm("Are you sure you want to delete this car?")) {
+    const response = await fetch(`${url}/car/${reg_no}`, fetchOptions);
+    const json = await response.json();
+    if (json.error) {
+      alert(json.error.message);
+    } else {
+      location.href = "userCar.html";
+    }
+  } else {
   }
 });
