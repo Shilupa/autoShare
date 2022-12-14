@@ -127,6 +127,10 @@ const createCarCard = async (car) => {
   // Fetching car images
   const carUrl = `${url}/pictures/${car.reg_no}`;
   const carImages = await getData(carUrl);
+
+  
+/*   carImages.forEach((image) => {
+
   console.log(carImages.length);
 
   /*  if(!carImages){
@@ -142,6 +146,7 @@ const createCarCard = async (car) => {
   } */
 
   /*   carImages.forEach((image) => {
+
     console.log(image.file_name);
     const details =
       '<div class="details">' +
