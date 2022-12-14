@@ -1,4 +1,5 @@
 "use strict";
+// Initializing google map
 const initMap = () => {
   const geocoder = new google.maps.Geocoder();
   const infowindow = new google.maps.InfoWindow();
@@ -7,11 +8,13 @@ const initMap = () => {
     center: { lat: 61.9241, lng: 25.7482 },
   });
 
+  // Generating lat and long values from address as string
   geocoder.geocode({ address: "Maininkitie" }, function (results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       const latitude = results[0].geometry.location.lat();
       const longitude = results[0].geometry.location.lng();
 
+      // Displaying address in map on click
       document.getElementById("submit").addEventListener("click", () => {
         geocodeLatLng(geocoder, map, infowindow, latitude, longitude);
       });
@@ -19,6 +22,7 @@ const initMap = () => {
   });
 };
 
+// Displaying address in map on click
 const geocodeLatLng = (geocoder, map, infowindow, latitude, longitude) => {
   const latlng = {
     lat: latitude,
