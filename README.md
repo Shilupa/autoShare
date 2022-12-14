@@ -28,7 +28,7 @@ Auto Share is the car renting marketplace. Whether you are hiring a car for busi
 #### Cloning the repo
 
 ```http
-  git@github.com:Shilupa/autoShare.git
+    git@github.com:Shilupa/autoShare.git
 ```
 ### Running the back end using: 
 
