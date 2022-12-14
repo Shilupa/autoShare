@@ -6,6 +6,7 @@ const bookingController = require("../controllers/bookingController");
 
 router
   .get("/", bookingController.get_all_bookings)
+  .get("/user", bookingController.get_booking_by_user_id)
   .get("/:carReg", bookingController.get_booking_by_reg)
   .post("/", bookingController.add_booking)
   .put("/:bookingId", bookingController.modify_booking)
