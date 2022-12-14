@@ -172,20 +172,6 @@ a {
   text-decoration: none;
 }
 
-.delete {
-  width: 200px;
-  display: flex;
-  flex-direction: row;
-  color: red;
-  margin-bottom: 25px;
-  justify-content: flex-end;
-  cursor: pointer;
-}
-
-.delete:hover {
-  color: #d11a2a;
-}
-
 .checked {
   color: orange;
 }

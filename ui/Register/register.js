@@ -5,9 +5,9 @@ const url = "https://suraj-bcwt.northeurope.cloudapp.azure.com/app";
 const registerForm = document.getElementById("register-form");
 const errorMessage = document.getElementById("error-message");
 
-//calendar and time
-var today = new Date().toISOString().split("T")[0];
-document.querySelector(".dob").setAttribute("max", today);
+//setting dob calendar to max today
+var today = new Date().toISOString().split('T')[0];
+document.querySelector(".dob").setAttribute('max', today);
 
 registerForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -33,7 +33,7 @@ registerForm.addEventListener("submit", async (event) => {
   const response = await fetch(url + "/auth/register", fetchOptions);
   const json = await response.json();
   alert(json.message);
-  //TODO: navigation to login page.
+  //navigation to login page.
   if (json.status === 201) {
     location.href = "../Login/login-1.html";
   }

@@ -34,12 +34,11 @@
           ></a>
         </li>
         <li class="nav-item">
-          <a href="/ui/Home/home.html" class="nav-link" id="btn-logout">
+          <a href="#" class="nav-link" id="btn-logout">
             <i class="fa-solid fa-right-from-bracket fa-lg"></i>&nbsp;&nbsp; Log
             Out
           </a>
         </li>
-
         <!-- hamburger is hidden by default and becomes active when the screen size is small -->
         <div class="hamburger">
           <span class="bar"></span>
@@ -47,8 +46,6 @@
           <span class="bar"></span>
 
           <div class="dropdown-content">
-            <!-- <a href="/ui/Login/login-1.html" class="nav-link" id="hamburger-login">Log In</a> -->
-            <!-- should be hidden unless user has logged in -->
             <a
               class="nav-link"
               href="../userProfile/userProfile.html"
@@ -56,7 +53,7 @@
             ></a>
             <a href="/ui/About/about.html" class="nav-link">About Us</a>
             <!-- should be hidden unless user has logged in -->
-            <a href="/ui/Home/home.html" class="nav-link" id="hamburger-logout"
+            <a href="#" class="nav-link" id="hamburger-logout"
               >Log Out</a
             >
           </div>
@@ -93,85 +90,7 @@
           <div class="form-car">
             <div class="form-header">
               <span class="title">Car Info</span>
-              <!--               <form
-                action=""
-                method=""
-                enctype="multipart/form-data"
-                id="my-form"
-              >
-                <input
-                  type="file"
-                  name="images[]"
-                  multiple=""
-                  accept="image/*"
-                  style="display: none !important"
-                />
-              </form>
-              <div class="multiple-uploader" id="multiple-uploader">
-                <div class="mup-msg">
-                  <span class="mup-main-msg">click to upload images.</span>
-                  <span class="mup-msg" id="max-upload-number"
-                    >Upload up to 10 images</span
-                  >
-                  <span class="mup-msg"
-                    >Only images are allowed for upload</span
-                  >
-                </div>
-
-              </div> -->
-
-              <!--  <div class="multiple-uploader" id="multiple-uploader">
-                <form
-                  action="#"
-                  class="image-container"
-                  id="placeholder1"
-                  enctype="multipart/form-data"
-                >
-                  <label for="file-input">
-                    <img
-                      src="https://icons.iconarchive.com/icons/graphicloads/100-flat-2/128/add-icon.png"
-                    />
-                  </label>
-                  <input id="file-input" type="file" />
-                </form>
-
-                <div class="image-container" id="placeholder2">
-                  <label for="file-input">
-                    <img
-                      src="https://icons.iconarchive.com/icons/graphicloads/100-flat-2/128/add-icon.png"
-                    />
-                  </label>
-                  <input id="file-input" type="file" />
-                </div>
-
-                <div class="image-container" id="placeholder3">
-                  <label for="file-input">
-                    <img
-                      src="https://icons.iconarchive.com/icons/graphicloads/100-flat-2/128/add-icon.png"
-                    />
-                  </label>
-                  <input id="file-input" type="file" />
-                </div>
-
-                <div class="image-container" id="placeholder4">
-                  <label for="file-input">
-                    <img
-                      src="https://icons.iconarchive.com/icons/graphicloads/100-flat-2/128/add-icon.png"
-                    />
-                  </label>
-                  <input id="file-input" type="file" />
-                </div>
-                <div class="image-container" id="placeholder5">
-                  <label for="file-input">
-                    <img
-                      src="https://icons.iconarchive.com/icons/graphicloads/100-flat-2/128/add-icon.png"
-                    />
-                  </label>
-                  <input id="file-input" type="file" />
-                </div>
-              </div> -->
             </div>
-
             <form action="#" id="add-car">
               <div class="input-field">
                 <input
@@ -328,7 +247,6 @@
               </fieldset>
 
               <div class="input-field button">
-                <!-- <input type="button" /> -->
                 <button type="submit" class="upload-btn">Upload</button>
               </div>
             </form>
@@ -338,14 +256,5 @@
     </div>
     <script src="addCar.js"></script>
     <script src="../serialize.js"></script>
-    <!--     <script src="multiple-uploader.js"></script>
-    <script>
-      let multipleUploader = new MultipleUploader("#multiple-uploader").init({
-        maxUpload: 20, // maximum number of uploaded images
-        maxSize: 2, // in size in mb
-        filesInpName: "images", // input name sent to backend
-        formSelector: "#my-form", // form selector
-      });
-    </script> -->
   </body>
 </html>

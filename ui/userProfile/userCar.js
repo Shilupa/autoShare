@@ -17,7 +17,6 @@ const hamburgerUserHtml = document.querySelector("#hamburger-user-html");
 
 const token = sessionStorage.getItem("token");
 const user = JSON.parse(sessionStorage.getItem("user"));
-console.log(user, token);
 
 //checking token if it exists
 if (token != null) {
@@ -123,14 +122,17 @@ if (token != null) {
   btnLogout.style.display = "none";
   hamburgerBtnLogout.style.display = "none";
   hamburgerUserHtml.style.display = "none";
+  location.href = "../Home/home.html";
 }
 
 btnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
+  location.href = "../Home/home.html";
 });
 
 hamburgerBtnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
+  location.href = "../Home/home.html";
 });

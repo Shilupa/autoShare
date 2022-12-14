@@ -86,16 +86,19 @@ if (token != null) {
   btnLogout.style.display = "none";
   hamburgerBtnLogout.style.display = "none";
   hamburgerUserHtml.style.display = "none";
+  location.href = "../Home/home.html";
 }
 
 btnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
+  location.href = "../Home/home.html";
 });
 
 hamburgerBtnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
+  location.href = "../Home/home.html";
 });
 
 // get query parameter
@@ -224,7 +227,6 @@ placeholder_2.onchange = async () => {
 
 placeholder_3.onchange = async () => {
   const selectedFile = placeholder_3.files[0];
-  //console.log(selectedFile);
   const fd = new FormData(formPH3);
 
   const fetchOptions = {
@@ -246,7 +248,6 @@ placeholder_3.onchange = async () => {
 
 placeholder_4.onchange = async () => {
   const selectedFile = placeholder_4.files[0];
-  //console.log(selectedFile);
   const fd = new FormData(formPH4);
 
   const fetchOptions = {
@@ -268,7 +269,6 @@ placeholder_4.onchange = async () => {
 
 placeholder_5.onchange = async () => {
   const selectedFile = placeholder_5.files[0];
-  //console.log(selectedFile);
   const fd = new FormData(formPH5);
 
   const fetchOptions = {
@@ -300,7 +300,6 @@ delete_PH1.addEventListener("click", async () => {
   if (json.error) {
     alert(json.error.message);
   } else {
-    //alert(json.message);
     window.location.reload();
   }
 });
@@ -317,7 +316,6 @@ delete_PH2.addEventListener("click", async () => {
   if (json.error) {
     alert(json.error.message);
   } else {
-    //alert(json.message);
     window.location.reload();
   }
 });
@@ -334,7 +332,6 @@ delete_PH3.addEventListener("click", async () => {
   if (json.error) {
     alert(json.error.message);
   } else {
-    //alert(json.message);
     window.location.reload();
   }
 });
@@ -351,7 +348,6 @@ delete_PH4.addEventListener("click", async () => {
   if (json.error) {
     alert(json.error.message);
   } else {
-    //alert(json.message);
     window.location.reload();
   }
 });
@@ -368,7 +364,6 @@ delete_PH5.addEventListener("click", async () => {
   if (json.error) {
     alert(json.error.message);
   } else {
-    //alert(json.message);
     window.location.reload();
   }
 });

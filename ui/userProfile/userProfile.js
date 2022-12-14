@@ -76,11 +76,13 @@ if (token != null) {
 btnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
+  location.href = "../Home/home.html";
 });
 
 hamburgerBtnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
+  location.href = "../Home/home.html";
 });
 
 userName.value = user.name;
