@@ -20,7 +20,7 @@ const add_booking = async (req, res) => {
 
   if (errors.isEmpty()) {
     const result = await bookingModel.addBooking(newBooking, res);
-    res.status(201).json({ message: "booking created", newUserId: result });
+    res.json({ message: "booking created", status: 201, newUserId: result });
   } else {
     res
       .status(400)

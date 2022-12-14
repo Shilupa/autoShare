@@ -12,6 +12,8 @@ const hamburgerUserHtml = document.querySelector("#hamburger-user-html");
 
 //imagecontainer
 const imageContainer = document.querySelector(".slideshow-container");
+const def_image_number = document.querySelector(".numbertext");
+const def_image_src = document.querySelector("#img1");
 
 const carCard = document.querySelector(".card");
 const carName = document.querySelector(".car-name");
@@ -31,6 +33,9 @@ const address = document.querySelector(".address-value");
 const htmlImage = document.querySelector(".images");
 const swipeLeft = document.querySelector("#left");
 const swipeRight = document.querySelector("#right");
+
+const booking_form = document.querySelector(".booking-details");
+const bookingButton = document.querySelector(".request-btn");
 
 // reviews -card selector
 const reviews_card = document.querySelector(".reviews-card");
@@ -96,6 +101,7 @@ const getCar = async (reg_no) => {
   const reviews = [];
   const pictures = [];
 
+  let sum = 0;
   car.forEach((element) => {
     const review = {};
     review.booking_id = element.booking_id;
@@ -103,6 +109,7 @@ const getCar = async (reg_no) => {
     review.profile = element.bp_file;
     review.comment = element.comment;
     review.rating = element.rating;
+    sum += element.rating;
     review.bp_name = element.bp_name;
     reviews.push(review);
 
@@ -113,7 +120,11 @@ const getCar = async (reg_no) => {
     pictures.push(picture);
   });
 
+  const average_rating = sum / car.length;
+  overallRating(average_rating);
+
   console.log("details", car);
+  //console.log("average rating", average_rating);
 
   const reviewseen = new Set();
   const uniqueReviews = reviews.filter((el) => {
@@ -121,7 +132,9 @@ const getCar = async (reg_no) => {
     reviewseen.add(el.booking_id);
     return !duplicate;
   });
-  createReviewCard(uniqueReviews);
+  if (uniqueReviews[0].booking_id) {
+    createReviewCard(uniqueReviews);
+  }
   console.log("unique reviews: ", uniqueReviews);
 
   const pictureseen = new Set();
@@ -130,7 +143,8 @@ const getCar = async (reg_no) => {
     pictureseen.add(el.placeholder);
     return !duplicate;
   });
-  console.log("unique pictures: ", uniquePictures);
+  createPicSlide(uniquePictures);
+  //console.log("unique pictures: ", uniquePictures);
 
   // sending car info and car owner information
   createCarCard(car[0]);
@@ -175,7 +189,7 @@ const createReviewCard = (rev) => {
     booker_review.setAttribute("class", "booker-review");
 
     // creating booker profile
-    const booker_profile_text = '<img src="/images/user.png" alt="user image">';
+    const booker_profile_text = `<img src="../../server/uploads/${element.profile}" alt="user image">`;
     const booker_profile = document.createElement("div");
     booker_profile.setAttribute("class", "booker-profile");
     const name = document.createTextNode(element.bp_name);
@@ -214,19 +228,79 @@ const createReviewCard = (rev) => {
   });
 };
 
-/* const createPicSlide = (pics) => {
-  pics.forEach((element) => {
+const createPicSlide = (pics) => {
+  console.log("pic length: ", pics);
+  if (pics.length > 0) {
+    console.log("pic length: ", pics.length);
+    pics.forEach((element, i) => {
+      if (element.file_name) {
+        if (i == 0) {
+          def_image_number.innerHTML = `1/${pics.length}`;
+          def_image_src.src = `../../server/uploads/${element.file_name}`;
+        } else if (i > 0) {
+          const picText =
+            `<div class="numbertext">${i + 1}/${pics.length}</div>` +
+            `<img src="../../server/uploads/${element.file_name}" style="width:100%" id="img1">`;
+          const picture = document.createElement("div");
+          picture.setAttribute("class", "mySlides fade");
+          picture.innerHTML = picText;
+          imageContainer.append(picture);
+        }
+      }
+    });
+  }
+};
 
-} */
+const car_header = document.querySelector(".car-header");
 
-// Fetching user data or car images from respective databases
-/* const getData = async (url) => {
+// creating overall rating
+const overallRating = (rating) => {
+  const overallrating = document.createElement("div");
+  overallrating.setAttribute("class", "overall-ratings");
+  for (let i = 1; i < 6; i++) {
+    if (i <= Math.round(rating)) {
+      const text = '<span class="fa fa-star checked"></span>';
+      const span = document.createElement("span");
+      span.innerHTML = text;
+      overallrating.appendChild(span);
+    } else {
+      const text = '<span class="fa fa-star"></span>';
+      const span = document.createElement("span");
+      span.innerHTML = text;
+      overallrating.appendChild(span);
+    }
+  }
+  car_header.appendChild(overallrating);
+};
+
+// booking click listener
+
+booking_form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  //const fd = new FormData(carForm);
+  const data = serializeJson(booking_form);
+
+  for (const [prop, value] of Object.entries(data)) {
+    if (value === "") {
+      delete data[prop];
+    }
+  }
+  data.person_id = tokenUser.id;
+  data.car_reg_no = reg_no;
+
   const fetchOptions = {
+    method: "POST",
     headers: {
+      "Content-Type": "application/json",
       Authorization: "Bearer " + sessionStorage.getItem("token"),
     },
+    body: JSON.stringify(data),
   };
-  const response = await fetch(url, fetchOptions);
-  return await response.json();
-};
- */
+
+  const response = await fetch(url + "/booking/", fetchOptions);
+  const json = await response.json();
+  if (json.status === 201) {
+    alert(json.message);
+    location.href = "../bookings/myBookings.html";
+  }
+});
