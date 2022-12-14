@@ -24,15 +24,14 @@ if (token != null) {
   userHtml.addEventListener("click", () => {
     location.href = "../userProfile/userProfile.html";
   });
+  //hamburger
+  hamburgerBtnLogin.style.display = "none";
+  hamburgerBtnLogout.style.display = "visible";
+  hamburgerUserHtml.innerHTML = `Hi ${user.name}!`;
 
-    //hamburger
-    hamburgerBtnLogin.style.display = "none";
-    hamburgerBtnLogout.style.display = "visible";
-    hamburgerUserHtml.innerHTML = `Hi ${user.name}!`;
-  
-    hamburgerUserHtml.addEventListener("click", () => {
-      location.href = "../userProfile/userProfile.html";
-    });
+  hamburgerUserHtml.addEventListener("click", () => {
+    location.href = "../userProfile/userProfile.html";
+  });
 } else {
   btnLogout.style.display = "none";
   hamburgerBtnLogout.style.display = "none";
@@ -40,15 +39,17 @@ if (token != null) {
 }
 
 //normal logout button
-btnLogin.addEventListener("click", () => {
+btnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
+  location.href = "../Home/home.html";
 });
 
 //hamburger logout button
 hamburgerBtnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
+  location.href = "../Home/home.html";
 });
 
 // Self invoking fuction which gets list of cars from database

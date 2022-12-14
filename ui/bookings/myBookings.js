@@ -35,16 +35,19 @@ if (token != null) {
   btnLogout.style.display = "none";
   hamburgerBtnLogout.style.display = "none";
   hamburgerUserHtml.style.display = "none";
+  location.href = "../Home/home.html";
 }
 
 btnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
+  location.href = "../Home/home.html";
 });
 
 hamburgerBtnLogout.addEventListener("click", () => {
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("user");
+  location.href = "../Home/home.html";
 });
 
 (async () => {
@@ -56,7 +59,6 @@ hamburgerBtnLogout.addEventListener("click", () => {
   const response = await fetch(`${url}/booking/user`, fetchOptions);
   const myBookings = await response.json();
   createBookingCard(myBookings);
-  //console.log(profile);
 })();
 
 const createBookingCard = (bookingList) => {
@@ -85,18 +87,3 @@ const createBookingCard = (bookingList) => {
     mainList.append(detail);
   });
 };
-{
-  /* <h4>As owner</h4>
-          <!--should be owner or renter-->
-          <div class="car-image">
-            <img
-              src="/images/photo-1525609004556-c46c7d6cf023.jfif"
-              alt="car"
-            />
-          </div>
-          <div class="booking-details">
-            <span id="booking-date"> Booking date : 12/12/2022</span>
-            <span id="booked-hrs">Booked for : 2 hours</span>
-            <span id="total-cost">Total estimated cost : 50€</span>
-          </div> */
-}
