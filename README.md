@@ -62,8 +62,27 @@ To run front end: For VSCode, you can click the Go Live on the bottom bar to ope
     npm install express-validator
     npm i passport passport-local passport-jwt
     npm i exif
+    
+##Some screenshots from our web page
+### About us page
+![image](https://user-images.githubusercontent.com/91323947/207741712-e75e1a71-eabc-4b66-9337-07f2a3a35213.png)
+
+### Login Page
+![image](https://user-images.githubusercontent.com/91323947/207741851-33bb16cd-186e-413e-90b0-089e6c105bab.png)
+
+### Home page 
+![image](https://user-images.githubusercontent.com/91323947/207741933-457eab57-22b8-498b-a7ea-023bb2da93d8.png)
+
+### editing/deleting user profile
+![image](https://user-images.githubusercontent.com/91323947/207742096-a69e4f5d-41ad-4a02-a795-8ef2742b1997.png)
+
+### adding car
+![image](https://user-images.githubusercontent.com/91323947/207742214-42769a79-ae30-4d18-bdca-ba55c5ab60d2.png)
+
+### editing car
+![image](https://user-images.githubusercontent.com/91323947/207742306-8218bcfa-365c-4d9a-a97a-f89cd6570a89.png)
 
 ### Contributors
-    Bibek Shrestha
+    Bibek Shrestha 
     Suraj Rana Bhat
     Shilpa Singh Yadav
