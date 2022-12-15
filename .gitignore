@@ -76,14 +76,14 @@ bower_components
 build/Release
 
 # Dependency directories
-server/node_modules 
+server/node_modules
 jspm_packages/
 server/uploads/*
 !server/uploads/.gitkeep
 server/thumbnails/*
 !server/thumbnails/.gitkeep
-autoshare-logo/
-images/
+autoshare-logo/*
+images/*
 
 
 
