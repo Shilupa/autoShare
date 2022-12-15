@@ -82,6 +82,11 @@ server/uploads/*
 !server/uploads/.gitkeep
 server/thumbnails/*
 !server/thumbnails/.gitkeep
+autoshare-logo/*
+!autoshare-logo/.gitkeep
+images/*
+!images/.gitkeep
+
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/

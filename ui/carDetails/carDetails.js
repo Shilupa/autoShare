@@ -226,6 +226,7 @@ const createReviewCard = (rev) => {
 
 const createPicSlide = (pics) => {
   if (pics.length > 0) {
+    console.log("pic length: ", pics.length);
     pics.forEach((element, i) => {
       if (element.file_name) {
         if (i == 0) {
