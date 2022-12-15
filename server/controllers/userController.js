@@ -17,28 +17,6 @@ const get_user = async (req, res) => {
   }
 };
 
-/* const add_user = async (req, res) => {
-  console.log("creating a new user: ", req.body);
-  const newUser = req.body;
-  if (!newUser.role_) {
-    newUser.role_ = "User";
-  }
-  const errors = validationResult(req);
-  console.log("error: ", errors);
-
-  if (errors.isEmpty()) {
-    const salt = await bcrypt.genSalt();
-    const passwordHash = await bcrypt.hash(newUser.password, salt);
-    newUser.password = passwordHash;
-    const result = await userModel.addUser(newUser, res);
-    res.status(201).json({ message: "user created", newUserId: result });
-  } else {
-    res
-      .status(400)
-      .json({ message: "user creation failed", errors: errors.array() });
-  }
-}; */
-
 const delete_user = async (req, res) => {
   const result = await userModel.deleteUserById(req.params.userId, res);
   console.log("user deleted", result);
@@ -78,7 +56,6 @@ const modify_user = async (req, res) => {
 module.exports = {
   get_all_users,
   get_user,
-  //add_user,
   modify_user,
   delete_user,
 };

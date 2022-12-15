@@ -157,7 +157,7 @@ const createCarCard = (car) => {
   gearbox.innerHTML = car.transmission;
   year.innerHTML = car.year_;
   numberOfPeople.innerHTML = car.seater;
-  rentPrice.innerHTML = car.rent_price;
+  rentPrice.innerHTML = car.rent_price + " Euros/hour.";
   map_address.value = car.car_address;
 
   // Splitting date string to remove unnecessary string
@@ -226,6 +226,7 @@ const createReviewCard = (rev) => {
 
 const createPicSlide = (pics) => {
   if (pics.length > 0) {
+    console.log("pic length: ", pics.length);
     pics.forEach((element, i) => {
       if (element.file_name) {
         if (i == 0) {
