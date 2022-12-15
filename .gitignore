@@ -82,8 +82,8 @@ server/uploads/*
 !server/uploads/.gitkeep
 server/thumbnails/*
 !server/thumbnails/.gitkeep
-autoshare-logo/*
-images/*
+autoshare-logo/
+images/
 
 
 
